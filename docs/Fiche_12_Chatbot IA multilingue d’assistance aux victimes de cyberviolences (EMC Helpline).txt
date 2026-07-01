@@ -1,0 +1,105 @@
+CMRPI – EMC | Fiche Technique Projet N°12
+
+Centre Marocain de Recherches Polytechniques et d’Innovation (CMRPI)
+Espace Maroc Cyberconfiance (EMC)
+Offres de Stages PFA 2026 – Plan Stratégique 2026-2029
+
+Fiche Technique — Projet N°12
+Intitulé
+
+Chatbot IA multilingue d’assistance aux victimes de cyberviolences (EMC
+Helpline)
+
+Domaine
+
+Intelligence artificielle
+
+Axe stratégique
+
+EMC Helpline
+
+Encadrant(s)
+
+• M. Anass Bentaleb – IA / Chatbot (principal)
+• Mme. Fadwa Belaous – Psychologie / Cyberviolence
+✉ anass.bentaleb.2002@gmail.com
+
+Contexte
+
+Un assistant conversationnel intelligent disponible 24h/24 permettrait
+d’informer, orienter et accompagner les victimes.
+
+Objectifs
+
+• Chatbot multilingue (arabe, français)
+• IA générative intégrée
+• Réponses adaptées aux cyberviolences
+• Orientation vers les ressources compétentes
+
+Missions
+
+• Analyse de l’existant : https://emc-chatbot.vercel.app/ (version Beta) &
+https://evigilance.ma/fr & www.cybereconfiance.ma
+• Scénarios conversationnels
+• Base de connaissances multilingue
+• Moteur conversationnel
+• Intégration LLM
+• Tests et évaluation
+
+Technologies
+
+• Python (LangChain, FastAPI)
+• LLM (GPT, Claude, Mistral)
+• RAG
+• Pinecone / ChromaDB
+• React
+
+Phases de réalisation
+
+• Semaine 1-2 : Besoins et base de connaissances
+• Semaine 3-4 : Moteur conversationnel et LLM
+• Semaine 5-6 : Interface et multilingue
+• Semaine 7 : Tests et optimisation
+• Semaine 8 : Documentation et présentation
+
+Compétences requises
+
+• IA et NLP
+• APIs et back-end
+• LLM et IA générative
+• Problématiques de cyberviolences
+
+Livrables
+
+• Chatbot opérationnel multilingue (fichier source /lien)
+• Base de connaissances
+• Guide d’administration
+• Rapport de stage
+
+CMRPI – Espace Maroc Cyberconfiance | Stages PFA 2026
+
+CMRPI – EMC | Fiche Technique Projet N°12
+
+Durée
+
+2 mois (01 juillet 2026 – 30 août 2026)
+
+Type de stage
+
+Projet de Fin d’Année (PFA)
+
+Public cible
+
+Étudiants de 2ème année du cycle d’ingénieur
+
+Lieu
+
+Hybride (présentiel et/ou à distance)
+
+Structure d’accueil
+
+CMRPI – Espace Maroc Cyberconfiance
+
+CMRPI – Espace Maroc Cyberconfiance | Stages PFA 2026
+
+
