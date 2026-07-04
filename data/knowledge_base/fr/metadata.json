@@ -1,0 +1,20 @@
+[
+  {
+    "file_path": "juridique/loi_103_13.md",
+    "langue": "fr",
+    "categorie": "juridique",
+    "mots_cles": ["loi 103-13", "harcèlement", "revenge porn", "diffamation", "peines", "droit marocain"]
+  },
+  {
+    "file_path": "ressources/numeros_urgence.md",
+    "langue": "fr",
+    "categorie": "ressources",
+    "mots_cles": ["police", "gendarmerie", "190", "177", "ONDE", "25 11", "urgence", "aide", "association"]
+  },
+  {
+    "file_path": "fiches_pratiques/cyberharcelement.md",
+    "langue": "fr",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["cyberharcèlement", "cyberbullying", "preuves", "signaler", "bloquer", "que faire"]
+  }
+]
