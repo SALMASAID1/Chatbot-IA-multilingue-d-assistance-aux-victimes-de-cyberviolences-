@@ -1,0 +1,50 @@
+[
+  {
+    "file_path": "juridique/loi_103_13.md",
+    "langue": "ar",
+    "categorie": "juridique",
+    "mots_cles": ["القانون 103-13", "التحرش", "الانتقام الإباحي", "التشهير", "العقوبات", "القانون المغربي"]
+  },
+  {
+    "file_path": "ressources/numeros_urgence.md",
+    "langue": "ar",
+    "categorie": "ressources",
+    "mots_cles": ["الشرطة", "الدرك الملكي", "190", "177", "ONDE", "25 11", "طوارئ", "مساعدة"]
+  },
+  {
+    "file_path": "fiches_pratiques/cyberharcelement.md",
+    "langue": "ar",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["التحرش الإلكتروني", "التنمر", "الأدلة", "تبليغ", "حظر", "ماذا تفعل"]
+  },
+  {
+    "file_path": "fiches_pratiques/sextorsion.md",
+    "langue": "ar",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["الابتزاز الجنسي", "ابتزاز", "صور حميمية", "ماتخلصش", "تهديد"]
+  },
+  {
+    "file_path": "fiches_pratiques/usurpation_identite.md",
+    "langue": "ar",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["انتحال الهوية", "حساب مزيف", "سرقة هوية", "تبليغ حساب"]
+  },
+  {
+    "file_path": "fiches_pratiques/phishing.md",
+    "langue": "ar",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["التصيد الاحتيالي", "احتيال", "رابط مزيف", "كلمة المرور", "بنك"]
+  },
+  {
+    "file_path": "prevention/securiser_comptes.md",
+    "langue": "ar",
+    "categorie": "prevention",
+    "mots_cles": ["كلمة مرور", "المصادقة الثنائية", "2FA", "أمان", "حماية حسابات"]
+  },
+  {
+    "file_path": "faq/faq_cyberviolence.md",
+    "langue": "ar",
+    "categorie": "faq",
+    "mots_cles": ["أسئلة شائعة", "شكاية", "أدلة", "خط المساعدة", "قاصر"]
+  }
+]

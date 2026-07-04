@@ -3,18 +3,96 @@
     "file_path": "juridique/loi_103_13.md",
     "langue": "fr",
     "categorie": "juridique",
-    "mots_cles": ["loi 103-13", "harcèlement", "revenge porn", "diffamation", "peines", "droit marocain"]
+    "mots_cles": ["loi 103-13", "harcèlement", "revenge porn", "diffamation", "peines", "droit marocain", "violence femmes"]
+  },
+  {
+    "file_path": "juridique/loi_09_08.md",
+    "langue": "fr",
+    "categorie": "juridique",
+    "mots_cles": ["loi 09-08", "données personnelles", "CNDP", "doxxing", "vie privée", "protection données"]
+  },
+  {
+    "file_path": "juridique/loi_07_03.md",
+    "langue": "fr",
+    "categorie": "juridique",
+    "mots_cles": ["loi 07-03", "cybercriminalité", "piratage", "accès frauduleux", "code pénal", "spyware"]
   },
   {
     "file_path": "ressources/numeros_urgence.md",
     "langue": "fr",
     "categorie": "ressources",
-    "mots_cles": ["police", "gendarmerie", "190", "177", "ONDE", "25 11", "urgence", "aide", "association"]
+    "mots_cles": ["police", "gendarmerie", "190", "177", "ONDE", "25 11", "urgence", "aide"]
+  },
+  {
+    "file_path": "ressources/associations_aide.md",
+    "langue": "fr",
+    "categorie": "ressources",
+    "mots_cles": ["associations", "Sourire de Reda", "AMANE", "Bayti", "FNAPEM", "cellules", "tribunal"]
+  },
+  {
+    "file_path": "ressources/signalement_reseaux_sociaux.md",
+    "langue": "fr",
+    "categorie": "ressources",
+    "mots_cles": ["signalement", "signaler", "Facebook", "Instagram", "TikTok", "WhatsApp", "Snapchat"]
   },
   {
     "file_path": "fiches_pratiques/cyberharcelement.md",
     "langue": "fr",
     "categorie": "fiches_pratiques",
     "mots_cles": ["cyberharcèlement", "cyberbullying", "preuves", "signaler", "bloquer", "que faire"]
+  },
+  {
+    "file_path": "fiches_pratiques/sextorsion.md",
+    "langue": "fr",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["sextorsion", "chantage sexuel", "images intimes", "ne pas payer", "menace"]
+  },
+  {
+    "file_path": "fiches_pratiques/usurpation_identite.md",
+    "langue": "fr",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["usurpation identité", "faux profil", "vol identité", "signaler profil"]
+  },
+  {
+    "file_path": "fiches_pratiques/phishing.md",
+    "langue": "fr",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["phishing", "hameçonnage", "arnaque", "faux lien", "mot de passe", "banque"]
+  },
+  {
+    "file_path": "fiches_pratiques/revenge_porn.md",
+    "langue": "fr",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["revenge porn", "pornographie non consensuelle", "images intimes", "suppression contenu"]
+  },
+  {
+    "file_path": "fiches_pratiques/cyberstalking.md",
+    "langue": "fr",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["cyberstalking", "harcèlement obsessionnel", "surveillance", "danger", "logiciel espion"]
+  },
+  {
+    "file_path": "prevention/securiser_comptes.md",
+    "langue": "fr",
+    "categorie": "prevention",
+    "mots_cles": ["mot de passe", "2FA", "double authentification", "sécurité", "connexions"]
+  },
+  {
+    "file_path": "prevention/confidentialite_reseaux_sociaux.md",
+    "langue": "fr",
+    "categorie": "prevention",
+    "mots_cles": ["confidentialité", "compte privé", "paramètres", "Facebook", "Instagram", "TikTok", "WhatsApp"]
+  },
+  {
+    "file_path": "prevention/protection_mineurs.md",
+    "langue": "fr",
+    "categorie": "prevention",
+    "mots_cles": ["enfants", "adolescents", "mineurs", "parents", "contrôle parental", "signes alerte"]
+  },
+  {
+    "file_path": "faq/faq_cyberviolence.md",
+    "langue": "fr",
+    "categorie": "faq",
+    "mots_cles": ["FAQ", "questions fréquentes", "porter plainte", "preuves", "E-Helpline", "mineur"]
   }
 ]
