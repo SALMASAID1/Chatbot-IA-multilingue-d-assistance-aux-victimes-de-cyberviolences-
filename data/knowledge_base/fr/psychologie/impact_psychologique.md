@@ -1,49 +1,103 @@
-# Impact Psychologique de la Cyberviolence
+# Impact psychologique de la cyberviolence
+
+> Ce document est informatif. Il ne remplace pas l'avis d'un psychologue, d'un psychiatre, d'un médecin ou d'un service d'urgence.
 
 ## Pourquoi c'est important
-La cyberviolence ne laisse pas de traces physiques, mais ses conséquences psychologiques sont profondes et durables. Comprendre ces effets aide les victimes à reconnaître ce qu'elles vivent et à chercher de l'aide.
 
-## Les effets psychologiques courants
+La cyberviolence ne laisse pas toujours de traces physiques, mais elle peut avoir des conséquences réelles sur la santé mentale, la sécurité, la scolarité, le travail et les relations sociales. Elle peut prendre plusieurs formes : cyberharcèlement, menaces, usurpation d'identité, diffusion non consentie d'images, chantage, doxxing, intimidation ou surveillance numérique.
+
+Comprendre ces effets aide les victimes à reconnaître ce qu'elles vivent et à demander de l'aide sans culpabilité.
+
+## Effets psychologiques possibles
+
+Les réactions varient d'une personne à l'autre. Certaines victimes vont ressentir une forte détresse immédiatement, tandis que d'autres peuvent développer des symptômes progressivement.
 
 ### Anxiété et stress
-- **Peur permanente** de recevoir de nouveaux messages ou de voir du contenu publié.
-- **Hypervigilance** : vérification compulsive du téléphone et des réseaux sociaux.
-- Difficultés de concentration à l'école ou au travail.
-- Troubles du sommeil : insomnies, cauchemars.
 
-### Dépression
-- Sentiment de **tristesse intense** et de désespoir.
-- Perte d'intérêt pour les activités habituelles.
-- **Isolement social** : la victime se replie sur elle-même et évite ses amis.
-- Baisse de l'estime de soi et sentiment de honte.
+Une victime peut ressentir :
 
-### Stress post-traumatique (PTSD)
-- Reviviscences involontaires des événements traumatisants (flashbacks).
-- Évitement de tout ce qui rappelle l'agression (réseaux sociaux, téléphone).
-- Réactions émotionnelles intenses face à des stimuli anodins (son de notification).
+- une peur constante de recevoir de nouveaux messages ou de voir un contenu publié en ligne ;
+- une hypervigilance, par exemple vérifier très souvent son téléphone ou ses réseaux sociaux ;
+- des difficultés de concentration à l'école, à l'université ou au travail ;
+- des troubles du sommeil : insomnie, cauchemars, réveils fréquents ;
+- une impression de perte de contrôle sur sa vie numérique.
 
-### Effets sur les jeunes et adolescents
-- **Décrochage scolaire** : baisse des résultats et absentéisme.
-- **Troubles alimentaires** liés au stress et à l'anxiété.
-- **Idées suicidaires** : dans les cas les plus graves, la cyberviolence peut conduire à des pensées suicidaires. Si vous ou un proche êtes concerné(e), appelez immédiatement le **190** (police) ou le **25 11** (ONDE).
-- Perte de confiance envers les adultes et les institutions.
+### Tristesse, honte et perte d'estime de soi
 
-## Spécificités dans le contexte marocain
-- La **honte familiale (hchouma)** peut empêcher les victimes de parler, surtout lorsque la cyberviolence implique des images intimes.
-- La pression sociale pousse certaines victimes à se taire plutôt que de risquer d'exposer leur famille.
-- Les **femmes et les filles** sont davantage ciblées et subissent une double peine : la violence elle-même et le jugement social.
-- Dans les zones rurales, l'accès aux ressources d'aide psychologique est plus limité.
+La cyberviolence peut provoquer :
 
-## Facteurs de vulnérabilité
-- **Âge** : les adolescents (11-17 ans) sont les plus vulnérables.
-- **Genre** : les femmes et les filles subissent plus de sextorsion et de revenge porn ; les garçons subissent plus de cyberharcèlement verbal.
-- **Isolement social** : les personnes avec peu de soutien familial ou amical sont plus à risque.
-- **Exposition prolongée** : plus la cyberviolence dure, plus les effets sont graves.
+- une tristesse intense ;
+- un sentiment d'humiliation ou de honte ;
+- une baisse de l'estime de soi ;
+- l'impression d'être jugé(e) ou observé(e) par tout le monde ;
+- un repli sur soi et une envie d'éviter les autres.
 
-## Données statistiques (Maroc)
-- Selon le **HCP (Haut-Commissariat au Plan)**, environ **1 femme sur 7** au Maroc a subi une forme de violence numérique.
-- L'enquête nationale sur la violence à l'égard des femmes montre une augmentation significative de la cyberviolence depuis la généralisation des smartphones.
-- Source : [www.hcp.ma](https://www.hcp.ma)
+Il est important de rappeler que la honte ne doit jamais être portée par la victime. La responsabilité revient à l'auteur des violences.
 
-## Message important
-**Ce que vous ressentez est normal.** L'anxiété, la peur, la colère ou la honte sont des réactions naturelles face à la cyberviolence. Ce n'est pas un signe de faiblesse. Demander de l'aide est un signe de courage.
+### Isolement social
+
+Certaines victimes évitent les amis, la famille, les réseaux sociaux ou les lieux d'étude/travail par peur d'être reconnues, jugées ou exposées. Cet isolement peut aggraver la souffrance psychologique.
+
+### Symptômes liés au traumatisme
+
+Dans les situations graves ou prolongées, certaines personnes peuvent présenter des réactions qui ressemblent à des symptômes post-traumatiques :
+
+- revivre mentalement l'événement ;
+- éviter tout ce qui rappelle l'agression : téléphone, réseaux sociaux, certains lieux ou certaines personnes ;
+- paniquer au son d'une notification ;
+- se sentir constamment en alerte.
+
+Seul un professionnel de santé mentale peut poser un diagnostic. Mais ces signes doivent être pris au sérieux.
+
+## Effets chez les jeunes et adolescents
+
+Chez les enfants et les adolescents, la cyberviolence peut avoir des effets particuliers :
+
+- baisse des résultats scolaires ;
+- absentéisme ou peur d'aller à l'école ;
+- troubles du sommeil ;
+- perte de confiance envers les adultes ;
+- repli social ;
+- comportements à risque ;
+- idées suicidaires dans les situations les plus graves.
+
+L'UNICEF souligne que le cyberharcèlement peut affecter la santé mentale des enfants et des jeunes, notamment à travers l'anxiété, le stress, la dépression, les troubles alimentaires et les pensées suicidaires. La CDC signale aussi que l'usage fréquent des réseaux sociaux et la victimisation électronique peuvent être associés à des résultats défavorables pour la santé mentale des adolescents.
+
+## Spécificités possibles dans le contexte marocain
+
+Au Maroc, certaines victimes peuvent hésiter à parler à cause de la peur du jugement social, de la honte familiale ou de la peur que l'affaire soit connue. Cette pression peut être plus forte lorsque la cyberviolence concerne des photos intimes, la réputation, la sexualité ou l'honneur familial.
+
+Les femmes et les filles peuvent subir une double violence : l'agression numérique elle-même, puis le jugement social ou la culpabilisation. Dans certains contextes, l'accès à une aide psychologique spécialisée peut aussi être plus difficile.
+
+## Données statistiques utiles au Maroc
+
+Selon des données citées par le Haut-Commissariat au Plan et relayées par le Conseil de l'Europe, environ 1,5 million de femmes au Maroc, soit un taux de prévalence d'environ 14 %, ont été victimes de violence numérique en 2019, notamment via courriels, appels téléphoniques et SMS.
+
+Cette donnée doit être utilisée avec précision : elle concerne les femmes et les violences numériques relevées dans ce cadre d'enquête, et ne doit pas être généralisée automatiquement à toute la population marocaine.
+
+## Signes d'alerte nécessitant une aide rapide
+
+Il faut chercher de l'aide rapidement si la personne :
+
+- parle de suicide ou d'automutilation ;
+- dit qu'elle ne veut plus vivre ;
+- reçoit des menaces physiques ;
+- est victime de chantage ou de diffusion d'images intimes ;
+- ne dort plus ou ne mange presque plus ;
+- n'arrive plus à aller à l'école, au travail ou à sortir de chez elle ;
+- semble en danger immédiat.
+
+En cas de danger immédiat au Maroc, contactez **Police Secours : 19** ou la **Gendarmerie Royale : 177**. Pour les enfants, l'ONDE met à disposition le numéro court **2511** et le numéro vert **0800002511** pour signaler les actes de violence.
+
+## Message important pour les victimes
+
+Ce que vous ressentez est légitime. La peur, la colère, la honte, la tristesse ou l'anxiété sont des réactions possibles face à une situation violente. Demander de l'aide n'est pas un signe de faiblesse : c'est une manière de se protéger et de reprendre progressivement le contrôle.
+
+## Sources et références
+
+- Haut-Commissariat au Plan / Conseil de l'Europe — données sur la violence numérique au Maroc : https://www.coe.int/fr/web/rabat/-/proteger-les-femmes-et-les-filles-contre-la-violence-a-l-ere-numerique
+- HCP — note sur la violence électronique : https://www.hcp.ma/attachment/2429482/
+- UNICEF — Cyberbullying: what it is and how to stop it : https://www.unicef.org/stories/how-to-stop-cyberbullying
+- CDC — Frequent Social Media Use and Experiences with Bullying Victimization : https://www.cdc.gov/mmwr/volumes/73/su/su7304a3.htm
+- DGSN — Services, ligne 19 dédiée aux appels d'urgence : https://www.dgsn.gov.ma/fr/services?page=1
+- ONDE — Centre d'écoute 2511 : https://www.onde.ma/centre-decoute-2511
