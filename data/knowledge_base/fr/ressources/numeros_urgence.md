@@ -4,7 +4,7 @@ En cas d'urgence ou si vous avez besoin d'aide immédiate, voici les contacts of
 
 ## Numéros d'Urgence Nationaux (Gratuits et 24h/24)
 
-*   **Police Secours (DGSN)** : Composez le **190** (En zone urbaine).
+*   **Police Secours (DGSN)** : Composez le **19** (En zone urbaine).
 *   **Gendarmerie Royale** : Composez le **177** (En zone rurale).
 *   **Protection Civile / Pompiers** : Composez le **150** (En cas de danger physique immédiat ou besoin de secours médicaux).
 

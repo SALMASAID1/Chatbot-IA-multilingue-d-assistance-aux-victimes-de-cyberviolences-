@@ -30,7 +30,7 @@
 
 ### Direction Générale de la Sûreté Nationale (DGSN)
 - Les commissariats de police disposent d'unités spécialisées pour recevoir les plaintes liées à la cybercriminalité.
-- Numéro d'urgence : **190**.
+- Numéro d'urgence : **19**.
 
 ### Brigade de lutte contre la cybercriminalité (Gendarmerie Royale)
 - Pour les zones rurales : composez le **177**.
@@ -39,4 +39,4 @@
 - **Vous êtes mineur(e)** → Appelez l'ONDE (25 11) ou contactez Sourire de Reda.
 - **Vous êtes une femme victime de violence** → Contactez la Fondation Ytto ou la cellule de prise en charge du tribunal.
 - **Vous avez besoin d'un accompagnement en cyberviolence** → Contactez l'E-Helpline de Cyberconfiance.
-- **Vous êtes en danger immédiat** → Appelez la police (190) ou la gendarmerie (177).
+- **Vous êtes en danger immédiat** → Appelez la police (19) ou la gendarmerie (177).

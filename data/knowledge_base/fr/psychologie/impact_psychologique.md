@@ -25,7 +25,7 @@ La cyberviolence ne laisse pas de traces physiques, mais ses conséquences psych
 ### Effets sur les jeunes et adolescents
 - **Décrochage scolaire** : baisse des résultats et absentéisme.
 - **Troubles alimentaires** liés au stress et à l'anxiété.
-- **Idées suicidaires** : dans les cas les plus graves, la cyberviolence peut conduire à des pensées suicidaires. Si vous ou un proche êtes concerné(e), appelez immédiatement le **190** (police) ou le **25 11** (ONDE).
+- **Idées suicidaires** : dans les cas les plus graves, la cyberviolence peut conduire à des pensées suicidaires. Si vous ou un proche êtes concerné(e), appelez immédiatement le **19** (police) ou le **25 11** (ONDE).
 - Perte de confiance envers les adultes et les institutions.
 
 ## Spécificités dans le contexte marocain

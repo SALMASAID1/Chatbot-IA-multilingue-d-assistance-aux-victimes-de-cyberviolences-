@@ -22,7 +22,7 @@ L'objectif n'est pas de résoudre le problème immédiatement, mais de **stabili
 
 #### 3. Rassurer sur la sécurité
 - Évaluez si la personne est en danger immédiat (menaces physiques, idées suicidaires).
-- Si oui, orientez immédiatement vers les urgences : **police (190)** ou **ONDE (25 11)** pour les mineurs.
+- Si oui, orientez immédiatement vers les urgences : **police (19)** ou **ONDE (25 11)** pour les mineurs.
 - Aidez la personne à se sentir en sécurité : bloquer l'agresseur, changer les mots de passe.
 
 #### 4. Informer sur les ressources

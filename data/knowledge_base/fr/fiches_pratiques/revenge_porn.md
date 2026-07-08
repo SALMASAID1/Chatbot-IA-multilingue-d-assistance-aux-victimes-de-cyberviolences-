@@ -25,7 +25,7 @@ Le revenge porn (ou pornographie non consensuelle) est la diffusion d'images ou 
 - Contactez l'**E-Stopline** de Cyberconfiance pour de l'aide dans la suppression.
 
 ### 4. Portez plainte
-- Rendez-vous au commissariat de police (190) ou à la gendarmerie (177) avec les preuves.
+- Rendez-vous au commissariat de police (19) ou à la gendarmerie (177) avec les preuves.
 - La diffusion d'images intimes sans consentement est un délit grave au Maroc.
 
 ## Ce que dit la loi marocaine
