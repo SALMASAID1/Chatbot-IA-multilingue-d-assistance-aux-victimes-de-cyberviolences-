@@ -1,0 +1,253 @@
+--- Page 1 ---
+Base de connaissances du Chatb ot EMC Helpline :
+In v en taire complet des données et ressources
+Pro jet PF A  Chatb ot IA Multilingue
+Salma Said & Mohamed T amzirt
+CMRPI  Espace Maro c Cyb erconance
+3 juillet 2026
+T able des matières
+1 In tro duction 2
+2 Données juridiques (Maro c) 2
+2.1 Données à inclure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+2.2 Sources et ressources . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+3 Ann uaires et ressources d'assistance (Maro c) 2
+3.1 Données à inclure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+3.2 Sources et ressources . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+4 Fic hes pratiques et guides de réaction 3
+4.1 Données à inclure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+4.2 Sources et ressources . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+5 Guides de prév en tion et sécurité n umérique 3
+5.1 Données à inclure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+5.2 Sources et ressources . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+6 Articles de psyc hologie et rec herc he académique 3
+6.1 Thématiques clés à do cumen ter . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+6.2 P ortails académiques et bases d'articles . . . . . . . . . . . . . . . . . . . . . . . . 4
+6.3 Ressources académiques maro caines . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+6.4 Données statistiques maro caines . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+7 Bases de données publiques et datasets NLP 4
+7.1 Datasets de détection du cyb erharcèlemen t . . . . . . . . . . . . . . . . . . . . . 4
+7.2 Plateformes de datasets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+7.3 Mo dèles m ultilingues recommandés . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+8 Rapp orts d'organisations in ternationales 5
+8.1 Organisation Mondiale de la San té (OMS) . . . . . . . . . . . . . . . . . . . . . . 5
+8.2 UNICEF . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+8.3 Conseil de l'Europ e . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+8.4 UNESCO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+1
+
+--- Page 2 ---
+Base de connaissances  Données et Ressources Pro jet EMC Helpline
+1 In tro duction
+Ce do cumen t recense de manière exhaustiv e l'ensem ble des données, sources et ressources
+exploitables p our construire la base de connaissances m ultilingue (français, arab e, darija)
+du c hatb ot d'assistance aux victimes de cyb erviolences EMC Helpline .
+Les ressources son t organisées en sept catégories :
+1. Données juridiques maro caines
+2. Ann uaires et ressources d'assistance
+3. Fic hes pratiques et guides de réaction
+4. Guides de prév en tion et sécurité n umérique
+5. Articles de psyc hologie et rec herc he académique
+6. Bases de données publiques et datasets NLP
+7. Rapp orts d'organisations in ternationales
+2 Données juridiques (Maro c)
+Ces données p ermetten t au c hatb ot de fournir des informations légales ables aux victimes
+sur les infractions et les p eines encourues par les agresseurs.
+2.1 Données à inclure
+ Loi 103-13 : Relativ e à la lutte con tre les violences faites aux femmes. Elle con tien t
+des disp ositions p énales sur le harcèlemen t en ligne, la diamation et la publication de
+photos/vidéos sans consen temen t.
+ Loi 09-08 : Relativ e à la protection des p ersonnes ph ysiques à l'égard du traitemen t des
+données à caractère p ersonnel (do xxing, fuite de données priv ées).
+ Co de p énal maro cain (Loi 07-03) : Articles répriman t l'accès frauduleux aux systèmes
+informatiques, le c han tage n umérique (sextorsion) et l'usurpation d'iden tité.
+2.2 Sources et ressources
+ SGG (Secrétariat Général du Gouv ernemen t) : http://www.sgg.gov.ma  Bulle-
+tins Ociels et textes de loi.
+ CNDP (Commission Nationale de protection des Données) : https://www.cndp.
+ma  T extes et guides sur la loi 09-08.
+3 Ann uaires et ressources d'assistance (Maro c)
+Ces données serv en t à orien ter immédiatemen t la victime v ers les structures de soutien adap-
+tées.
+3.1 Données à inclure
+ Numéros d'urgence : P olice ( 190 ), Gendarmerie Ro y ale ( 177 ).
+ Ligne ONDE : 25 11 (enfan ts victimes de violences).
+ Asso ciations partenaires : Sourir e de R e da , AMANE , Bayti , FNAPEM , etc.
+ Cellules judiciaires de prise en c harge des femmes et enfan ts victimes de violences.
+2
+
+--- Page 3 ---
+Base de connaissances  Données et Ressources Pro jet EMC Helpline
+3.2 Sources et ressources
+ Espace Maro c Cyb erconance : https://www.cyberconfiance.ma/
+ Plateforme e Vigilance : https://evigilance.ma/  F orm ulaires de signalemen t et
+c hes d'aide.
+ Ministère de la Solidarité et de la F amille  Ann uaires des cellules d'écoute.
+4 Fic hes pratiques et guides de réaction
+Rép onses op érationnelles fournies par le c hatb ot p our aider la victime à agir immédiatemen t.
+4.1 Données à inclure
+ Fic hes par t yp e de cyb erviolence : Cyb erharcèlemen t, sextorsion/rev enge p orn, usur-
+pation d'iden tité, phishing.
+ Conserv ation des preuv es : Captures d'écran, constats d'h uissier n umérique.
+ Signalemen t sur les réseaux so ciaux : Pro cédures pas à pas p our F aceb o ok, Instagram,
+TikT ok, Snap c hat et WhatsApp.
+4.2 Sources et ressources
+ EMC-Biblio : https://www.cyberconfiance.ma/emc- biblio/  Bro c h ures et guides
+ociels.
+ Cen tres d'aide des plateformes : Instagram Help Cen ter, F aceb o ok Safet y , etc.
+ Cyb ermalv eillance.gouv.fr (F rance) : https://www.cybermalveillance.gouv.fr/ 
+Fic hes pratiques de référence.
+ e-Enfance / 3018 (F rance) : https://www.e- enfance.org/  Ressources sur le cyb e-
+rharcèlemen t des mineurs.
+5 Guides de prév en tion et sécurité n umérique
+Données p our sensibiliser et aider à la sécurisation des comptes p ersonnels.
+5.1 Données à inclure
+ Sécurisation : Mots de passe forts, double authen tication (2F A).
+ Conden tialité : P aramètres de vie priv ée sur les réseaux so ciaux.
+ Vigilance : Reconnaître le phishing, les arnaques en ligne.
+5.2 Sources et ressources
+ Campagnes EMC / Safe In ternet Da y Maro c (gérées par le CMRPI).
+ ANR T : https://www.anrt.ma  Guides de sécurité p our le grand public.
+ Better In ternet for Kids (BIK) : https://www.betterinternetforkids.eu/  P or-
+tail europ éen de la Commission europ éenne.
+6 Articles de psyc hologie et rec herc he académique
+Les articles et tra v aux de rec herc he en psyc hologie son t essen tiels p our calibrer le ton empa-
+thique du c hatb ot et comprendre l'impact psyc hologique de la cyb erviolence sur les victimes.
+3
+
+--- Page 4 ---
+Base de connaissances  Données et Ressources Pro jet EMC Helpline
+6.1 Thématiques clés à do cumen ter
+ Impact psyc hologique du cyb erharcèlemen t (anxiété, dépression, PTSD).
+ T ec hniques d'accompagnemen t empathique et de premiers secours psyc hologiques.
+ Prols des victimes et facteurs de vulnérabilité (âge, genre, con texte so cial).
+ Résilience et stratégies de coping face à la cyb erviolence.
+ Sp écicités culturelles maro caines dans la prise en c harge des victimes.
+6.2 P ortails académiques et bases d'articles
+ Go ogle Sc holar : https://scholar.google.com  Rec herc her : cyb erviolenc e Mar o c
+psycholo gie , cyb erbul lying mental he alth , cyb erhar c èlement imp act psycholo gique .
+ PubMed / PubMed Cen tral : https://pubmed.ncbi.nlm.nih.gov/  Articles en
+accès libre sur la san té men tale et le cyb erharcèlemen t.
+ Cairn.info : https://www.cairn.info  P ortail de référence p our les revues franco-
+phones en psyc hologie et sciences so ciales.
+ Op enEdition Journals : https://journals.openedition.org  Revues en sciences
+h umaines et so ciales (accès ouv ert).
+ Researc hGate : https://www.researchgate.net  Articles et prépublications de c her-
+c heurs.
+ Psyc hArc hiv es : https://www.psycharchives.org  Dép ôt disciplinaire dédié à la psy-
+c hologie.
+6.3 Ressources académiques maro caines
+ IMIST (Institut Maro cain de l'Information Scien tique et T ec hnique) : https:
+//eressources.imist.ma  A ccès aux bases de données et revues maro caines.
+ Catalogue national des thèses (T oubk al) : http://toubkal.imist.ma  Thèses et
+mémoires univ ersitaires maro cains.
+ Revues scien tiques maro caines : https://revues.imist.ma  Publications en SHS
+et psyc hologie au Maro c.
+ Lab oratoires univ ersitaires : F acultés des Lettres et Sciences Humaines (Univ ersité Has-
+san I I Casablanca, Univ ersité Ibn T ofail Kénitra)  Études qualitativ es et psyc hoso ciales.
+6.4 Données statistiques maro caines
+ HCP (Haut-Commissariat au Plan) : https://www.hcp.ma  Statistiques sur la pré-
+v alence des violences n umériques (enquêtes nationales sur la violence à l'égard des femmes,
+etc.).
+7 Bases de données publiques et datasets NLP
+Ces ressources son t utiles à la fois p our enric hir la base de connaissances et p our en traîner
+ou év aluer les mo dèles de détection de con ten u to xique in tégrés au c hatb ot.
+7.1 Datasets de détection du cyb erharcèlemen t
+4
+
+--- Page 5 ---
+Base de connaissances  Données et Ressources Pro jet EMC Helpline
+Dataset Plateforme Description
+Multi-Lingual Seman tic
+Cyb erbullyKaggle Classication m ultilingue incluan t
+l'arab e et le français (few-shot lear-
+ning).
+T extDeto x Multilingual
+T o xicit yHugging F ace Classication binaire de to xicité en
+arab e (OSA CT4) et français.
+ArbCyD (Arabic Cyb er-
+bullying)Kaggle Benc hmark de détection du cyb erhar-
+cèlemen t en arab e (T witter/X).
+SynBullying Hugging F ace Langage oensif et n uisible p our la re-
+c herc he académique.
+Cyb erbullying Classica-
+tionKaggle P osts de réseaux so ciaux annotés (har-
+cèlemen t vs. non-harcèlemen t).
+7.2 Plateformes de datasets
+ Kaggle : https://www.kaggle.com  Rec herc her : cyb erbul lying dataset , hate sp e e ch
+A r abic .
+ Hugging F ace Datasets : https://huggingface.co/datasets  Rec herc her : cyb er-
+bul lying , toxicity A r abic F r ench .
+ Mendeley Data : https://data.mendeley.com  Datasets annotés p our la rec herc he
+académique.
+ P ap ers With Co de : https://paperswithcode.com  Benc hmarks et datasets a v ec
+implémen tations de référence.
+7.3 Mo dèles m ultilingues recommandés
+P our le traitemen t m ultilingue arab e/français, les mo dèles pré-en traînés suiv an ts son t recom-
+mandés :
+ XLM-RoBER T a  Pré-en traîné sur 100 langues (arab e et français inclus).
+ mDeBER T a-v3  P erformances élev ées sur les tâc hes de classication m ultilingue.
+ mBER T (m ultilingual BER T)  Large corpus m ultilingue incluan t arab e et français.
+8 Rapp orts d'organisations in ternationales
+Les rapp orts et guides pro duits par les organisations in ternationales fournissen t des données,
+des statistiques et des métho dologies de référence p our structurer les connaissances du c hatb ot.
+8.1 Organisation Mondiale de la San té (OMS)
+ Rapp ort : What works to pr event online violenc e against childr en ?  Syn thèse des
+stratégies ecaces de prév en tion (abus sexuels en ligne, cyb erharcèlemen t).
+ Enquête HBSC (Health Beha viour in Sc ho ol-aged Children)  Données sur la prév alence
+du cyb erharcèlemen t c hez les 1115 ans.
+ Stratégie INSPIRE  Sept stratégies p our mettre n à la violence en v ers les enfan ts.
+ Site : https://www.who.int
+5
+
+--- Page 6 ---
+Base de connaissances  Données et Ressources Pro jet EMC Helpline
+8.2 UNICEF
+ Rapp orts régionaux MENA : Études sur la sécurité des enfan ts en ligne dans la région
+Mo y en-Orien t et Afrique du Nord (Maro c inclus).
+ Guides pratiques : Conseils p our les paren ts, les enseignan ts et les enfan ts face au cyb e-
+rharcèlemen t.
+ Site : https://www.unicef.org (section Child Pr ote ction et Online Safety ).
+8.3 Conseil de l'Europ e
+ Con v en tion de Budap est sur la cyb ercriminalité  Cadre juridique in ternational de
+référence.
+ Con v en tion de Lanzarote  Protection des enfan ts con tre l'exploitation et les abus
+sexuels (incluan t le gro oming en ligne).
+ Plateforme V A C Clearinghouse  Ressources cen tralisées sur la violence en v ers les
+enfan ts.
+ Man uel Rep ères  Éducation aux droits de l'homme incluan t le cyb erharcèlemen t.
+ Site : https://www.coe.int (sections Dr oits des enfants et Cyb er criminalité ).
+8.4 UNESCO
+ Rapp orts sur le harcèlemen t scolaire et en ligne dans les pa ys du Maghreb.
+ Guides p édagogiques p our l'éducation à la cito y enneté n umérique.
+ Site : https://www.unesco.org
+Récapitulatif des sources principales
+Catégorie Source URL / Con tact
+Juridique SGG http://www.sgg.gov.ma
+Juridique CNDP https://www.cndp.ma
+Assistance EMC https://www.cyberconfiance.
+ma
+Assistance e Vigilance https://evigilance.ma
+Fic hes pratiques EMC-Biblio https://www.cyberconfiance.
+ma/emc- biblio/
+Fic hes pratiques Cyb ermalv eillance.gouv.fr https://www.
+cybermalveillance.gouv.fr
+Prév en tion ANR T https://www.anrt.ma
+Prév en tion BIK Europ e https://www.
+betterinternetforkids.eu
+Psyc hologie Go ogle Sc holar https://scholar.google.com
+Psyc hologie Cairn.info https://www.cairn.info
+Psyc hologie IMIST https://eressources.imist.
+ma
+Psyc hologie HCP (Statistiques) https://www.hcp.ma
+Datasets NLP Kaggle https://www.kaggle.com
+6
+
+--- Page 7 ---
+Base de connaissances  Données et Ressources Pro jet EMC Helpline
+Catégorie Source URL / Con tact
+Datasets NLP Hugging F ace https://huggingface.co/
+datasets
+In ternational OMS https://www.who.int
+In ternational UNICEF https://www.unicef.org
+In ternational Conseil de l'Europ e https://www.coe.int
+7

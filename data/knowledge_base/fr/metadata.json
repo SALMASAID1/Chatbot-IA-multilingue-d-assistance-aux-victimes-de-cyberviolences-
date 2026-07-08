@@ -94,5 +94,53 @@
     "langue": "fr",
     "categorie": "faq",
     "mots_cles": ["FAQ", "questions fréquentes", "porter plainte", "preuves", "E-Helpline", "mineur"]
+  },
+  {
+    "file_path": "psychologie/impact_psychologique.md",
+    "langue": "fr",
+    "categorie": "psychologie",
+    "mots_cles": ["anxiété", "dépression", "PTSD", "impact psychologique", "santé mentale", "stress", "hchouma", "HCP", "statistiques"]
+  },
+  {
+    "file_path": "psychologie/soutien_empathique.md",
+    "langue": "fr",
+    "categorie": "psychologie",
+    "mots_cles": ["soutien", "empathie", "premiers secours psychologiques", "écouter", "accompagner", "aidant", "proche"]
+  },
+  {
+    "file_path": "psychologie/resilience_coping.md",
+    "langue": "fr",
+    "categorie": "psychologie",
+    "mots_cles": ["résilience", "coping", "reconstruction", "guérison", "stratégies", "thérapie", "TCC", "bien-être"]
+  },
+  {
+    "file_path": "rapports_internationaux/oms.md",
+    "langue": "fr",
+    "categorie": "rapports_internationaux",
+    "mots_cles": ["OMS", "WHO", "INSPIRE", "HBSC", "prévention", "violence enfants", "santé"]
+  },
+  {
+    "file_path": "rapports_internationaux/unicef.md",
+    "langue": "fr",
+    "categorie": "rapports_internationaux",
+    "mots_cles": ["UNICEF", "MENA", "enfants", "sécurité en ligne", "parents", "enseignants", "grooming"]
+  },
+  {
+    "file_path": "rapports_internationaux/conseil_europe.md",
+    "langue": "fr",
+    "categorie": "rapports_internationaux",
+    "mots_cles": ["Conseil de l'Europe", "Budapest", "Lanzarote", "cybercriminalité", "grooming", "convention", "Repères"]
+  },
+  {
+    "file_path": "rapports_internationaux/unesco.md",
+    "langue": "fr",
+    "categorie": "rapports_internationaux",
+    "mots_cles": ["UNESCO", "harcèlement scolaire", "citoyenneté numérique", "Maghreb", "éducation", "enseignants"]
+  },
+  {
+    "file_path": "prevention/vigilance_phishing.md",
+    "langue": "fr",
+    "categorie": "prevention",
+    "mots_cles": ["phishing", "arnaque", "escroquerie", "vigilance", "faux concours", "ANRT", "prévention", "signaux alerte"]
   }
 ]

@@ -46,5 +46,101 @@
     "langue": "ar",
     "categorie": "faq",
     "mots_cles": ["أسئلة شائعة", "شكاية", "أدلة", "خط المساعدة", "قاصر"]
+  },
+  {
+    "file_path": "juridique/loi_09_08.md",
+    "langue": "ar",
+    "categorie": "juridique",
+    "mots_cles": ["القانون 09-08", "المعطيات الشخصية", "CNDP", "الدوكسينغ", "الخصوصية", "حماية البيانات"]
+  },
+  {
+    "file_path": "juridique/loi_07_03.md",
+    "langue": "ar",
+    "categorie": "juridique",
+    "mots_cles": ["القانون 07-03", "الجرائم الإلكترونية", "الاختراق", "الولوج الاحتيالي", "القانون الجنائي", "برنامج تجسس"]
+  },
+  {
+    "file_path": "ressources/associations_aide.md",
+    "langue": "ar",
+    "categorie": "ressources",
+    "mots_cles": ["جمعيات", "ابتسامة رضى", "أمان", "بيتي", "FNAPEM", "خلايا", "محكمة"]
+  },
+  {
+    "file_path": "ressources/signalement_reseaux_sociaux.md",
+    "langue": "ar",
+    "categorie": "ressources",
+    "mots_cles": ["تبليغ", "إبلاغ", "فيسبوك", "إنستغرام", "تيك توك", "واتساب", "سناب شات"]
+  },
+  {
+    "file_path": "fiches_pratiques/revenge_porn.md",
+    "langue": "ar",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["الانتقام الإباحي", "صور حميمية", "نشر بدون موافقة", "حذف محتوى"]
+  },
+  {
+    "file_path": "fiches_pratiques/cyberstalking.md",
+    "langue": "ar",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["المطاردة الإلكترونية", "التحرش الهوسي", "مراقبة", "خطر", "برنامج تجسس"]
+  },
+  {
+    "file_path": "prevention/confidentialite_reseaux_sociaux.md",
+    "langue": "ar",
+    "categorie": "prevention",
+    "mots_cles": ["الخصوصية", "حساب خاص", "إعدادات", "فيسبوك", "إنستغرام", "تيك توك", "واتساب"]
+  },
+  {
+    "file_path": "prevention/protection_mineurs.md",
+    "langue": "ar",
+    "categorie": "prevention",
+    "mots_cles": ["أطفال", "مراهقون", "قاصرون", "آباء", "رقابة أبوية", "علامات إنذار"]
+  },
+  {
+    "file_path": "prevention/vigilance_phishing.md",
+    "langue": "ar",
+    "categorie": "prevention",
+    "mots_cles": ["التصيد الاحتيالي", "احتيال", "نصب", "يقظة", "مسابقات وهمية", "ANRT", "وقاية", "إشارات إنذار"]
+  },
+  {
+    "file_path": "psychologie/impact_psychologique.md",
+    "langue": "ar",
+    "categorie": "psychologie",
+    "mots_cles": ["القلق", "الاكتئاب", "PTSD", "التأثير النفسي", "الصحة النفسية", "التوتر", "الحشومة", "HCP", "إحصائيات"]
+  },
+  {
+    "file_path": "psychologie/soutien_empathique.md",
+    "langue": "ar",
+    "categorie": "psychologie",
+    "mots_cles": ["الدعم", "التعاطف", "الإسعافات النفسية الأولية", "الاستماع", "المرافقة", "المساعد", "القريب"]
+  },
+  {
+    "file_path": "psychologie/resilience_coping.md",
+    "langue": "ar",
+    "categorie": "psychologie",
+    "mots_cles": ["المرونة", "التعامل", "إعادة البناء", "الشفاء", "استراتيجيات", "العلاج", "TCC", "الرفاهية"]
+  },
+  {
+    "file_path": "rapports_internationaux/oms.md",
+    "langue": "ar",
+    "categorie": "rapports_internationaux",
+    "mots_cles": ["منظمة الصحة العالمية", "INSPIRE", "HBSC", "الوقاية", "العنف ضد الأطفال", "الصحة"]
+  },
+  {
+    "file_path": "rapports_internationaux/unicef.md",
+    "langue": "ar",
+    "categorie": "rapports_internationaux",
+    "mots_cles": ["اليونيسف", "MENA", "أطفال", "السلامة الإلكترونية", "آباء", "معلمون", "الغرومينغ"]
+  },
+  {
+    "file_path": "rapports_internationaux/conseil_europe.md",
+    "langue": "ar",
+    "categorie": "rapports_internationaux",
+    "mots_cles": ["مجلس أوروبا", "بودابست", "لانزاروتي", "الجرائم الإلكترونية", "الغرومينغ", "اتفاقية", "معالم"]
+  },
+  {
+    "file_path": "rapports_internationaux/unesco.md",
+    "langue": "ar",
+    "categorie": "rapports_internationaux",
+    "mots_cles": ["اليونسكو", "التحرش المدرسي", "المواطنة الرقمية", "المغرب العربي", "التعليم", "المعلمون"]
   }
 ]
