@@ -1,45 +1,54 @@
-# Rapports de l'UNESCO sur le Harcèlement et la Citoyenneté Numérique
+# Rapports de l'UNESCO sur le harcèlement et la citoyenneté numérique
 
 ## Présentation
-L'UNESCO (Organisation des Nations Unies pour l'éducation, la science et la culture) travaille sur la prévention du harcèlement scolaire et en ligne, notamment dans les pays du Maghreb, et promeut l'éducation à la citoyenneté numérique.
+L'UNESCO travaille sur la prévention de la violence et du harcèlement en milieu scolaire, y compris le cyberharcèlement. Elle développe aussi des ressources sur l'éducation à la citoyenneté numérique et l'usage responsable des technologies.
 
-## Rapports sur le harcèlement scolaire et en ligne
+## Harcèlement scolaire et cyberharcèlement
+Le rapport **Behind the numbers: ending school violence and bullying** rassemble des données internationales sur la violence scolaire et le harcèlement.
 
-### Harcèlement dans les pays du Maghreb
-- **Contenu** : Études et données sur la prévalence du harcèlement scolaire et du cyberharcèlement au Maroc, en Algérie et en Tunisie.
-- **Constats clés** :
-  - Le cyberharcèlement est en hausse constante dans la région, corrélé à l'augmentation de l'accès à internet chez les jeunes.
-  - Les victimes sont souvent réticentes à en parler par peur du jugement social.
-  - Le manque de formation des enseignants à la détection et à la gestion du cyberharcèlement est un obstacle majeur.
-  - Les cadres juridiques existent mais sont insuffisamment appliqués.
+Il montre que le harcèlement peut avoir des conséquences sur :
 
-### Recommandations de l'UNESCO
-- Former les enseignants à la détection précoce du cyberharcèlement.
-- Intégrer l'éducation numérique dans les programmes scolaires dès le primaire.
-- Créer des mécanismes de signalement accessibles et confidentiels dans les écoles.
-- Impliquer les parents dans les programmes de prévention.
+- la santé mentale ;
+- la réussite scolaire ;
+- l'absentéisme et le décrochage ;
+- le sentiment de sécurité ;
+- la confiance des élèves envers les adultes et les institutions.
 
-## Guides pédagogiques pour la citoyenneté numérique
+L'UNESCO reconnaît également que le cyberharcèlement fait partie des formes de violence qui peuvent affecter les élèves.
 
-### Éducation à la citoyenneté numérique
-- **Objectif** : Apprendre aux jeunes à utiliser internet de manière responsable, éthique et sûre.
-- **Compétences développées** :
-  - **Esprit critique** : évaluer la fiabilité des informations en ligne.
-  - **Respect** : comprendre l'impact de ses paroles et actions en ligne sur les autres.
-  - **Sécurité** : protéger ses données personnelles et sa vie privée.
-  - **Responsabilité** : comprendre les conséquences légales de la cyberviolence.
+## Citoyenneté numérique
+L'UNESCO encourage l'éducation à la citoyenneté numérique pour aider les jeunes à utiliser Internet de manière responsable, éthique et sûre.
 
-### Thèmes abordés dans les guides
-- Qu'est-ce que le cyberharcèlement et comment le reconnaître ?
-- Les conséquences du harcèlement pour la victime ET pour l'agresseur.
-- Comment être un témoin actif (upstander) plutôt qu'un spectateur passif (bystander).
-- Les droits et responsabilités numériques.
+Compétences à développer :
+
+- pensée critique face aux informations en ligne ;
+- respect dans les échanges numériques ;
+- protection de la vie privée et des données personnelles ;
+- compréhension des conséquences du partage de contenus ;
+- capacité à signaler les contenus dangereux ;
+- rôle positif des témoins face au cyberharcèlement.
+
+## Espaces numériques sûrs
+L'UNESCO insiste sur l'importance de créer des espaces numériques sûrs pour l'apprentissage, avec des mécanismes de signalement, de modération et de réponse.
+
+Les établissements scolaires peuvent agir par :
+
+- des règles claires sur les comportements en ligne ;
+- des mécanismes confidentiels de signalement ;
+- la formation des enseignants ;
+- l'implication des parents ;
+- des activités régulières sur la sécurité numérique.
 
 ## Pertinence pour le Maroc
-- Le Maroc fait partie des pays cibles des programmes UNESCO pour le Maghreb.
-- Le Ministère de l'Éducation Nationale marocain collabore avec l'UNESCO sur des projets d'éducation numérique.
-- Les guides pédagogiques de l'UNESCO sont disponibles en français et en arabe.
-- Le concept de « citoyenneté numérique » est de plus en plus intégré dans les réformes éducatives marocaines.
+Ces ressources peuvent être adaptées au contexte marocain pour préparer des modules de sensibilisation, former les enseignants, développer des supports en français, arabe et darija, et encourager une approche préventive.
 
-## Site officiel
-- [www.unesco.org](https://www.unesco.org)
+## Points corrigés
+- Ne pas affirmer que l'UNESCO publie des statistiques récentes spécifiques au Maroc sans source précise.
+- Remplacer « hausse constante dans le Maghreb » par une formulation plus prudente.
+- Dire que les guides UNESCO peuvent être adaptés, et non qu'ils sont automatiquement intégrés aux programmes marocains.
+
+## Sources et références
+- UNESCO — Behind the numbers: https://www.unesco.org/en/articles/behind-numbers-ending-school-violence-and-bullying
+- UNESCO — What you need to know about school violence and bullying: https://www.unesco.org/en/articles/what-you-need-know-about-school-violence-and-bullying
+- UNESCO — Global citizenship education in a digital age: https://unesdoc.unesco.org/ark%3A/48223/pf0000388812
+- UNESCO — Creating safe digital spaces: https://www.unesco.org/en/articles/creating-safe-digital-spaces
