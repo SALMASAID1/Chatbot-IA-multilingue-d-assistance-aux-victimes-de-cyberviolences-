@@ -1,4 +1,4 @@
-# Tâche 3 — Construction de la base de connaissances (Français)
+# Tâche 3 — Construction de la base de connaissances (Français) ✅ TERMINÉE
 
 ## Assigné à
 **Salma Said**
@@ -6,53 +6,54 @@
 ## Objectif
 Collecter, structurer et préparer la base de connaissances en français couvrant tous les aspects des cyberviolences au Maroc : cadre juridique, ressources d'aide, conseils pratiques, et informations de prévention.
 
-## Étapes d'implémentation
+## Statut : ✅ TERMINÉE
 
-1. **Collecte des données juridiques**
-   - Loi 103-13 relative à la lutte contre les violences faites aux femmes
-   - Articles du Code pénal relatifs à la cybercriminalité
-   - Textes de loi sur la protection des données personnelles (Loi 09-08)
-   - Résumer chaque texte en langage accessible
+### Résultat final — 23 documents structurés
 
-2. **Collecte des ressources d'aide**
-   - Numéros d'urgence et lignes d'écoute (police, DGSN, associations)
-   - Services d'aide juridique gratuits
-   - Associations d'aide aux victimes au Maroc
-   - Procédures de signalement sur les réseaux sociaux
+```
+data/knowledge_base/fr/
+├── juridique/
+│   ├── loi_103_13.md       ← Loi contre les violences faites aux femmes (68 lignes)
+│   ├── loi_09_08.md        ← Protection des données personnelles / CNDP (71 lignes)
+│   └── loi_07_03.md        ← Cybercriminalité / piratage (57 lignes)
+├── ressources/
+│   ├── associations_aide.md          ← Annuaire vérifié (128 lignes)
+│   ├── numeros_urgence.md            ← Police 19, Gendarmerie 177, ONDE 2511 (98 lignes)
+│   └── signalement_reseaux_sociaux.md ← Guide Facebook/Instagram/TikTok/WhatsApp/Snapchat (163 lignes)
+├── fiches_pratiques/
+│   ├── cyberharcelement.md     ← Méthode des 4 règles (32 lignes)
+│   ├── sextorsion.md           ← Chantage sexuel en ligne (40 lignes)
+│   ├── usurpation_identite.md  ← Faux profils / vol d'identité (33 lignes)
+│   ├── phishing.md             ← Hameçonnage (31 lignes)
+│   ├── revenge_porn.md         ← Pornographie non consensuelle (35 lignes)
+│   └── cyberstalking.md        ← Harcèlement obsessionnel (34 lignes)
+├── prevention/
+│   ├── securiser_comptes.md                ← Mots de passe + 2FA (33 lignes)
+│   ├── confidentialite_reseaux_sociaux.md  ← Paramètres de confidentialité (41 lignes)
+│   ├── protection_mineurs.md              ← Guide parents / contrôle parental (38 lignes)
+│   └── vigilance_phishing.md              ← Arnaques en ligne (59 lignes)
+├── psychologie/
+│   ├── impact_psychologique.md  ← Effets psychologiques + stats HCP (104 lignes)
+│   ├── soutien_empathique.md    ← Premiers secours psychologiques (140 lignes)
+│   └── resilience_coping.md     ← Stratégies de reconstruction (117 lignes)
+├── rapports_internationaux/
+│   ├── oms.md             ← OMS / INSPIRE / HBSC (49 lignes)
+│   ├── unicef.md          ← UNICEF / protection enfants (59 lignes)
+│   ├── conseil_europe.md  ← Budapest / Lanzarote (60 lignes)
+│   └── unesco.md          ← Citoyenneté numérique (54 lignes)
+├── faq/
+│   └── faq_cyberviolence.md  ← 10 questions fréquentes (47 lignes)
+└── metadata.json             ← 23 entrées indexées (147 lignes)
+```
 
-3. **Rédaction des fiches pratiques**
-   - Fiche par type de cyberviolence (définition, exemples, que faire)
-   - Guides de prévention (sécurité des comptes, paramètres de confidentialité)
-   - FAQ des questions fréquentes
+## Critères de validation — Résultats
 
-4. **Structuration des documents**
-   - Organiser en catégories (juridique, psychologique, pratique, prévention)
-   - Format Markdown structuré pour faciliter l'ingestion RAG
-   - Ajouter des métadonnées (catégorie, langue, mots-clés)
+- [x] Minimum 20 documents structurés en français → **23 documents**
+- [x] Couverture de tous les types de cyberviolence identifiés → **6 types couverts**
+- [x] Informations juridiques vérifiées et à jour → **3 lois avec articles et peines**
+- [x] Ressources d'aide avec coordonnées vérifiées → **URLs et numéros sourcés**
+- [x] Format prêt pour l'ingestion dans le pipeline RAG → **Markdown structuré + metadata.json**
+- [x] Durée : **Semaine 1-2** ✅
 
-5. **Préparation pour la vectorisation**
-   - Découpage en chunks de taille optimale (300-500 tokens)
-   - Vérification de la cohérence et de la qualité du contenu
-
-## Outils et ressources
-- Sources officielles marocaines (SGG, DGSN, CNDP)
-- Site eVigilance.ma
-- Documentation CMRPI
-- Éditeur Markdown (VS Code)
-
-## Livrable attendu
-- Répertoire `data/knowledge_base/fr/` contenant :
-  - `juridique/` — textes de loi résumés et accessibles
-  - `ressources/` — annuaire des services d'aide
-  - `fiches_pratiques/` — guides par type de cyberviolence
-  - `prevention/` — conseils de prévention
-  - `faq/` — questions fréquentes et réponses
-  - `metadata.json` — métadonnées de chaque document
-
-## Critères de validation
-- [ ] Minimum 20 documents structurés en français
-- [ ] Couverture de tous les types de cyberviolence identifiés
-- [ ] Informations juridiques vérifiées et à jour
-- [ ] Ressources d'aide avec coordonnées vérifiées
-- [ ] Format prêt pour l'ingestion dans le pipeline RAG
-- [ ] Durée : **Semaine 1-2**
+## Point d'attention pour le Sprint 2
+- Le dossier `fr/ressources/cyberviolence_ressources_verified_md/` contient des fichiers de travail (doublons) qui ne sont **pas** dans le metadata.json. Il faut les supprimer avant l'ingestion RAG pour éviter une double indexation.
