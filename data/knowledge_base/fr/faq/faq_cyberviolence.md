@@ -6,7 +6,7 @@
 **R :** La cyberviolence désigne toute forme de violence commise à travers les technologies numériques : harcèlement en ligne, menaces, chantage, diffusion d'images intimes sans consentement, usurpation d'identité, piratage de comptes, etc. Elle peut toucher n'importe qui, mais les femmes, les jeunes et les enfants sont particulièrement ciblés.
 
 ### Q2 : Est-ce que je peux porter plainte pour du harcèlement en ligne au Maroc ?
-**R :** Oui, absolument. Le harcèlement en ligne est un délit puni par la loi marocaine (Loi 103-13 et Code pénal). Vous pouvez déposer une plainte auprès de la police (190) ou de la gendarmerie (177). Pensez à apporter vos preuves (captures d'écran).
+**R :** Oui, absolument. Le harcèlement en ligne est un délit puni par la loi marocaine (Loi 103-13 et Code pénal). Vous pouvez déposer une plainte auprès de la police (19) ou de la gendarmerie (177). Pensez à apporter vos preuves (captures d'écran).
 
 ### Q3 : Est-ce que le signalement sur les réseaux sociaux est suffisant ?
 **R :** Le signalement aux plateformes est important pour faire supprimer le contenu, mais il ne remplace **pas** une plainte officielle auprès des autorités. Faites les deux : signalez à la plateforme ET portez plainte si nécessaire.
@@ -43,5 +43,5 @@ Ne modifiez jamais la capture d'écran.
 1. **Ne cédez pas au chantage** (ne payez pas et n'envoyez pas d'autres photos).
 2. **Conservez les preuves** des menaces (captures d'écran).
 3. **Bloquez** l'agresseur.
-4. **Contactez la police (190)** immédiatement.
+4. **Contactez la police (19)** immédiatement.
 5. Appelez l'**E-Helpline** de Cyberconfiance pour un accompagnement.

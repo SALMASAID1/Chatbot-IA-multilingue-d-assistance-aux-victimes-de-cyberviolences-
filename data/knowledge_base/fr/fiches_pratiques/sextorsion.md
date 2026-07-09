@@ -24,7 +24,7 @@ La sextorsion est une forme de chantage où un individu menace de diffuser des i
 
 ### 4. Signalez et portez plainte
 - **Signalez** le profil de l'agresseur aux plateformes (Facebook, Instagram, WhatsApp).
-- **Portez plainte** auprès de la police (190) ou de la gendarmerie (177).
+- **Portez plainte** auprès de la police (19) ou de la gendarmerie (177).
 - Contactez l'**E-Helpline** de l'Espace Maroc Cyberconfiance pour un accompagnement.
 
 ### 5. Demandez la suppression du contenu

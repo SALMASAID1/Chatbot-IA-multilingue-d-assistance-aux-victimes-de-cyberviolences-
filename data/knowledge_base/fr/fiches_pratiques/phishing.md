@@ -23,7 +23,7 @@ Le phishing (ou hameçonnage) est une technique de fraude où un individu se fai
 ### 4. Si vous avez cliqué et entré vos informations
 - **Changez immédiatement vos mots de passe** sur le site concerné et sur tous les comptes utilisant le même mot de passe.
 - **Contactez votre banque** si vous avez entré des informations bancaires.
-- **Signalez** l'incident à la police (190).
+- **Signalez** l'incident à la police (19).
 
 ## Comment se protéger du phishing ?
 - Activez la **double authentification (2FA)** sur tous vos comptes.

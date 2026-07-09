@@ -27,8 +27,8 @@ Le cyberstalking est une forme de harcèlement en ligne où une personne surveil
 - Rendez vos profils privés.
 
 ### 4. Portez plainte
-- Le cyberstalking est une infraction pénale au Maroc. Portez plainte auprès de la police (190) avec votre journal de preuves.
+- Le cyberstalking est une infraction pénale au Maroc. Portez plainte auprès de la police (19) avec votre journal de preuves.
 
 ### 5. Si vous êtes en danger physique
-- Appelez immédiatement la **police (190)** ou la **gendarmerie (177)**.
+- Appelez immédiatement la **police (19)** ou la **gendarmerie (177)**.
 - Ne restez pas seul(e). Rendez-vous chez une personne de confiance.

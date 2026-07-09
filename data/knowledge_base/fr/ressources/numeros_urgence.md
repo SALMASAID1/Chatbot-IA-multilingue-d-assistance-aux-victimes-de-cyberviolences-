@@ -4,7 +4,9 @@
 
 Ce fichier rassemble les contacts utiles en cas de cyberviolence, cyberharcèlement, chantage, menace, violence contre un enfant ou danger physique. Les informations ont été reformulées pour éviter les erreurs fréquentes, notamment la confusion entre **19** et **190**.
 
----
+*   **Police Secours (DGSN)** : Composez le **19** (En zone urbaine).
+*   **Gendarmerie Royale** : Composez le **177** (En zone rurale).
+*   **Protection Civile / Pompiers** : Composez le **150** (En cas de danger physique immédiat ou besoin de secours médicaux).
 
 ## 1. Numéros d'urgence nationaux
 

@@ -29,4 +29,4 @@ Le cyberharcèlement (ou cyberbullying) est un acte agressif et intentionnel per
    - Vous pouvez également contacter l'**E-Helpline** de l'Espace Maroc Cyberconfiance pour un accompagnement.
 
 ## Que dit la loi au Maroc ?
-Le harcèlement par le biais de moyens électroniques est puni par la loi marocaine (notamment la **Loi 103-13**). Vous avez parfaitement le droit de porter plainte auprès de la police (190) ou de la gendarmerie (177) munis de vos preuves (captures d'écran).
+Le harcèlement par le biais de moyens électroniques est puni par la loi marocaine (notamment la **Loi 103-13**). Vous avez parfaitement le droit de porter plainte auprès de la police (19) ou de la gendarmerie (177) munis de vos preuves (captures d'écran).

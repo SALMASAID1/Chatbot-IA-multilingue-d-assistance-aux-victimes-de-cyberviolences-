@@ -12,7 +12,10 @@ Les premiers secours psychologiques reposent sur une aide humaine, respectueuse,
 
 Avant de poser beaucoup de questions, il faut vérifier si la personne est en danger immédiat.
 
-Questions utiles :
+#### 3. Rassurer sur la sécurité
+- Évaluez si la personne est en danger immédiat (menaces physiques, idées suicidaires).
+- Si oui, orientez immédiatement vers les urgences : **police (19)** ou **ONDE (25 11)** pour les mineurs.
+- Aidez la personne à se sentir en sécurité : bloquer l'agresseur, changer les mots de passe.
 
 - Est-ce que la personne reçoit des menaces physiques ?
 - Est-ce qu'elle parle de suicide ou d'automutilation ?
