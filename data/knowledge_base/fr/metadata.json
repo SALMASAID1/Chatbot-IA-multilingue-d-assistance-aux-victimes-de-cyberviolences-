@@ -142,5 +142,59 @@
     "langue": "fr",
     "categorie": "prevention",
     "mots_cles": ["phishing", "arnaque", "escroquerie", "vigilance", "faux concours", "ANRT", "prévention", "signaux alerte"]
+  },
+  {
+    "file_path": "faq/emc_presentation.md",
+    "langue": "fr",
+    "categorie": "faq",
+    "mots_cles": ["EMC", "CMRPI", "Espace Maroc Cyberconfiance", "EMC-Helpline", "mission", "objectifs", "services", "evigilance", "signalement"]
+  },
+  {
+    "file_path": "juridique/loi_88_13.md",
+    "langue": "fr",
+    "categorie": "juridique",
+    "mots_cles": ["loi 88-13", "presse", "édition", "débauche", "enfants", "diffamation", "injure", "publication"]
+  },
+  {
+    "file_path": "juridique/loi_27_14_code_penal_503.md",
+    "langue": "fr",
+    "categorie": "juridique",
+    "mots_cles": ["loi 27-14", "article 503-2", "traite", "exploitation sexuelle", "enfants", "pornographie", "CSAM", "IWF"]
+  },
+  {
+    "file_path": "juridique/porter_plainte.md",
+    "langue": "fr",
+    "categorie": "juridique",
+    "mots_cles": ["porter plainte", "parquet", "police", "gendarmerie", "ministère public", "plaintes.pmp.ma", "e-blagh", "StopNCII", "Take It Down", "IWF", "signalement"]
+  },
+  {
+    "file_path": "fiches_pratiques/grooming.md",
+    "langue": "fr",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["grooming", "prédateur", "enfants", "manipulation", "faux profil", "prise de contact", "mineur"]
+  },
+  {
+    "file_path": "fiches_pratiques/doxing.md",
+    "langue": "fr",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["doxing", "doxxing", "informations personnelles", "adresse", "numéro téléphone", "CNDP", "vie privée"]
+  },
+  {
+    "file_path": "fiches_pratiques/autres_formes_cyberviolence.md",
+    "langue": "fr",
+    "categorie": "fiches_pratiques",
+    "mots_cles": ["flaming", "fraping", "exclusion", "outing", "trickery", "insultes", "intrusion", "divulgation"]
+  },
+  {
+    "file_path": "prevention/bonnes_pratiques_cybersecurite.md",
+    "langue": "fr",
+    "categorie": "prevention",
+    "mots_cles": ["bonnes pratiques", "mot de passe", "données personnelles", "objets connectés", "réseaux sociaux", "jeux en ligne", "bien-être numérique", "géolocalisation"]
+  },
+  {
+    "file_path": "prevention/strategie_reaction.md",
+    "langue": "fr",
+    "categorie": "prevention",
+    "mots_cles": ["stratégie", "réaction", "victime", "parent", "témoin", "protéger", "collecter", "bloquer", "signaler", "signaux alerte"]
   }
 ]
