@@ -93,22 +93,25 @@
 
 | Catégorie | Docs FR | Docs AR | Total |
 |---|---|---|---|
-| Juridique | 3 | 3 | 6 |
+| Juridique | 6 | 3 | 9 |
 | Ressources | 3 | 3 | 6 |
-| Fiches pratiques | 6 | 6 | 12 |
-| Prévention | 4 | 4 | 8 |
+| Fiches pratiques | 9 | 6 | 15 |
+| Prévention | 6 | 4 | 10 |
 | Psychologie | 3 | 3 | 6 |
 | Rapports internationaux | 4 | 4 | 8 |
-| FAQ | 1 | 1 | 2 |
-| **Total** | **24** | **24** | **48** |
+| FAQ | 2 | 1 | 3 |
+| **Total** | **33** | **24** | **57** |
 
 ### Qualité du contenu
-- ✅ Contenu structuré en Markdown avec métadonnées JSON
-- ✅ Parité parfaite FR/AR (chaque document a son miroir)
+- ✅ Contenu structuré en Markdown avec métadonnées JSON (33 entrées FR indexées)
+- ✅ Parité FR/AR en cours (AR à compléter pour les 9 nouveaux fichiers FR)
 - ✅ Mots-clés indexés dans `metadata.json` (FR et AR)
 - ✅ Ton empathique et bienveillant validé
 - ✅ Numéros d'urgence vérifiés (19, 177, 2511, 15)
-- ✅ Références juridiques précises (articles, peines)
+- ✅ Références juridiques complètes : Loi 103-13, 07-03, 09-08, 88-13, 27-14, Article 503-2
+- ✅ Plateformes de signalement internationales : eVigilance, E-Blagh, IWF, StopNCII, Take It Down, Google Report
+- ✅ Guide de plainte complet : Parquet (plaintes.pmp.ma), Police, Gendarmerie, Ministère de la Justice, Cellules de prise en charge
+- ✅ Fiches pratiques étendues : grooming, doxing, flaming, fraping, exclusion, outing/trickery
 
 ---
 

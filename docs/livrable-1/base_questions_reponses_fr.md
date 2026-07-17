@@ -32,6 +32,10 @@ Les principales formes de cyberviolence sont :
 5. **Phishing / Arnaque en ligne** — Tentatives de vol de données personnelles ou bancaires
 6. **Cyberstalking** — Surveillance obsessionnelle en ligne, traque numérique
 7. **Doxxing** — Publication d'informations personnelles (adresse, téléphone) sans consentement
+8. **Grooming** — Manipulation d'un enfant par un adulte en ligne pour l'exploiter
+9. **Flaming** — Envoi de messages hostiles et insultants
+10. **Fraping** — Intrusion dans les réseaux sociaux d'une personne pour publier en son nom
+11. **Outing / Trickery** — Divulgation d'informations privées obtenues sous couvert de confiance
 
 **Catégorie :** `faq` | **Document source :** `faq/faq_cyberviolence.md`, `fiches_pratiques/*`
 
@@ -377,6 +381,162 @@ La création d'un faux profil utilisant votre identité est une **infraction** p
 
 ---
 
+## Catégorie 7 : EMC et Signalement
+
+### Q21 — Qu'est-ce que l'Espace Maroc Cyberconfiance (EMC) ?
+
+**Réponse :**
+L'Espace Maroc Cyberconfiance (EMC) est une initiative du Centre Marocain de Recherches Polytechniques et d'Innovation (CMRPI). C'est un espace communautaire d'experts bénévoles à but non lucratif, au service des internautes au Maroc, en particulier les enfants et les jeunes.
+
+L'EMC a **5 objectifs** :
+1. **Sensibiliser** les internautes à la protection en ligne et à la citoyenneté numérique
+2. **Former** aux bonnes pratiques de cybersécurité
+3. **Aider** les internautes en difficulté technique ou juridique
+4. **Éduquer** au maniement efficace de l'Internet
+5. **Analyser** le comportement des internautes et formuler des recommandations
+
+Le service **EMC-Helpline** est une ligne d'assistance en ligne dédiée aux victimes de cyberviolences, accessible **24h/24 et 7j/7**, gratuite et confidentielle.
+
+**Catégorie :** `faq` | **Document source :** `faq/emc_presentation.md`
+
+---
+
+### Q22 — Où et comment signaler des contenus de cyberviolence ?
+
+**Réponse :**
+Plusieurs plateformes de signalement sont disponibles selon votre situation :
+
+| Situation | Plateforme | Lien |
+|---|---|---|
+| Cyberviolence / cyberharcèlement | **eVigilance** | https://evigilance.ma/fr/signaler |
+| Contenu illicite en ligne | **E-Blagh (DGSN)** | https://www.e-blagh.ma/ |
+| Images/vidéos d'abus sexuel sur enfants | **IWF Maroc** | https://report.iwf.org.uk/ma/ |
+| Contenu sur un site pornographique | **Google Report Content** | https://reportcontent.google.com/forms/rtbf |
+| Contenus intimes pris avant 18 ans | **Take It Down** | https://takeitdown.ncmec.org/fr/ |
+| Adulte victime de revenge porn | **StopNCII** | https://stopncii.org/?lang=fr-fr |
+
+⚠️ Le signalement aux plateformes est important mais **ne remplace pas** une plainte officielle auprès des autorités.
+
+**Catégorie :** `ressources` | **Document source :** `ressources/numeros_urgence.md`, `juridique/porter_plainte.md`
+
+---
+
+### Q23 — Comment et où porter plainte pour cyberviolence au Maroc ?
+
+**Réponse :**
+Voici toutes les autorités compétentes :
+
+1. **Au Parquet** — Déposez une plainte auprès du tribunal de première instance ou en ligne via https://plaintes.pmp.ma/
+2. **À la Police (DGSN)** — Sur place ou via la plateforme E-Blagh : https://www.e-blagh.ma/ — Numéro : **19**
+3. **À la Gendarmerie Royale** — Sur place, notamment en milieu rural — Numéro : **177**
+4. **Au Ministère de la Justice** — Centre d'aide et d'orientation : **+212 537 266 600**
+5. **Aux Cellules de prise en charge** — Cellules dédiées aux femmes et enfants victimes de violence au sein des tribunaux
+
+📋 **Avant de porter plainte :** collectez les preuves (captures d'écran, liens, dates, profils des agresseurs). Les preuves ne doivent être partagées qu'avec des entités légitimes (forces de l'ordre, justice).
+
+**Catégorie :** `juridique` | **Document source :** `juridique/porter_plainte.md`
+
+---
+
+### Q24 — Quels sont les textes juridiques qui protègent les enfants en ligne ?
+
+**Réponse :**
+Le droit marocain protège les enfants contre les cyberviolences à travers plusieurs textes :
+
+- **Article 503-2 du Code pénal** — Criminalise l'exploitation sexuelle des enfants en ligne, y compris la représentation d'actes sexuels ou d'organes sexuels d'enfants par des moyens électroniques
+- **Loi 27-14** — Assimile l'exploitation d'un enfant de moins de 18 ans, y compris par les moyens informatiques, à un acte de traite d'êtres humains
+- **Loi 88-13** — Sanctionne la publication de contenus incitant les enfants à la débauche par tout moyen, y compris électronique. Sanctionne aussi la diffamation et l'injure
+- **Loi 103-13** — Protège contre le harcèlement sexuel en ligne, l'atteinte à la vie privée et la diffusion de montages/fausses allégations
+- **Loi 09-08** — Protège les données personnelles. Article 61 : peine de 6 mois à 1 an et amende de 20 000 à 300 000 DH pour communication non autorisée de données
+- **Loi 07-03** — Punit le piratage informatique et l'accès frauduleux aux systèmes
+
+**Catégorie :** `juridique` | **Document source :** `juridique/loi_27_14_code_penal_503.md`, `juridique/loi_88_13.md`
+
+---
+
+## Catégorie 8 : Protection des enfants
+
+### Q25 — Qu'est-ce que le grooming et comment en protéger mon enfant ?
+
+**Réponse :**
+Le **grooming** désigne les tentatives de prise de contact par des adultes (souvent sous une fausse identité) pour manipuler un enfant et l'exploiter sexuellement. Le processus se déroule en phases :
+
+1. **Contact** — L'adulte crée un faux profil et contacte l'enfant
+2. **Confiance** — Il gagne la confiance en se montrant attentionné
+3. **Isolement** — Il pousse l'enfant à garder la relation secrète
+4. **Manipulation** — Il aborde des sujets intimes ou demande des photos
+5. **Exploitation** — Il exerce du chantage ou demande une rencontre physique
+
+🛡️ **Protégez votre enfant :**
+- Parlez-lui des dangers du grooming de manière adaptée à son âge
+- Apprenez-lui à ne jamais partager d'informations personnelles avec des inconnus
+- Surveillez ses activités en ligne sans être intrusif
+- Si un enfant est victime : ONDE **2511**, Police **19**, eVigilance
+
+**Catégorie :** `fiches_pratiques` | **Document source :** `fiches_pratiques/grooming.md`
+
+---
+
+### Q26 — Quels sont les signaux d'alerte chez un enfant victime de cyberviolence ?
+
+**Réponse :**
+Voici les signes à surveiller chez un enfant potentiellement victime :
+
+- **Changements de comportement** — Anxiété, tristesse, irritabilité, isolement soudain, repli sur soi
+- **Symptômes physiques** — Troubles du sommeil, maux de ventre ou de tête récurrents, perte d'appétit (souvent psychosomatiques)
+- **Baisse des résultats scolaires** — Difficultés de concentration, absentéisme, décrochage
+- **Modification des habitudes numériques** — Arrêt brutal des réseaux sociaux ou surveillance obsessionnelle de ses comptes
+- **Changement d'apparence** — Modification du style vestimentaire pour échapper aux moqueries
+
+💡 La communication est la clé. Établissez une discussion avec votre enfant sans le juger. Ne confisquez pas son téléphone en représailles — cela l'empêchera de vous faire confiance.
+
+**Catégorie :** `prevention` | **Document source :** `prevention/strategie_reaction.md`, `prevention/protection_mineurs.md`
+
+---
+
+## Catégorie 9 : Prévention et rôles
+
+### Q27 — Quelles sont les bonnes pratiques pour se protéger en ligne ?
+
+**Réponse :**
+Internet est un espace public. Voici les règles essentielles :
+
+🔐 **Mots de passe** — Composés de minuscules + majuscules + chiffres + signes. Un mot de passe différent par compte. Changez-les régulièrement.
+
+🔒 **Données personnelles** — Ne donnez aucune information personnelle en ligne, même sur un formulaire. Ce qui est publié peut être copié et diffusé.
+
+📱 **Objets connectés** — Ils collectent vos données. Mettez un mot de passe et ne les connectez pas à tous vos appareils.
+
+📲 **Réseaux sociaux** — Désactivez la géolocalisation. Réfléchissez avant de publier. Ne publiez jamais de photos d'autres personnes sans leur accord.
+
+🎮 **Jeux en ligne** — Fixez des temps de jeu. Ne donnez aucune information personnelle à d'autres joueurs. Ne répondez pas aux demandes inappropriées.
+
+**Catégorie :** `prevention` | **Document source :** `prevention/bonnes_pratiques_cybersecurite.md`
+
+---
+
+### Q28 — Que faire si je suis témoin de cyberviolence ?
+
+**Réponse :**
+En tant que témoin, vous avez un rôle important :
+
+🚫 **Ne pas amplifier — La règle d'or :**
+- Ne jamais liker une moquerie
+- Ne jamais partager une rumeur ou un contenu humiliant
+
+💙 **Soutenir la victime :**
+- Envoyez un message privé de soutien
+- Des mots simples suffisent : « Je suis là pour toi », « Ce n'est pas acceptable »
+
+📢 **Signaler le contenu :**
+- Signalez sur la plateforme concernée
+- Signalez sur l'EMC-Helpline : https://www.cyberconfiance.ma/signalment/
+- Signalez sur eVigilance : https://evigilance.ma/fr/signaler
+
+**Catégorie :** `prevention` | **Document source :** `prevention/strategie_reaction.md`
+
+---
+
 ## 📊 Résumé
 
 | # | Catégorie | Questions | Numéros |
@@ -387,4 +547,7 @@ La création d'un faux profil utilisant votre identité est une **infraction** p
 | 4 | Aide et ressources | 4 | Q11, Q12, Q13, Q14 |
 | 5 | Actions pratiques | 5 | Q15, Q16, Q17, Q18, Q19 |
 | 6 | Soutien psychologique | 1 | Q20 |
-| **Total** | **6 catégories** | **20 questions** | — |
+| 7 | EMC et signalement | 4 | Q21, Q22, Q23, Q24 |
+| 8 | Protection des enfants | 2 | Q25, Q26 |
+| 9 | Prévention et rôles | 2 | Q27, Q28 |
+| **Total** | **9 catégories** | **28 questions** | — |

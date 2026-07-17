@@ -14,9 +14,9 @@ Ce répertoire contient l'ensemble des éléments nécessaires au contenu conver
 
 | Fichier | Description |
 |---|---|
-| [base_questions_reponses_fr.md](./base_questions_reponses_fr.md) | 20 questions-réponses validées en **français** |
-| [base_questions_reponses_ar.md](./base_questions_reponses_ar.md) | 20 questions-réponses validées en **arabe / darija** |
-| [mots_cles_declencheurs.md](./mots_cles_declencheurs.md) | Matrice complète des mots-clés associés à chaque question (FR + AR) |
+| [base_questions_reponses_fr.md](./base_questions_reponses_fr.md) | 28 questions-réponses validées en **français** (9 catégories) |
+| [base_questions_reponses_ar.md](./base_questions_reponses_ar.md) | 28 questions-réponses validées en **arabe / darija** (9 catégories) |
+| [mots_cles_declencheurs.md](./mots_cles_declencheurs.md) | Matrice complète des mots-clés associés à chaque question (FR + AR) — ~185 FR / ~165 AR |
 | [sources_etude.md](./sources_etude.md) | Synthèse de l'étude des ressources EMC (cyberconfiance.ma, evigilance.ma, chatbot Beta) |
 
 ## 🎯 Objectif

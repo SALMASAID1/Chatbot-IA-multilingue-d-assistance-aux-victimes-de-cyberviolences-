@@ -24,7 +24,7 @@ Chaque question de la base Q/R est associée à une liste de **mots-clés décle
 | Q# | Mots-clés FR | Mots-clés AR / Darija | Priorité |
 |---|---|---|---|
 | Q4 | danger, en danger, urgence, urgent, aide immédiate, menacé physiquement, il est chez moi, il va me frapper | خطر, ف خطر, طوارئ, مهدد, غادي يضربني, راه عند الباب | 🔴 CRITIQUE |
-| Q6 | suicide, me tuer, en finir, plus envie de vivre, me faire du mal, envie de mourir, mourir | انتحار, بغيت نموت, ماعندي مع الحياة, نقتل راسي, بغيت نموت | 🔴 CRITIQUE |
+| Q6 | suicide, me tuer, en finir, finir avec la vie, plus envie de vivre, plus la force, me faire du mal, envie de mourir, mourir, automutilation, danger immédiat | انتحار, بغيت نموت, ماعندي مع الحياة, نقتل راسي, بغيت نموت, ما بقات عندي القوة | 🔴 CRITIQUE |
 
 ---
 
@@ -90,6 +90,35 @@ Chaque question de la base Q/R est associée à une liste de **mots-clés décle
 
 ---
 
+### Catégorie 7 : EMC et Signalement (Q21-Q24)
+
+| Q# | Mots-clés FR | Mots-clés AR / Darija |
+|---|---|---|
+| Q21 | EMC, Espace Maroc Cyberconfiance, CMRPI, qui êtes-vous, c'est quoi EMC, mission, objectifs, EMC-Helpline | EMC, فضاء المغرب, الثقة الرقمية, CMRPI, شكون نتوما, أش هو EMC |
+| Q22 | signaler, signalement, où signaler, eVigilance, IWF, StopNCII, Take It Down, Google Report, E-Blagh | بلّغ, تبليغ, فين نبلّغ, eVigilance, IWF, StopNCII |
+| Q23 | porter plainte, plainte, où porter plainte, parquet, ministère public, plaintes.pmp.ma, cellules, ministère justice | شكاية, فين نقدم شكاية, النيابة العامة, وزارة العدل |
+| Q24 | protection enfants, loi enfants, loi 27-14, loi 88-13, article 503-2, traite, exploitation sexuelle, textes juridiques | حماية الأطفال, قانون الأطفال, 27-14, 88-13, 503-2, استغلال جنسي |
+
+---
+
+### Catégorie 8 : Protection des enfants (Q25-Q26)
+
+| Q# | Mots-clés FR | Mots-clés AR / Darija |
+|---|---|---|
+| Q25 | grooming, prédateur, manipulation enfant, faux profil adulte, rencontre en ligne, pedophile | غرومينغ, مفترس, تلاعب بالطفل, حساب مزيف ديال بالغ |
+| Q26 | signaux alerte, signes, parents, comportement, sommeil, scolaire, enfant victime, alerte | علامات إنذار, الوالدين, سلوك, النوم, الدراسة, طفل ضحية |
+
+---
+
+### Catégorie 9 : Prévention et rôles (Q27-Q28)
+
+| Q# | Mots-clés FR | Mots-clés AR / Darija |
+|---|---|---|
+| Q27 | bonnes pratiques, prévention, protéger, mot de passe, géolocalisation, objets connectés, jeux en ligne, réseaux sociaux | ممارسات جيدة, وقاية, حماية, كلمة مرور, أجهزة متصلة, ألعاب |
+| Q28 | témoin, ne pas amplifier, soutenir victime, signaler, liker, partager, rumeur | شاهد, ما تزيدش ف النار, ساند الضحية, بلّغ, جام, إشاعة |
+
+---
+
 ## Mots-clés cross-catégories (déclenchement multiple)
 
 Certains mots-clés peuvent correspondre à plusieurs questions. Le chatbot doit prioriser selon cette logique :
@@ -100,8 +129,12 @@ Certains mots-clés peuvent correspondre à plusieurs questions. Le chatbot doit
 | "photos" | Q5 (sextorsion) > Q8 (preuves) | Contexte de menace = Q5 |
 | "aide" | Q4 (urgence) > Q12 (E-Helpline) | Vérifier urgence d'abord |
 | "police" / "19" | Q4 (urgence) > Q11 (numéros) > Q7 (plainte) | Urgence d'abord |
-| "enfant" / "mineur" | Q14 (mineur) > Q4 (urgence si danger) | Vérifier danger d'abord |
+| "enfant" / "mineur" | Q14 (mineur) > Q25 (grooming) > Q4 (urgence si danger) | Vérifier danger d'abord |
 | "supprimer" | Q15 (signalement) > Q9 (preuves effacées) | Contexte détermine |
+| "signaler" / "signalement" | Q22 (plateformes) > Q15 (réseaux sociaux) | Q22 pour orientation générale |
+| "plainte" / "porter plainte" | Q23 (guide complet) > Q7 (base légale) | Q23 pour procédure détaillée |
+| "grooming" / "prédateur" | Q25 (grooming) > Q14 (mineur) | Grooming d'abord |
+| "EMC" / "Cyberconfiance" | Q21 (présentation) > Q12 (gratuité) | Q21 si demande générale |
 
 ---
 
@@ -109,9 +142,9 @@ Certains mots-clés peuvent correspondre à plusieurs questions. Le chatbot doit
 
 | Métrique | Valeur |
 |---|---|
-| Total questions | 20 |
-| Total mots-clés FR | ~120 |
-| Total mots-clés AR/Darija | ~110 |
-| Mots-clés d'urgence | 14 (FR) + 12 (AR) |
-| Catégories couvertes | 6 |
+| Total questions | 28 |
+| Total mots-clés FR | ~185 |
+| Total mots-clés AR/Darija | ~165 |
+| Mots-clés d'urgence | 18 (FR) + 14 (AR) |
+| Catégories couvertes | 9 |
 | Priorités de déclenchement | 3 niveaux (🔴🟡🔵) |
