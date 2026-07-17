@@ -38,6 +38,25 @@ Il est important de rappeler que la honte ne doit jamais être portée par la vi
 
 Certaines victimes évitent les amis, la famille, les réseaux sociaux ou les lieux d'étude/travail par peur d'être reconnues, jugées ou exposées. Cet isolement peut aggraver la souffrance psychologique.
 
+Un autre effet du cyberharcèlement est que les victimes peuvent être exclues par d'autres personnes qui craignent également d'être confrontées au cyberharcèlement si elles continuent à rester amies avec la victime. La victime se retrouve alors isolée et ostracisée.
+
+### Conséquences sur les réseaux sociaux
+
+Les conséquences du cyberharcèlement peuvent se traduire par un sentiment de malaise persistant. Le harcèlement en ligne semble plus durable, surtout lorsque les actes sont commis par des publications sur les réseaux sociaux qui ne disparaissent pas immédiatement. Cette situation peut conduire à des sentiments accablants de vulnérabilité et de détresse.
+
+### Conséquences émotionnelles sur les enfants victimes
+
+Le spectre des émotions ressenties par la victime se transforme souvent en colère. Certains enfants peuvent même commencer à élaborer des plans de vengeance. L'acte de vengeance est un moyen pour l'enfant de retrouver un certain pouvoir, car les victimes de cyberharcèlement se sentent souvent impuissantes face à ce qui se passe.
+
+### Conséquences physiques
+
+Les conséquences du cyberharcèlement peuvent également être physiques. Des sentiments intenses de stress et d'anxiété peuvent entraîner :
+
+- l'insomnie ;
+- des troubles gastro-intestinaux ;
+- des habitudes alimentaires néfastes ;
+- des maux de ventre ou de tête récurrents.
+
 ### Symptômes liés au traumatisme
 
 Dans les situations graves ou prolongées, certaines personnes peuvent présenter des réactions qui ressemblent à des symptômes post-traumatiques :
@@ -62,6 +81,8 @@ Chez les enfants et les adolescents, la cyberviolence peut avoir des effets part
 - idées suicidaires dans les situations les plus graves.
 
 L'UNICEF souligne que le cyberharcèlement peut affecter la santé mentale des enfants et des jeunes, notamment à travers l'anxiété, le stress, la dépression, les troubles alimentaires et les pensées suicidaires. La CDC signale aussi que l'usage fréquent des réseaux sociaux et la victimisation électronique peuvent être associés à des résultats défavorables pour la santé mentale des adolescents.
+
+Selon Kaspersky, les effets du cyberharcèlement comprennent également des problèmes de santé mentale, une augmentation du stress et de l'anxiété, la dépression, des comportements violents ainsi qu'une faible estime de soi. Le cyberharcèlement peut également avoir des conséquences émotionnelles durables, même si les actes d'intimidation ont cessé.
 
 ## Spécificités possibles dans le contexte marocain
 

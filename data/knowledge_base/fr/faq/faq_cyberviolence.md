@@ -45,3 +45,28 @@ Ne modifiez jamais la capture d'écran.
 3. **Bloquez** l'agresseur.
 4. **Contactez la police (19)** immédiatement.
 5. Appelez l'**E-Helpline** de Cyberconfiance pour un accompagnement.
+
+## Questions sur le signalement
+
+### Q11 : Quels sont les sites de signalement disponibles ?
+**R :** Plusieurs plateformes sont disponibles selon votre situation :
+- **Pour signaler des cyberviolences** : https://evigilance.ma/fr
+- **Pour signaler des images/vidéos d'abus sexuel sur enfants** : https://report.iwf.org.uk/ma/
+- **Si le contenu est sur un site pornographique** : https://reportcontent.google.com/forms/rtbf
+- **Pour demander la suppression de contenus intimes pris avant 18 ans** : https://takeitdown.ncmec.org/fr/
+- **Pour les adultes victimes de revenge porn** : https://stopncii.org/?lang=fr-fr
+
+### Q12 : Qu'est-ce que StopNCII ?
+**R :** StopNCII est une plateforme destinée aux adultes victimes de menaces liées à la diffusion de leurs images intimes. Elle permet de créer une empreinte numérique de vos images pour empêcher leur diffusion sur les plateformes partenaires. Site : https://stopncii.org/?lang=fr-fr
+
+### Q13 : Qu'est-ce que Take It Down ?
+**R :** Take It Down est une plateforme permettant aux mineurs (ou anciens mineurs) de demander la suppression de contenus intimes (photos/vidéos dénudées ou explicites) pris avant l'âge de 18 ans. Site : https://takeitdown.ncmec.org/fr/
+
+### Q14 : Comment et où demander de l'assistance si un enfant est en danger en ligne ?
+**R :** Deux options principales :
+- **ONDE** : Contactez le numéro vert **2511** (https://2511.ma/) pour demander assistance.
+- **EMC-Helpline** : Sollicitez de l'aide via https://www.cyberconfiance.ma/signalment/ — l'assistance est disponible 24h/24 et 7j/7.
+
+### Q15 : Est-ce que le cyberharcèlement est puni par la loi ?
+**R :** Oui. Toutes les formes de cyberviolences et de cyberharcèlement sont interdites par la loi marocaine. Il existe des lois spécifiques qui protègent les victimes, notamment la **Loi 103-13**, le **Code pénal** (articles 503-2 et suivants), la **Loi 09-08** (données personnelles), la **Loi 07-03** (cybercriminalité) et la **Loi 88-13** (presse et édition).
+

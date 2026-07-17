@@ -49,6 +49,31 @@ Ce fichier rassemble les contacts utiles en cas de cyberviolence, cyberharcèlem
 ### eVigilance
 - **Site : https://evigilance.ma/**
 - Usage : ligne nationale d'assistance pour la protection des enfants, des jeunes et des femmes en ligne.
+- Formulaire de signalement : https://evigilance.ma/fr/signaler
+
+### Plaintes électroniques — Ministère Public
+- **Site : https://plaintes.pmp.ma/**
+- Usage : déposer une plainte en ligne auprès du parquet du tribunal de première instance.
+
+### Ministère de la Justice — Centre d'aide et d'orientation
+- **Numéro : +212 537 266 600**
+- Usage : aide et orientation juridique.
+
+### IWF — Internet Watch Foundation (Maroc)
+- **Site : https://report.iwf.org.uk/ma/**
+- Usage : signaler les images et vidéos d'abus sexuel à l'encontre des enfants.
+
+### StopNCII
+- **Site : https://stopncii.org/?lang=fr-fr**
+- Usage : plateforme destinée aux adultes victimes de menaces liées à la diffusion de leurs images intimes.
+
+### Take It Down
+- **Site : https://takeitdown.ncmec.org/fr/**
+- Usage : demande de suppression de contenus intimes (photos/vidéos) pris avant l'âge de 18 ans.
+
+### Google — Demande de suppression de contenu
+- **Site : https://reportcontent.google.com/forms/rtbf**
+- Usage : si le contenu a été diffusé sur un site pornographique indexé par Google.
 
 ---
 
@@ -62,6 +87,12 @@ Ce fichier rassemble les contacts utiles en cas de cyberviolence, cyberharcèlem
 | Enfant victime ou témoin de violence | ONDE 2511 / 0800002511 |
 | Contenu illicite en ligne | E-Blagh |
 | Cyberharcèlement, cyberviolence, demande d'orientation | Cyberconfiance / eVigilance |
+| Images/vidéos d'abus sexuel sur enfants | IWF Maroc |
+| Adulte victime de revenge porn | StopNCII |
+| Mineur : contenus intimes pris avant 18 ans | Take It Down |
+| Contenu sur un site pornographique | Google Report Content |
+| Plainte en ligne au Ministère Public | plaintes.pmp.ma |
+| Orientation juridique | Ministère de la Justice : +212 537 266 600 |
 
 ---
 
@@ -95,3 +126,8 @@ Ce fichier rassemble les contacts utiles en cas de cyberviolence, cyberharcèlem
 - E-Blagh : https://e-blagh.ma/
 - Cyberconfiance : https://www.cyberconfiance.ma/
 - eVigilance : https://evigilance.ma/
+- Plaintes PMP : https://plaintes.pmp.ma/
+- IWF Maroc : https://report.iwf.org.uk/ma/
+- StopNCII : https://stopncii.org/?lang=fr-fr
+- Take It Down : https://takeitdown.ncmec.org/fr/
+- Google Report Content : https://reportcontent.google.com/forms/rtbf
