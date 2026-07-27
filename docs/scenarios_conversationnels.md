@@ -15,19 +15,19 @@
 flowchart TD
     A["🔵 Utilisateur ouvre le chatbot"] --> B["Bot : Message de bienvenue"]
     B --> C{"Choix de langue"}
-    C -->|Français| D["Accueil FR"]
-    C -->|العربية| E["Accueil AR"]
-    C -->|Darija| F["Accueil Darija"]
-    C -->|Auto-détection| G["Détection automatique"]
+    C -- "Français" --> D["Accueil FR"]
+    C -- "العربية" --> E["Accueil AR"]
+    C -- "Darija" --> F["Accueil Darija"]
+    C -- "Auto-détection" --> G["Détection automatique"]
     D --> H["Présentation + Limites + Suggestions"]
     E --> H
     F --> H
     G --> H
     H --> I{"Type de demande"}
-    I -->|Urgence détectée| J["🔴 Protocole d'urgence"]
-    I -->|Question générale| K["Flux conversationnel principal"]
-    I -->|Signaler un contenu| L["Orientation signalement"]
-    I -->|Hors sujet| M["Recentrage bienveillant"]
+    I -- "Urgence" --> J["🔴 Protocole d'urgence"]
+    I -- "Question" --> K["Flux conversationnel principal"]
+    I -- "Signalement" --> L["Orientation signalement"]
+    I -- "Hors sujet" --> M["Recentrage bienveillant"]
 ```
 
 ### 1.2 Message de bienvenue — Français
@@ -81,11 +81,11 @@ Afin d'adapter l'orientation, le ton et les ressources aux besoins spécifiques 
 ```mermaid
 flowchart TD
     A["Accueil du Chatbot"] --> B{"Quel est votre profil ?"}
-    B -->|👤 Je suis victime| C["Parcours 1 : Victime (Soutien + Actions + Signalement)"]
-    B -->|👨‍👩‍👧 Je suis un parent| D["Parcours 2 : Parent inquiet (Conseils + Protection + Dialogue)"]
-    B -->|🏫 Je suis enseignant/éducateur| E["Parcours 3 : Enseignant (Gestion de crise en milieu scolaire + Cadre légal)"]
-    B -->|👁️ Je suis témoin| F["Parcours 4 : Témoin / Ami (Signalement + Comment aider sans s'exposer)"]
-    B -->|💡 Je cherche des infos / prévention| G["Parcours 5 : Jeune / Prévention (Bonnes pratiques + Sensibilisation)"]
+    B -- "👤 Victime" --> C["Parcours 1 : Victime<br/>(Soutien + Actions + Signalement)"]
+    B -- "👨‍👩‍👧 Parent" --> D["Parcours 2 : Parent inquiet<br/>(Conseils + Protection + Dialogue)"]
+    B -- "🏫 Enseignant" --> E["Parcours 3 : Enseignant / Éducateur<br/>(Gestion de crise + Cadre légal)"]
+    B -- "👁️ Témoin" --> F["Parcours 4 : Témoin / Ami<br/>(Signalement + Aide)"]
+    B -- "💡 Prévention" --> G["Parcours 5 : Jeune / Prévention<br/>(Bonnes pratiques)"]
 ```
 
 #### 1.5.1 Profil 1 : Victime (Enfant, Adolescent, Adulte)
@@ -161,16 +161,16 @@ Le protocole d'urgence se déclenche automatiquement lorsque le chatbot détecte
 ```mermaid
 flowchart TD
     A["Message utilisateur"] --> B{"Détection mots-clés de crise"}
-    B -->|Oui| C["🔴 Affichage immédiat numéros d'urgence"]
+    B -- "Oui" --> C["🔴 Affichage immédiat numéros d'urgence"]
     C --> D["Message empathique + validation"]
     D --> E{"La personne est-elle mineure ?"}
-    E -->|Oui| F["Ajouter ONDE 2511"]
-    E -->|Non| G["Proposer aide préparation plainte"]
+    E -- "Oui" --> F["Ajouter ONDE 2511"]
+    E -- "Non" --> G["Proposer aide préparation plainte"]
     F --> G
     G --> H{"L'utilisateur souhaite continuer ?"}
-    H -->|Oui| I["Accompagnement guidé"]
-    H -->|Non| J["Message de clôture bienveillant"]
-    B -->|Non| K["Flux conversationnel normal"]
+    H -- "Oui" --> I["Accompagnement guidé"]
+    H -- "Non" --> J["Message de clôture bienveillant"]
+    B -- "Non" --> K["Flux conversationnel normal"]
 ```
 
 ---
@@ -181,18 +181,18 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A["Utilisateur : Je suis harcelé(e) en ligne"] --> B["Bot : Je suis désolé. Pouvez-vous me dire sur quelle plateforme ?"]
+    A["Utilisateur : Je suis harcelé(e) en ligne"] --> B["Bot : Demande de la plateforme"]
     B --> C{"Plateforme identifiée"}
-    C -->|Facebook/Instagram/TikTok/WhatsApp/Snapchat| D["Guide de signalement spécifique"]
-    C -->|Autre/Non spécifié| E["Conseils généraux"]
-    D --> F["Bot : Avez-vous conservé les preuves ?"]
+    C -- "Réseaux sociaux" --> D["Guide de signalement spécifique"]
+    C -- "Autre / Inconnu" --> E["Conseils généraux"]
+    D --> F["Bot : Conservation des preuves ?"]
     E --> F
     F --> G{"Preuves conservées ?"}
-    G -->|Non| H["Bot : Voici comment faire des captures d'écran..."]
-    G -->|Oui| I["Bot : Très bien. Voici vos options..."]
+    G -- "Non" --> H["Bot : Tuto captures d'écran"]
+    G -- "Oui" --> I["Bot : Options disponibles"]
     H --> I
-    I --> J["Options : 1. Bloquer 2. Signaler 3. Porter plainte"]
-    J --> K["Bot : Souhaitez-vous les numéros utiles ?"]
+    I --> J["Options : Bloquer / Signaler / Porter plainte"]
+    J --> K["Bot : Numéros utiles ?"]
     K --> L["Affichage ressources pertinentes"]
 ```
 
@@ -220,13 +220,13 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A["Utilisateur : On me fait du chantage avec mes photos"] --> B["Bot : Vérification sécurité immédiate"]
-    B --> C{"Danger immédiat détecté ?"}
-    C -->|Oui| D["🔴 Protocole d'urgence"]
-    C -->|Non| E["Bot : Ce n'est PAS votre faute. Ne payez pas."]
-    E --> F["Bot : Conseils immédiats - Ne pas payer, ne pas céder"]
-    F --> G["Bot : Conservez toutes les preuves"]
-    G --> H["Bot : Voici comment signaler et porter plainte"]
+    A["Utilisateur : Chantage aux photos"] --> B["Bot : Vérification sécurité"]
+    B --> C{"Danger immédiat ?"}
+    C -- "Oui" --> D["🔴 Protocole d'urgence"]
+    C -- "Non" --> E["Bot : Pas votre faute. Ne payez pas."]
+    E --> F["Bot : Conseils immédiats"]
+    F --> G["Bot : Conserver les preuves"]
+    G --> H["Bot : Signaler et porter plainte"]
     H --> I["Orientation : Police 19 + E-Helpline"]
 ```
 
@@ -335,14 +335,14 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A["Entrée dans le Parcours Émotionnel"] --> B["1. Évaluation : Météo des Émotions"]
-    B --> C["2. Message de Validation & Normalisation"]
-    C --> D{"Souhaitez-vous un exercice d'apaisement ?"}
-    D -->|Oui (Crise / Panique)| E["3. Exercices Guidés Interactifs Pas-à-Pas"]
-    E --> E1["Option A : Respiration Carrée 4-4-4-4"]
-    E --> E2["Option B : Ancrage Sensoriel 5-4-3-2-1"]
-    D -->|Non / Après l'exercice| F["4. Psychoéducation Simple (Comprendre ses réactions)"]
-    F --> G["5. Orientation vers Ressources & Soutien Humain"]
+    A["Entrée Parcours Émotionnel"] --> B["1. Évaluation : Météo des Émotions"]
+    B --> C["2. Validation & Normalisation"]
+    C --> D{"Souhaitez-vous un exercice ?"}
+    D -- "Oui (Panique)" --> E["3. Exercices Guidés Pas-à-Pas"]
+    E --> E1["Respiration Carrée 4-4-4-4"]
+    E --> E2["Ancrage Sensoriel 5-4-3-2-1"]
+    D -- "Non / Suite" --> F["4. Psychoéducation Simple"]
+    F --> G["5. Orientation vers Soutien Humain"]
 ```
 
 ---
