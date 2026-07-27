@@ -110,12 +110,25 @@ Chaque question de la base Q/R est associée à une liste de **mots-clés décle
 
 ---
 
+---
+
 ### Catégorie 9 : Prévention et rôles (Q27-Q28)
 
 | Q# | Mots-clés FR | Mots-clés AR / Darija |
 |---|---|---|
 | Q27 | bonnes pratiques, prévention, protéger, mot de passe, géolocalisation, objets connectés, jeux en ligne, réseaux sociaux | ممارسات جيدة, وقاية, حماية, كلمة مرور, أجهزة متصلة, ألعاب |
 | Q28 | témoin, ne pas amplifier, soutenir victime, signaler, liker, partager, rumeur | شاهد, ما تزيدش ف النار, ساند الضحية, بلّغ, جام, إشاعة |
+
+---
+
+### Catégorie 10 : Soutien Émotionnel, Psychoéducation & Profils Utilisateurs (Q29-Q32 — Mme Belaous)
+
+| Q# | Mots-clés FR | Mots-clés AR / Darija |
+|---|---|---|
+| Q29 | sidération, honte, culpabilité, météo des émotions, choc, freeze, hypervigilance, anxiété, déculpabiliser, blocage | صدمة, حشومة, إحساس بالذنب, نشرة المشاعر, خوف, قلق, شلل فكري |
+| Q30 | parent, mon enfant, fils, fille, ado victime, confisquer écran, punir, écouter parent, ONDE 2511 | الوالدين, ولدي, بنتي, طفل ضحية, حيد التلفون, حماية الطفل |
+| Q31 | enseignant, prof, professeur, éducateur, école, collège, lycée, établissement scolaire, procédure élève | أستاذ, مربي, مدرسة, ثانوية, مؤسسة تعليمية, تلميذ ضحية |
+| Q32 | respiration, ancrage, exercice, respiration carrée, 4-4-4-4, 5-4-3-2-1, météo émotions, panique, calmer | تنفس, ترسيخ, تمرين, تنفس مربع, نوبة هلع, مهدئ, استرخاء |
 
 ---
 
@@ -129,12 +142,14 @@ Certains mots-clés peuvent correspondre à plusieurs questions. Le chatbot doit
 | "photos" | Q5 (sextorsion) > Q8 (preuves) | Contexte de menace = Q5 |
 | "aide" | Q4 (urgence) > Q12 (E-Helpline) | Vérifier urgence d'abord |
 | "police" / "19" | Q4 (urgence) > Q11 (numéros) > Q7 (plainte) | Urgence d'abord |
-| "enfant" / "mineur" | Q14 (mineur) > Q25 (grooming) > Q4 (urgence si danger) | Vérifier danger d'abord |
+| "enfant" / "mineur" | Q14 (mineur) > Q25 (grooming) > Q30 (parent) > Q4 (urgence) | Vérifier danger d'abord |
 | "supprimer" | Q15 (signalement) > Q9 (preuves effacées) | Contexte détermine |
 | "signaler" / "signalement" | Q22 (plateformes) > Q15 (réseaux sociaux) | Q22 pour orientation générale |
 | "plainte" / "porter plainte" | Q23 (guide complet) > Q7 (base légale) | Q23 pour procédure détaillée |
 | "grooming" / "prédateur" | Q25 (grooming) > Q14 (mineur) | Grooming d'abord |
 | "EMC" / "Cyberconfiance" | Q21 (présentation) > Q12 (gratuité) | Q21 si demande générale |
+| "prof" / "enseignant" | Q31 (éducateur) > Q28 (témoin) | Q31 pour cadre scolaire |
+| "panique" / "stress" | Q32 (respiration) > Q29 (psychoéducation) | Q32 pour apaisement immédiat |
 
 ---
 
@@ -142,9 +157,10 @@ Certains mots-clés peuvent correspondre à plusieurs questions. Le chatbot doit
 
 | Métrique | Valeur |
 |---|---|
-| Total questions | 28 |
-| Total mots-clés FR | ~185 |
-| Total mots-clés AR/Darija | ~165 |
+| Total questions | 32 |
+| Total mots-clés FR | ~220 |
+| Total mots-clés AR/Darija | ~195 |
 | Mots-clés d'urgence | 18 (FR) + 14 (AR) |
-| Catégories couvertes | 9 |
+| Catégories couvertes | 10 |
 | Priorités de déclenchement | 3 niveaux (🔴🟡🔵) |
+

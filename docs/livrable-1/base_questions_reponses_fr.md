@@ -537,6 +537,66 @@ En tant que témoin, vous avez un rôle important :
 
 ---
 
+## Catégorie 10 : Soutien Émotionnel, Psychoéducation & Profils d'Utilisateurs (Retours Encadrement - Mme Belaous)
+
+### Q29 — Pourquoi ressent-on de la sidération, de la honte ou de l'anxiété après une cyberattaque ?
+
+**Réponse :**
+La cyberviolence provoque un choc émotionnel intense. Les réactions les plus fréquentes observées chez les victimes sont :
+
+- **La sidération :** L'impossibilité de réagir immédiatement est un réflexe neurologique de survie (*freeze* face au danger), ce n'est en aucun cas de la faiblesse.
+- **La culpabilité inversée :** Les agresseurs utilisent la manipulation pour faire croire à la victime qu'elle est responsable. **C'est faux : la responsabilité est à 100% du côté de l'agresseur.**
+- **L'hypervigilance :** Sursauter à chaque notification ou vérifier son téléphone en permanence est une réaction de défense normale de votre système nerveux.
+
+Le chatbot vous propose un apaisement émotionnel immédiat grâce à la **Météo des Émotions** et des exercices guidés (Respiration Carrée 4-4-4-4, Ancrage 5-4-3-2-1).
+
+**Catégorie :** `soutien_psychologique` | **Document source :** `psychologie/impact_psychologique.md`
+
+---
+
+### Q30 — Je suis un parent relatif/inquiet : comment réagir si mon enfant est victime de cyberharcèlement ?
+
+**Réponse :**
+En tant que parent, votre réaction est essentielle pour protéger votre enfant :
+
+1. **Écoutez sans juger ni punir :** Ne confisquez pas le téléphone ou les écrans, car l'enfant risquerait de se fermer par peur d'être privé de sa vie sociale.
+2. **Rassurez et déculpabilisez :** Répétez-lui clairement : « Tu n'as rien fait de mal, et je suis là pour t'aider ».
+3. **Conservez les preuves :** Prenez des captures d'écran (messages, profils, liens, dates) avant toute suppression.
+4. **Signalez et agissez :** Signalez sur les plateformes, prévenez l'établissement scolaire et contactez la ligne d'assistance ONDE **2511** ou l'EMC-Helpline.
+
+**Catégorie :** `profils_utilisateurs` | **Document source :** `prevention/protection_mineurs.md`
+
+---
+
+### Q31 — Je suis enseignant ou éducateur : quelle est la démarche face au cyberharcèlement en milieu scolaire ?
+
+**Réponse :**
+En tant qu'éducateur, voici la démarche méthodologique recommandée :
+
+1. **Sécuriser la victime :** Recueillir son témoignage dans un cadre confidentiel et valider son ressenti sans minimiser.
+2. **Conserver les preuves matérielles :** Captures d'écran des publications, groupes de discussion ou commentaires incriminés.
+3. **Mobiliser l'équipe éducative :** Informer la direction d'établissement et la cellule d'écoute/psychologue scolaire.
+4. **Organiser un temps de prévention :** Échanger avec la classe sur l'empathie numérique et le respect d'autrui sans stigmatiser directement les élèves si une procédure est en cours.
+5. **Orientation & Signalement :** Orienter les parents vers l'EMC-Helpline (cyberconfiance.ma) et effectuer un signalement sur E-Blagh si la gravité l'exige.
+
+**Catégorie :** `profils_utilisateurs` | **Document source :** `prevention/environnement_scolaire.md`
+
+---
+
+### Q32 — Comment fonctionnent les exercices guidés de respiration et d'ancrage du chatbot ?
+
+**Réponse :**
+Lorsque l'utilisateur exprime une forte détresse ou choisit l'option « Submergé / Panique » dans la Météo des Émotions, le chatbot propose des exercices interactifs étape par étape :
+
+- **Respiration Carrée (4-4-4-4) :** Cycle guidé de 1 minute (Inspiration 4s 🫁, Rétention 4s ⏹️, Expiration 4s 🌬️, Rétention poumons vides 4s ⏹️).
+- **Technique d'Ancrage Sensoriel 5-4-3-2-1 :** Exercice sollicitant les 5 sens pour ramener l'esprit dans l'instant présent et calmer l'attaque de panique.
+
+Ces exercices constituent un **premier niveau de soutien réconfortant**, court et bienveillant, avant de guider l'utilisateur vers une aide humaine adaptée.
+
+**Catégorie :** `soutien_psychologique` | **Document source :** `psychologie/techniques_ancrage.md`
+
+---
+
 ## 📊 Résumé
 
 | # | Catégorie | Questions | Numéros |
