@@ -74,6 +74,47 @@ flowchart TD
 
 ---
 
+### 1.5 Parcours conversationnels par profil d'utilisateur (Personas)
+
+Afin d'adapter l'orientation, le ton et les ressources aux besoins spécifiques de chaque utilisateur, le chatbot propose une orientation dès l'accueil selon **5 profils principaux** :
+
+```mermaid
+flowchart TD
+    A["Accueil du Chatbot"] --> B{"Quel est votre profil ?"}
+    B -->|👤 Je suis victime| C["Parcours 1 : Victime (Soutien + Actions + Signalement)"]
+    B -->|👨‍👩‍👧 Je suis un parent| D["Parcours 2 : Parent inquiet (Conseils + Protection + Dialogue)"]
+    B -->|🏫 Je suis enseignant/éducateur| E["Parcours 3 : Enseignant (Gestion de crise en milieu scolaire + Cadre légal)"]
+    B -->|👁️ Je suis témoin| F["Parcours 4 : Témoin / Ami (Signalement + Comment aider sans s'exposer)"]
+    B -->|💡 Je cherche des infos / prévention| G["Parcours 5 : Jeune / Prévention (Bonnes pratiques + Sensibilisation)"]
+```
+
+#### 1.5.1 Profil 1 : Victime (Enfant, Adolescent, Adulte)
+* **Posture :** Empathique, rassurante, déculpabilisante, sécurisante.
+* **Objectif :** Offrir un premier soutien émotionnel, évaluer le danger, conserver les preuves et guider vers le signalement/plainte.
+* **Message type :** « Je suis là pour vous écouter et vous aider. Ce que vous vivez n'est pas de votre faute. Nous allons regarder ensemble comment vous protéger et faire cesser cela. »
+
+#### 1.5.2 Profil 2 : Parent inquiet
+* **Posture :** Écoutante, structurée, dé-dramatisante mais réactive, orientée action.
+* **Objectif :** Aider le parent à réagir de façon constructive sans paniquer, préserver le dialogue avec son enfant, collecter les preuves et contacter les interlocuteurs adaptés (EMC, école, police).
+* **Message type :** « Votre démarche est essentielle pour protéger votre enfant. Il est primordial de maintenir le dialogue sans punir ou confisquer les écrans. Voici les étapes conseillées... »
+
+#### 1.5.3 Profil 3 : Enseignant / Éducateur
+* **Posture :** Institutionnelle, méthodique, conforme au cadre scolaire et juridique.
+* **Objectif :** Fournir les démarches à suivre au sein de l'établissement (signalement administration, référent harcèlement, sensibilisation de classe, signalement EMC/E-Blagh).
+* **Message type :** « En tant qu'éducateur, votre rôle est clef. Voici la procédure recommandée pour intervenir auprès des élèves impliqués et alerter les services compétents. »
+
+#### 1.5.4 Profil 4 : Témoin / Ami(e)
+* **Posture :** Encourageante, responsable, protectrice de la confidentialité du témoin.
+* **Objectif :** Inciter au signalement citoyen, expliquer comment soutenir la victime sans aggraver le harcèlement ni se mettre soi-même en danger.
+* **Message type :** « Bravo de ne pas rester indifférent. En signalant ce contenu ou en épaulant votre ami(e), vous faites une vraie différence. Voici comment agir efficacement. »
+
+#### 1.5.5 Profil 5 : Jeune en recherche d'information & prévention
+* **Posture :** Ludique, pédagogique, engageante, moderne.
+* **Objectif :** Sensibiliser aux risques du numérique, donner des astuces de paramétrage de confidentialité, expliquer les lois en vigueur de manière simple.
+* **Message type :** « Bienvenue ! Découvre les règles d'or pour protéger tes données, sécuriser tes comptes et naviguer en toute sérénité sur les réseaux sociaux. »
+
+---
+
 ## 2. Protocole d'urgence
 
 ### 2.1 Déclencheurs de crise
@@ -288,7 +329,113 @@ flowchart TD
 
 ---
 
-## 4. Cas limites
+## 4. Parcours d'Accompagnement Psychologique et Soutien Émotionnel Interactif
+
+> 💡 **Remarque importante :** Le chatbot n'effectue aucun diagnostic psychologique. Son rôle est d'apporter un **premier soutien émotionnel réconfortant**, d'aider la personne à apaiser sa détresse immédiate et de l'orienter sereinement vers un accompagnement humain spécialisé.
+
+```mermaid
+flowchart TD
+    A["Entrée dans le Parcours Émotionnel"] --> B["1. Évaluation : Météo des Émotions"]
+    B --> C["2. Message de Validation & Normalisation"]
+    C --> D{"Souhaitez-vous un exercice d'apaisement ?"}
+    D -->|Oui (Crise / Panique)| E["3. Exercices Guidés Interactifs Pas-à-Pas"]
+    E --> E1["Option A : Respiration Carrée 4-4-4-4"]
+    E --> E2["Option B : Ancrage Sensoriel 5-4-3-2-1"]
+    D -->|Non / Après l'exercice| F["4. Psychoéducation Simple (Comprendre ses réactions)"]
+    F --> G["5. Orientation vers Ressources & Soutien Humain"]
+```
+
+---
+
+### 4.1 Évaluation de l'état émotionnel (« Météo des Émotions »)
+
+Lors de l'entrée en contact ou après l'exposition d'un problème, le bot propose une évaluation interactive simple :
+
+> **Bot :** Avant d'aborder les démarches techniques et juridiques, comment vous sentez-vous en ce moment ? (Cliquez sur l'option qui décrit le mieux votre état) :
+>
+> - 🔴 **Submergé(e) / En panique**
+> - 😟 **Très anxieux(se) / Inquiet(e)**
+> - 😔 **Triste / Honteux(se) / Isolé(e)**
+> - 😡 **En colère / Indigné(e)**
+> - ❓ **Perdu(e) / Ne sait pas quoi faire**
+
+---
+
+### 4.2 Messages de validation et de normalisation des émotions
+
+En fonction de la météo choisie, le chatbot envoie un message chaleureux visant à valider le ressenti et déculpabiliser l'utilisateur :
+
+#### Message si 🔴 Submergé(e) / Panique :
+> **Bot :** Respirez. C'est tout à fait normal de ressentir un choc violent face à ce qui se passe. Prenez une grande inspiration : **vous êtes en sécurité ici, et vous n'êtes plus seul(e)**. Nous allons avancer pas à pas.
+
+#### Message si 😟 Anxieux(se) / Inquiet(e) :
+> **Bot :** Votre inquiétude est totalement légitime. Face à une menace ou un harcèlement, notre cerveau se met en état d'alerte pour nous protéger. Sachez qu'il existe des solutions concrètes pour reprendre le contrôle.
+
+#### Message si 😔 Triste / Honteux(se) / Isolé(e) :
+> **Bot :** Sachez une chose essentielle : **vous n'avez RIEN à vous reprocher et ce n'est PAS votre faute**. La honte doit changer de camp et appartenir uniquement à l'agresseur. Des milliers de personnes ont traversé cela et s'en sont sorties grâce à du soutien.
+
+---
+
+### 4.3 Exercices guidés d'ancrage et de respiration interactifs (Pas-à-Pas)
+
+Pour éviter un simple pavé de texte illisible, le bot guide l'exercice **étape par étape**, demandant à l'utilisateur de cliquer sur un bouton (ex: « Étape suivante ➡️ ») pour avancer à son rythme.
+
+#### 4.3.1 Exercice 1 : Respiration Carrée 4-4-4-4 (Box Breathing)
+
+```mermaid
+sequenceDiagram
+    participant U as Utilisateur
+    participant B as Chatbot
+    B->>U: « Prêt(e) pour un exercice de respiration de 1 minute ? » [Bouton : Commencer]
+    U->>B: Clic sur [Commencer]
+    B->>U: 🫁 1. Inspirez doucement par le nez pendant 4 secondes... (1... 2... 3... 4) [Bouton : Suivant]
+    U->>B: Clic sur [Suivant]
+    B->>U: ⏹️ 2. Retenez votre souffle pendant 4 secondes... (1... 2... 3... 4) [Bouton : Suivant]
+    U->>B: Clic sur [Suivant]
+    B->>U: 🌬️ 3. Expirez lentement par la bouche pendant 4 secondes... (1... 2... 3... 4) [Bouton : Suivant]
+    U->>B: Clic sur [Suivant]
+    B->>U: ⏹️ 4. Gardez les poumons vides pendant 4 secondes... (1... 2... 3... 4)
+    B->>U: Bravo ! Souhaitez-vous refaire un cycle ou passer aux conseils ?
+```
+
+#### 4.3.2 Exercice 2 : Technique d'Ancrage Sensoriel 5-4-3-2-1
+
+*Cet exercice permet de ramener l'attention dans l'instant présent et de sortir des pensées anxieuses.*
+
+* **Étape 1 (Vue) :** « Regardez autour de vous. Repérez et nommez **5 objets** (ex: une chaise, une lampe, un stylo...). Cliquez quand c'est fait. » [Bouton : C'est fait ➡️]
+* **Étape 2 (Toucher) :** « Touchez **4 textures différentes** autour de vous (votre vêtement, le bureau, du métal, vos cheveux...). » [Bouton : C'est fait ➡️]
+* **Étape 3 (Ouïe) :** « Écoutez attentivement. Identifiez **3 sons** distincts autour de vous (le vent, une voiture, un bruit de clavier...). » [Bouton : C'est fait ➡️]
+* **Étape 4 (Odorat) :** « Concentrez-vous et essayez de sentir **2 odeurs** (votre parfum, le papier, un café...). » [Bouton : C'est fait ➡️]
+* **Étape 5 (Goût / Sensation) :** « Prenez conscience d'**1 sensation physique** (le contact de vos pieds sur le sol ou votre respiration). » [Bouton : Terminer 🌟]
+
+---
+
+### 4.4 Psychoéducation simple : Comprendre ses réactions face au traumatisme numérique
+
+> **Bot :** Il est très utile de comprendre ce qui se passe dans votre corps et votre esprit :
+>
+> 🔹 **La sidération :** Rester bloqué(e) ou incapable de réagir immédiatement est une réaction neurologique réflexe, pas de la faiblesse.
+> 🔹 **L'hypervigilance :** Regarder son téléphone en permanence ou sursauter à chaque notification est une réaction de défense normale de votre cerveau.
+> 🔹 **La culpabilité inversée :** Les cyberagresseurs utilisent souvent le chantage émotionnel pour vous faire croire que tout est de votre faute. **C'est une manipulation**.
+>
+> En comprenant ces mécanismes, on réduit la peur et on commence à reprendre le dessus.
+
+---
+
+### 4.5 Orientation et soutien humain spécialisé
+
+> **Bot :** Si vous ressentez le besoin d'échanger avec une personne bienveillante et formée :
+>
+> 📞 **Écoute & Soutien Psychologique :**
+> - **ONDE (Ligne enfants/jeunes) :** 2511
+> - **E-Helpline EMC :** Assistance spécialisée cyberconfiance.ma
+> - **Lignes d'écoute associatives partenaires** (Soutien psychologique anonyme et gratuit)
+>
+> Souhaitez-vous que nous passions maintenant à la sécurisation de vos comptes et aux démarches légales ?
+
+---
+
+## 5. Cas limites
 
 ### 4.1 Questions hors sujet
 

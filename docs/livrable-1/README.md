@@ -18,17 +18,21 @@ Ce répertoire contient l'ensemble des éléments nécessaires au contenu conver
 | [base_questions_reponses_ar.md](./base_questions_reponses_ar.md) | 28 questions-réponses validées en **arabe / darija** (9 catégories) |
 | [mots_cles_declencheurs.md](./mots_cles_declencheurs.md) | Matrice complète des mots-clés associés à chaque question (FR + AR) — ~185 FR / ~165 AR |
 | [sources_etude.md](./sources_etude.md) | Synthèse de l'étude des ressources EMC (cyberconfiance.ma, evigilance.ma, chatbot Beta) |
+| [scenarios_conversationnels.md](../scenarios_conversationnels.md) | **[Enrichi]** Parcours 5 Personas + Module de soutien psychologique interactif (Météo des émotions, exercices guidés pas-à-pas, psychoéducation) |
 
-## 🎯 Objectif
+## 🎯 Objectif & Enrichissements (Retour Encadrement - Mme Belaous)
 
-Rassembler le contenu du chatbot **avant de coder quoi que ce soit** :
-1. Étudier les ressources EMC (cyberconfiance.ma, evigilance.ma) et le chatbot Beta existant
-2. Rédiger 15 à 20 questions fréquentes et leurs réponses validées
-3. Définir les mots-clés qui déclenchent chaque réponse
+1. **Parcours conversationnels multi-profils (5 Personas) :** Victime, Parent inquiet, Enseignant/Éducateur, Témoin, Jeune (Information & Prévention).
+2. **Soutien émotionnel & Accompagnement psychologique :**
+   - Évaluation « Météo des émotions » (Panique, Anxiété, Tristesse/Honte, Colère, Perdu).
+   - Messages de validation et de normalisation des émotions.
+   - Exercices guidés d'ancrage et de respiration **interactifs pas-à-pas** (Respiration carrée 4-4-4-4, Ancrage sensoriel 5-4-3-2-1).
+   - Psychoéducation sur le traumatisme numérique et la culpabilité inversée.
+   - Orientation douce vers le soutien humain et psychologique spécialisé.
 
 ## ✅ Point de contrôle encadrant
 
-> Vérifier que les réponses sont **justes**, **bienveillantes** et **adaptées à des victimes**.
+> **Statut :** 🟢 **Enrichi suite aux retours de Mme Fadwa BELAOUS** — Intégration de l'accompagnement psychologique interactif et des parcours multi-profils.
 
 ## 📚 Ressources utilisées
 
@@ -36,4 +40,4 @@ Rassembler le contenu du chatbot **avant de coder quoi que ce soit** :
 - [eVigilance.ma](https://www.evigilance.ma) — Ligne nationale d'assistance (DGSN)
 - [EMC Chatbot Beta](https://emc-chatbot.vercel.app/) — Version Beta du chatbot EMC
 - Base de connaissances du projet : `data/knowledge_base/fr/` et `data/knowledge_base/ar/`
-- Scénarios conversationnels : `docs/scenarios_conversationnels.md`
+- Scénarios conversationnels : [scenarios_conversationnels.md](../scenarios_conversationnels.md)
