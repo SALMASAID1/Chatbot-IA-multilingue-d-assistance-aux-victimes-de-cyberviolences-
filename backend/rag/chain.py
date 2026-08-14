@@ -12,7 +12,7 @@ Includes (aligned with Mme Belaous feedback):
 from typing import Optional, List, Dict
 
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.schema import HumanMessage, AIMessage, SystemMessage
+from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 
 import sys
 from pathlib import Path
@@ -295,7 +295,7 @@ class RAGChain:
 
     def __init__(
         self,
-        model_name: str = "gemini-2.0-flash",
+        model_name: str = "gemini-2.5-flash",
         temperature: float = 0.3,
     ):
         self.retriever = BilingualRetriever()

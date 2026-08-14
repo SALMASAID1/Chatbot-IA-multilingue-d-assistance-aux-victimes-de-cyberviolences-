@@ -3,9 +3,10 @@ from typing import List, Optional
 
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 import sys
+import io
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 from config import (
@@ -82,6 +83,9 @@ def load_vector_store(
 
 # === Full ingestion script ===
 if __name__ == "__main__":
+    # Ensure stdout can handle multilingual (Arabic) output on Windows
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
     from ingestion import load_all_documents, split_documents
 
     # 1. Load documents

@@ -1,6 +1,6 @@
 """Bilingual semantic search with language filtering and cross-lingual fallback."""
 from typing import List, Optional, Tuple
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 import sys
 from pathlib import Path
