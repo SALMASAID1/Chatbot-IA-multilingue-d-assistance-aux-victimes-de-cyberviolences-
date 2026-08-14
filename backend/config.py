@@ -51,6 +51,34 @@ SIMILARITY_THRESHOLD = 0.3  # minimum relevance score
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # ============================================================
+# API Configuration
+# ============================================================
+API_HOST = os.getenv("API_HOST", "0.0.0.0")
+API_PORT = int(os.getenv("API_PORT", "8000"))
+API_VERSION = "1.0.0"
+CORS_ORIGINS = os.getenv(
+    "CORS_ORIGINS", "http://localhost:5173,http://localhost:3000"
+).split(",")
+
+# ============================================================
+# Session configuration
+# ============================================================
+SESSION_TTL_MINUTES = int(os.getenv("SESSION_TTL_MINUTES", "30"))
+MAX_HISTORY_SIZE = int(os.getenv("MAX_HISTORY_SIZE", "50"))
+MAX_MESSAGE_LENGTH = int(os.getenv("MAX_MESSAGE_LENGTH", "2000"))
+
+# ============================================================
+# Rate limiting
+# ============================================================
+RATE_LIMIT_CHAT = os.getenv("RATE_LIMIT_CHAT", "30/minute")
+RATE_LIMIT_ADMIN = os.getenv("RATE_LIMIT_ADMIN", "10/minute")
+
+# ============================================================
+# Redis (optional, for production sessions)
+# ============================================================
+REDIS_URL = os.getenv("REDIS_URL", None)
+
+# ============================================================
 # ChromaDB collection
 # ============================================================
 CHROMA_COLLECTION_NAME = "cyberviolence_knowledge"
