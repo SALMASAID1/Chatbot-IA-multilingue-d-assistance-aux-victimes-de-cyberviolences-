@@ -86,7 +86,10 @@ if __name__ == "__main__":
     # Ensure stdout can handle multilingual (Arabic) output on Windows
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
-    from ingestion import load_all_documents, split_documents
+    try:
+        from rag.ingestion import load_all_documents, split_documents
+    except ImportError:
+        from ingestion import load_all_documents, split_documents
 
     # 1. Load documents
     docs = load_all_documents()
