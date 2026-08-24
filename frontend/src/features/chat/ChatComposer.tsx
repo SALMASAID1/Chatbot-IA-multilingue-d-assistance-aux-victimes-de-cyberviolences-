@@ -115,11 +115,8 @@ export function ChatComposer({
     undefined;
 
   return (
-    <form
-      onSubmit={(event) => void submit(event)}
-      className="sticky bottom-0 z-20 border-t border-line bg-sand-50/95 pt-3 pb-3 backdrop-blur-sm"
-    >
-      <div className="mx-auto w-full max-w-3xl px-4">
+    <form onSubmit={(event) => void submit(event)} className="pt-3 pb-3">
+      <div className="mx-auto w-full max-w-3xl">
         <div className="card flex items-end gap-2 p-2">
           <label htmlFor="chat-message" className="sr-only">
             {t('composer.label')}

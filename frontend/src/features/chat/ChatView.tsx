@@ -1,12 +1,13 @@
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Loader2 } from 'lucide-react';
+import { ArrowDown, Loader2 } from 'lucide-react';
 import { ChatComposer } from './ChatComposer';
 import { ChatNotice } from './ChatNotice';
 import { ChatTimeline } from './ChatTimeline';
 import { WelcomePanel } from './WelcomePanel';
 import { ConfirmDialog } from '@/components/ConfirmDialog';
 import { useChatController } from './useChatController';
+import { useConversationScroll } from './useConversationScroll';
 
 interface Props {
   /** Bumped by the shell when "New conversation" is requested from the header. */
@@ -16,6 +17,7 @@ interface Props {
 export function ChatView({ newConversationToken }: Props) {
   const { t } = useTranslation();
   const chat = useChatController();
+  const scroll = useConversationScroll(chat.messages.length);
   const [pendingPrompt, setPendingPrompt] = useState<string | null>(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [resetToken, setResetToken] = useState(0);
@@ -57,19 +59,37 @@ export function ChatView({ newConversationToken }: Props) {
           isSending={chat.isSending}
           sessionId={chat.sessionId}
           lastUrgentMessageId={chat.lastUrgentMessageId}
+          containerRef={scroll.containerRef}
         />
       ) : (
         <WelcomePanel onSelectSuggestion={setPendingPrompt} />
       )}
 
-      <ChatComposer
-        onSend={chat.send}
-        onCancel={chat.cancel}
-        isSending={chat.isSending}
-        pendingPrompt={pendingPrompt}
-        onPendingPromptConsumed={() => setPendingPrompt(null)}
-        resetToken={resetToken}
-      />
+      {/* One sticky footer holds both affordances, so the "new answer" button
+          can never sit underneath the composer. */}
+      <div className="sticky bottom-0 z-20 -mx-4 border-t border-line bg-sand-50/95 px-4 backdrop-blur-sm">
+        {scroll.hasUnseen ? (
+          <div className="flex justify-center pt-3">
+            <button
+              type="button"
+              onClick={() => scroll.scrollToBottom('smooth')}
+              className="tap-target flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-navy-800 shadow-raised"
+            >
+              <ArrowDown aria-hidden="true" className="size-4" />
+              {t('chat.newMessages')}
+            </button>
+          </div>
+        ) : null}
+
+        <ChatComposer
+          onSend={chat.send}
+          onCancel={chat.cancel}
+          isSending={chat.isSending}
+          pendingPrompt={pendingPrompt}
+          onPendingPromptConsumed={() => setPendingPrompt(null)}
+          resetToken={resetToken}
+        />
+      </div>
 
       <ConfirmDialog
         open={confirmOpen}

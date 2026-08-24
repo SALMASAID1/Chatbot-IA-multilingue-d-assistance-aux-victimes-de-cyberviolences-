@@ -18,6 +18,16 @@ if (!Element.prototype.scrollIntoView) {
   Element.prototype.scrollIntoView = vi.fn();
 }
 
+// jsdom implements neither scrolling nor ResizeObserver.
+window.scrollTo = vi.fn() as unknown as typeof window.scrollTo;
+if (!('ResizeObserver' in window)) {
+  (window as unknown as { ResizeObserver: unknown }).ResizeObserver = class {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  };
+}
+
 // jsdom has no clipboard. `userEvent.setup()` installs a working stub of its
 // own on top of this, which is what the copy test asserts against.
 beforeEach(() => {
