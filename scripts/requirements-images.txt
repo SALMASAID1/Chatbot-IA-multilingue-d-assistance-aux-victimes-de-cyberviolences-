@@ -1,0 +1,4 @@
+# Dependencies for scripts/fetch_google_images.py
+# Install with:  venv/bin/pip install -r scripts/requirements-images.txt
+requests>=2.31.0
+Pillow>=10.3.0

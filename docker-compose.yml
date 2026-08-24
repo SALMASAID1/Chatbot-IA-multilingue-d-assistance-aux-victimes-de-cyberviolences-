@@ -23,5 +23,21 @@ services:
       - redis_data:/data
     restart: unless-stopped
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # Empty => the app calls same-origin "/api/...", which nginx proxies to
+        # the api service below. No secret is ever passed as a build arg.
+        VITE_API_BASE_URL: ""
+    ports:
+      - "5173:8080"
+    environment:
+      API_UPSTREAM: http://api:8000
+    depends_on:
+      - api
+    restart: unless-stopped
+
 volumes:
   redis_data:

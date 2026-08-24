@@ -1,0 +1,178 @@
+{
+  "app": {
+    "title": "EMC Helpline",
+    "subtitle": "Espace Maroc Cyberconfiance",
+    "skipToContent": "Aller au contenu principal",
+    "mainLabel": "Conversation avec l’assistant",
+    "footerNote": "Service d’information et d’orientation. Ne remplace pas les services d’urgence."
+  },
+  "header": {
+    "newConversation": "Nouvelle conversation",
+    "help": "Aide et ressources",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "menuLabel": "Menu principal"
+  },
+  "language": {
+    "label": "Langue de l’interface",
+    "change": "Changer la langue",
+    "fr": "Français",
+    "ar": "العربية",
+    "ary": "الدارجة",
+    "arLabel": "Arabe",
+    "aryLabel": "Darija marocaine",
+    "note": "Vous pouvez écrire dans la langue de votre choix : la réponse suivra votre message."
+  },
+  "status": {
+    "label": "État du service",
+    "checking": "Vérification du service…",
+    "online": "Service disponible",
+    "degraded": "Service partiellement disponible",
+    "offline": "Vous êtes hors ligne",
+    "unreachable": "Service momentanément injoignable",
+    "degradedDetail": "L’assistant peut répondre plus lentement ou de façon incomplète. Les numéros d’urgence ci-dessous restent valables.",
+    "offlineDetail": "Vérifiez votre connexion. Les numéros d’urgence fonctionnent même sans internet.",
+    "unreachableDetail": "Nous n’arrivons pas à joindre le service. Les numéros d’urgence ci-dessous restent valables.",
+    "showEmergency": "Voir les numéros d’urgence"
+  },
+  "welcome": {
+    "greeting": "Bonjour, vous êtes au bon endroit.",
+    "intro": "Cet assistant vous informe et vous oriente en cas de cyberviolence au Maroc : cyberharcèlement, chantage, diffusion d’images, usurpation d’identité, ou simplement un doute.",
+    "howToStart": "Écrivez ce que vous vivez, avec vos mots. Il n’y a pas de bonne façon de commencer.",
+    "privacyTitle": "Confidentialité",
+    "privacyBody": "Votre conversation n’est pas enregistrée sur cet appareil. Elle disparaît lorsque vous fermez l’onglet ou lancez une nouvelle conversation.",
+    "disclaimerTitle": "Ce service ne remplace pas une aide humaine",
+    "disclaimerBody": "L’assistant ne remplace ni la police, ni les secours, ni un avocat, ni un professionnel de santé mentale. En cas de danger immédiat, appelez le 19.",
+    "suggestionsTitle": "Par où commencer ?",
+    "imageAlt": "Illustration apaisante : formes douces évoquant un espace protégé et confidentiel."
+  },
+  "suggestions": {
+    "protectAccounts": {
+      "title": "Protéger mes comptes",
+      "description": "Sécuriser mes accès et reprendre le contrôle",
+      "prompt": "Comment sécuriser mes comptes en ligne après une cyberviolence ?"
+    },
+    "report": {
+      "title": "Signaler un contenu",
+      "description": "Faire retirer une publication ou un compte nuisible",
+      "prompt": "Comment signaler un contenu qui me nuit sur les réseaux sociaux au Maroc ?"
+    },
+    "evidence": {
+      "title": "Conserver les preuves",
+      "description": "Garder une trace utile pour une plainte",
+      "prompt": "Comment conserver correctement les preuves d’une cyberviolence ?"
+    },
+    "helpOther": {
+      "title": "Aider quelqu’un",
+      "description": "Soutenir un proche, un enfant ou un élève",
+      "prompt": "Comment aider une personne proche victime de cyberviolence ?"
+    }
+  },
+  "composer": {
+    "label": "Votre message",
+    "placeholder": "Écrivez votre message…",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours",
+    "cancel": "Annuler la demande",
+    "hint": "Entrée pour envoyer, Maj + Entrée pour aller à la ligne.",
+    "charactersRemaining": "{{remaining}} caractères restants sur {{max}}.",
+    "limitReached": "Limite de {{max}} caractères atteinte.",
+    "emptyMessage": "Écrivez un message avant d’envoyer.",
+    "tooLong": "Votre message dépasse {{max}} caractères. Raccourcissez-le pour l’envoyer."
+  },
+  "chat": {
+    "you": "Vous",
+    "assistant": "Assistant EMC",
+    "preparing": "Préparation d’une réponse…",
+    "preparingHint": "Cela peut prendre quelques secondes.",
+    "copy": "Copier la réponse",
+    "copied": "Réponse copiée",
+    "copyFailed": "Copie impossible",
+    "sources": "Sources consultées",
+    "sourcesCount": "Sources consultées ({{count}})",
+    "sourceCategory": "Catégorie",
+    "sourceRelevance": "Pertinence",
+    "sourceNoPath": "Document de la base de connaissances",
+    "sourcesNote": "Extraits de la base de connaissances EMC utilisés pour composer cette réponse.",
+    "adaptedResponse": "Réponse adaptée à votre situation",
+    "answerLanguage": "Réponse en {{language}}",
+    "answerLanguageDarija": "Réponse en darija",
+    "historyRestored": "Conversation précédente restaurée.",
+    "loadingHistory": "Chargement de la conversation…",
+    "timelineLabel": "Fil de la conversation",
+    "scrollToLatest": "Revenir au dernier message",
+    "newMessages": "Nouvelle réponse disponible",
+    "messageFailed": "Cette question n’a pas pu aboutir.",
+    "retry": "Réessayer"
+  },
+  "newConversation": {
+    "confirmTitle": "Démarrer une nouvelle conversation ?",
+    "confirmBody": "La conversation actuelle sera effacée de cet écran et ne pourra pas être récupérée.",
+    "confirm": "Effacer et recommencer",
+    "cancel": "Garder la conversation",
+    "done": "Nouvelle conversation démarrée."
+  },
+  "feedback": {
+    "question": "Cette réponse vous a-t-elle aidé ?",
+    "helpful": "Oui, cela m’aide",
+    "notHelpful": "Non, pas vraiment",
+    "thanks": "Merci pour votre retour.",
+    "failed": "Votre retour n’a pas pu être envoyé.",
+    "sending": "Envoi du retour…"
+  },
+  "emergency": {
+    "responseTitle": "Aide immédiate",
+    "responseLead": "Si vous êtes en danger maintenant, contactez directement les secours.",
+    "panelLabel": "Réponse d’urgence",
+    "contactsTitle": "Numéros d’urgence au Maroc",
+    "callAction": "Appeler le {{number}}",
+    "callNote": "Aucun appel n’est lancé automatiquement : vous gardez le contrôle.",
+    "openLink": "Ouvrir {{name}}",
+    "police": "Police (en ville)",
+    "gendarmerie": "Gendarmerie Royale (zone rurale)",
+    "civilProtection": "Protection Civile (urgence médicale)",
+    "onde": "ONDE — enfants en danger",
+    "emc": "aide en ligne, gratuite et confidentielle",
+    "evigilance": "signalement en ligne",
+    "eblagh": "signalement DGSN"
+  },
+  "help": {
+    "open": "Aide et ressources",
+    "title": "Aide et ressources",
+    "aboutTitle": "À propos de cet assistant",
+    "aboutBody": "EMC Helpline est un assistant d’information de l’Espace Maroc Cyberconfiance (CMRPI). Il s’appuie sur une base documentaire vérifiée (droit marocain, démarches de signalement, prévention, soutien psychologique) pour vous orienter.",
+    "limitsTitle": "Ses limites",
+    "limitsBody": "Il ne remplace ni la police, ni les secours, ni un avocat, ni un professionnel de santé mentale. Il ne peut pas déposer plainte à votre place ni faire retirer un contenu.",
+    "privacyTitle": "Vos données",
+    "privacyBody": "Aucun compte n’est nécessaire. Le contenu de la conversation n’est pas conservé sur cet appareil et disparaît à la fermeture de l’onglet. Seul un identifiant technique de session est gardé le temps de la visite.",
+    "safetyTitle": "Si vous êtes en danger",
+    "safetyBody": "N’attendez pas la réponse de l’assistant : appelez directement les numéros ci-dessous.",
+    "close": "Fermer"
+  },
+  "errors": {
+    "title": "Une difficulté est survenue",
+    "offline": "Vous semblez hors ligne. Vérifiez votre connexion, puis réessayez.",
+    "timeout": "La réponse met trop de temps à arriver. Réessayez dans un instant.",
+    "aborted": "Demande annulée.",
+    "notFound": "Cette conversation a expiré. Une nouvelle conversation a été démarrée.",
+    "validation": "Ce message ne peut pas être envoyé tel quel. Vérifiez sa longueur, puis réessayez.",
+    "rateLimited": "Trop de messages envoyés coup sur coup. Patientez une minute avant de réessayer.",
+    "unavailable": "L’assistant est momentanément indisponible. Les numéros d’urgence restent joignables.",
+    "server": "Le service rencontre un problème technique. Réessayez dans un instant.",
+    "malformed": "Réponse inattendue du service. Réessayez dans un instant.",
+    "network": "Impossible de joindre le service. Vérifiez votre connexion.",
+    "unknown": "Une erreur inattendue est survenue. Réessayez dans un instant.",
+    "retry": "Réessayer",
+    "dismiss": "Masquer",
+    "boundaryTitle": "L’application a rencontré un problème",
+    "boundaryBody": "Vous pouvez recharger la page. En cas de danger immédiat, appelez le 19.",
+    "reload": "Recharger la page"
+  },
+  "common": {
+    "close": "Fermer",
+    "cancel": "Annuler",
+    "show": "Afficher",
+    "hide": "Masquer",
+    "loading": "Chargement…"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$comment": [
+    "Search concepts for the EMC Helpline welcome visual.",
+    "Every query is written to surface calm, abstract, supportive imagery.",
+    "Results are NEVER auto-approved: appearing in an image search is not a licence.",
+    "Excluded by policy: identifiable faces, minors, crying or cowering victims,",
+    "screenshots of harassment, padlocks over mouths, hooded-hacker cliches."
+  ],
+  "defaults": {
+    "safe_search": true,
+    "country": "ma",
+    "language": "fr",
+    "min_width": 900,
+    "min_height": 500
+  },
+  "queries": [
+    {
+      "id": "supportive-digital-safety-morocco",
+      "query": "supportive digital safety illustration Morocco",
+      "intent": "Welcome hero: reassurance and local relevance."
+    },
+    {
+      "id": "online-privacy-supportive",
+      "query": "online privacy supportive illustration",
+      "intent": "Privacy notice: confidentiality without surveillance imagery."
+    },
+    {
+      "id": "safe-social-media-abstract",
+      "query": "safe social media abstract illustration",
+      "intent": "Reporting guidance: platforms shown abstractly, no logos."
+    },
+    {
+      "id": "calm-confidential-online-help",
+      "query": "calm confidential online help illustration",
+      "intent": "Primary candidate for the welcome panel."
+    },
+    {
+      "id": "parent-teenager-online-safety",
+      "query": "parent helping teenager online safety illustration",
+      "intent": "Parent persona. Approve only if no identifiable minor appears."
+    }
+  ]
+}

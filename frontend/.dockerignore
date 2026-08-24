@@ -1,0 +1,20 @@
+node_modules
+dist
+coverage
+playwright-report
+test-results
+.vite
+*.tsbuildinfo
+
+# Never bake local environment files into an image
+.env
+.env.local
+.env.*.local
+
+.git
+.gitignore
+Dockerfile
+.dockerignore
+e2e
+playwright.config.ts
+README.md

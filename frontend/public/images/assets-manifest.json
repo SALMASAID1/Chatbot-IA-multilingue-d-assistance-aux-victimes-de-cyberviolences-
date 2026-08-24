@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "assets": [],
+  "generated_at": "2026-08-24T19:55:45+00:00",
+  "policy": {
+    "approval_required": true,
+    "usable_status": "approved",
+    "note": "The application may only reference assets whose approval_status is \"approved\". Appearance in an image search is not a licence."
+  },
+  "note": "No asset has been fetched: scripts/fetch_google_images.py requires a search API key (SERPAPI_KEY, or GOOGLE_CSE_API_KEY + GOOGLE_CSE_CX) and none is configured in this environment. The welcome panel therefore renders its built-in inline SVG illustration instead of a downloaded image."
+}
