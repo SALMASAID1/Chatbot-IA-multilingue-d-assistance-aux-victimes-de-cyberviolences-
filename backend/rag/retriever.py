@@ -1,4 +1,6 @@
-"""Bilingual semantic search with language filtering and cross-lingual fallback."""
+"""Bilingual semantic search with language filtering and lexical reranking."""
+import io
+import re
 from typing import List, Optional, Tuple
 from langchain_core.documents import Document
 
@@ -42,6 +44,7 @@ class BilingualRetriever:
             List of tuples (Document, similarity_score)
         """
         k = top_k or self.top_k
+        candidate_k = max(k * 4, 12)
 
         # Build ChromaDB filter
         where_filter = {"langue": langue}
@@ -56,14 +59,62 @@ class BilingualRetriever:
         # Search with scores
         results = self.vector_store.similarity_search_with_relevance_scores(
             query=query,
-            k=k,
+            k=candidate_k,
             filter=where_filter,
         )
 
-        # Filter by relevance threshold
-        filtered = [(doc, score) for doc, score in results if score >= self.threshold]
+        # The multilingual embedding model can under-rank short Arabic queries.
+        # Combine semantic similarity with exact terms in curated metadata/content.
+        reranked = []
+        query_terms = self._meaningful_terms(query)
+        for doc, semantic_score in results:
+            metadata_text = " ".join((
+                str(doc.metadata.get("mots_cles", "")),
+                str(doc.metadata.get("relative_path", "")),
+                str(doc.metadata.get("categorie", "")),
+            )).lower()
+            content_text = doc.page_content.lower()
+
+            if query_terms:
+                metadata_overlap = sum(
+                    term in metadata_text for term in query_terms
+                ) / len(query_terms)
+                content_overlap = sum(
+                    term in content_text for term in query_terms
+                ) / len(query_terms)
+            else:
+                metadata_overlap = 0.0
+                content_overlap = 0.0
+
+            combined_score = min(
+                1.0,
+                semantic_score + (0.12 * metadata_overlap) + (0.04 * content_overlap),
+            )
+            reranked.append((doc, combined_score))
+
+        reranked.sort(key=lambda item: item[1], reverse=True)
+        filtered = [
+            (doc, score)
+            for doc, score in reranked
+            if score >= self.threshold
+        ][:k]
 
         return filtered
+
+    @staticmethod
+    def _meaningful_terms(text: str) -> set[str]:
+        """Extract useful French/Arabic terms for lightweight lexical reranking."""
+        stop_words = {
+            "je", "j", "de", "du", "des", "le", "la", "les", "un", "une",
+            "mes", "mon", "ma", "est", "sont", "que", "qui", "quoi", "comment",
+            "أريد", "اريد", "ما", "هو", "هي", "من", "في", "على", "كيف", "واش",
+        }
+        terms = {
+            term
+            for term in re.findall(r"[\w\u0600-\u06FF]+", text.lower())
+            if len(term) > 1 and term not in stop_words
+        }
+        return terms
 
     def search_with_fallback(
         self,
@@ -113,6 +164,8 @@ class BilingualRetriever:
 
 # === Test the retriever ===
 if __name__ == "__main__":
+    # Ensure the Windows terminal can display Arabic test queries and results.
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
     retriever = BilingualRetriever()
 
     test_queries = [

@@ -125,21 +125,27 @@ def _parse_qa_document(file_path: Path, langue: str) -> List[Document]:
     if not content.strip():
         return []
 
-    # Split on Q&A headings (### Q1, ### Q2, etc.)
-    qa_blocks = re.split(r'(?=### Q\d+)', content)
+    # Split on French headings (### Q1) and Arabic headings (### س1).
+    heading_pattern = r'(?=###\s+(?:Q|س)\s*\d+)'
+    qa_blocks = re.split(heading_pattern, content)
     documents = []
 
     for block in qa_blocks:
         block = block.strip()
-        if not block or not block.startswith("### Q"):
+        if not block or not re.match(r'###\s+(?:Q|س)\s*\d+', block):
             continue
 
         # Extract question number
-        q_match = re.match(r'### (Q\d+)', block)
-        q_num = q_match.group(1) if q_match else "Q?"
+        q_match = re.match(r'###\s+((?:Q|س)\s*\d+)', block)
+        number_match = re.search(r'\d+', q_match.group(1)) if q_match else None
+        q_num = f"Q{number_match.group(0)}" if number_match else "Q?"
 
         # Extract category from the text if present
-        cat_match = re.search(r'\*\*Cat.gorie\s*:\*\*\s*`([^`]+)`', block)
+        cat_match = re.search(
+            r'\*\*(?:Cat.gorie|الفئة)\s*:\*\*\s*`([^`]+)`',
+            block,
+            flags=re.IGNORECASE,
+        )
         categorie = cat_match.group(1) if cat_match else "qa_base"
 
         doc_metadata = {

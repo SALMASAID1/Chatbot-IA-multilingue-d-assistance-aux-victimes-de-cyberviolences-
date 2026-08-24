@@ -52,6 +52,26 @@ async def lifespan(app: FastAPI):
     store = get_session_store()
     logger.info(f"Session store initialized: {store.__class__.__name__}")
 
+    # Warm the cached embedding model/vector store before accepting chat traffic.
+    # If the model is not cached yet, keep startup available and report degraded
+    # health until the first download succeeds.
+    try:
+        from rag.embeddings import get_vector_store_status, load_vector_store
+
+        rag_status = get_vector_store_status()
+        if rag_status == "healthy":
+            await asyncio.to_thread(load_vector_store)
+            # Import prompts and initialize the shared Gemini HTTP client now,
+            # so the first user message does not pay this setup cost.
+            from rag.chain import RAGChain
+            warm_chain = RAGChain()
+            _ = warm_chain.provider
+            logger.info("RAG vector store warmed and ready")
+        else:
+            logger.warning(f"RAG warmup skipped: status={rag_status}")
+    except Exception as exc:
+        logger.error(f"RAG warmup failed: {exc}")
+
     # Start session cleanup background task
     cleanup_task = asyncio.create_task(session_cleanup_task(store))
     logger.info("Session cleanup task started (every 5 minutes)")

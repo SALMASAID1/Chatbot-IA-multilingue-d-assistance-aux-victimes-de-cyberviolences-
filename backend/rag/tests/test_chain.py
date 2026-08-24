@@ -1,4 +1,5 @@
 """Unit tests for the RAG chain, urgency detection, and profile detection."""
+import os
 import pytest
 from pathlib import Path
 
@@ -89,11 +90,176 @@ class TestProfileDetection:
         from rag.chain import detect_profile
         assert detect_profile("\u062e\u0627\u064a\u0641 \u0628\u0632\u0627\u0641", "ar") == "detresse_emotionnelle"
 
+    @pytest.mark.parametrize(
+        "message",
+        [
+            "Je suis brisée et je ne sais plus quoi faire",
+            "Je me sens détruit depuis cette histoire",
+            "Je n'en peux plus, je suis à bout",
+            "Je me sens effondré et seul",
+        ],
+    )
+    def test_detects_broken_or_overwhelmed_french_user(self, message):
+        from rag.chain import detect_profile
+
+        assert detect_profile(message, "fr") == "detresse_emotionnelle"
+
+    def test_detects_broken_arabic_user(self):
+        from rag.chain import detect_profile
+
+        assert detect_profile("أنا منهارة ومخنوقة", "ar") == "detresse_emotionnelle"
+
+    def test_detects_distressed_latin_darija_user(self):
+        from rag.chain import detect_profile
+
+        assert detect_profile("ana m9hora o kanbki bzaf", "ar") == "detresse_emotionnelle"
+
+
+class TestSocialMediaReportingResources:
+    """Tests for mandatory reporting when active harm occurs on social media."""
+
+    def test_parent_cyberharassment_requires_priority_reporting(self):
+        from rag.chain import needs_social_media_reporting
+
+        assert needs_social_media_reporting(
+            "Mon enfant de 13 ans est harcelé sur les réseaux.",
+            "fr",
+        ) is True
+
+    def test_adult_social_media_harm_requires_priority_reporting(self):
+        from rag.chain import needs_social_media_reporting
+
+        assert needs_social_media_reporting(
+            "Mes photos ont été publiées sans mon accord sur Telegram.",
+            "fr",
+        ) is True
+
+    def test_generic_social_media_prevention_does_not_force_reporting(self):
+        from rag.chain import needs_social_media_reporting
+
+        assert needs_social_media_reporting(
+            "Comment sécuriser mon compte Facebook ?",
+            "fr",
+        ) is False
+
+    def test_missing_resources_are_appended_with_exact_urls(self):
+        from rag.chain import ensure_social_media_reporting
+
+        answer = ensure_social_media_reporting(
+            "Je comprends votre inquiétude.",
+            "fr",
+        )
+
+        assert "Conservez les preuves" in answer
+        assert "réseau social" in answer
+        assert "https://evigilance.ma/fr/signaler" in answer
+        assert "https://www.cyberconfiance.ma" in answer
+        assert "2511" not in answer
+
+    def test_onde_is_added_only_for_child_context(self):
+        from rag.chain import ensure_social_media_reporting
+
+        answer = ensure_social_media_reporting(
+            "Je comprends votre inquiétude.",
+            "fr",
+            include_onde=True,
+        )
+
+        assert "2511" in answer
+
+    def test_existing_resources_are_not_duplicated(self):
+        from rag.chain import ensure_social_media_reporting
+
+        answer = (
+            "Conservez les preuves et signalez le compte sur le réseau.\n"
+            "https://evigilance.ma/fr/signaler\n"
+            "https://www.cyberconfiance.ma"
+        )
+
+        assert ensure_social_media_reporting(answer, "fr") == answer
+
+
+class TestEmotionalSupportPriority:
+    """Tests that emotional support appears before operational actions."""
+
+    def test_cold_answer_receives_supportive_opening(self):
+        from rag.chain import ensure_emotional_support
+
+        answer = ensure_emotional_support(
+            "Signalez immédiatement le compte sur la plateforme.",
+            "fr",
+        )
+
+        assert answer.startswith("Je suis désolé")
+        assert answer.index("Je suis désolé") < answer.index("Signalez")
+
+    def test_existing_supportive_opening_is_not_duplicated(self):
+        from rag.chain import ensure_emotional_support
+
+        answer = "Je comprends votre douleur. Vous n'êtes pas seul(e)."
+        assert ensure_emotional_support(answer, "fr") == answer
+
+    def test_distress_precedes_social_media_reporting_in_final_answer(
+        self,
+        monkeypatch,
+    ):
+        from unittest.mock import MagicMock
+        from rag import chain as chain_module
+
+        retriever = MagicMock()
+        retriever.search_with_fallback.return_value = []
+        retriever.format_context.return_value = "Contexte cyberviolence."
+        monkeypatch.setattr(chain_module, "BilingualRetriever", lambda: retriever)
+
+        rag_chain = chain_module.RAGChain()
+        rag_chain._provider = MagicMock()
+        rag_chain._provider.generate.return_value = "Signalez le compte Instagram."
+
+        result = rag_chain.ask(
+            "Je suis brisée, mes photos ont été publiées sur Instagram.",
+            langue="fr",
+        )
+
+        assert result["user_profile"] == "detresse_emotionnelle"
+        assert result["answer"].startswith("Je suis désolé")
+        assert result["answer"].index("Je suis désolé") < result["answer"].index("Signalez")
+        assert "https://evigilance.ma/fr/signaler" in result["answer"]
+
+    def test_parent_cyberharassment_answer_guarantees_resources_and_onde(
+        self,
+        monkeypatch,
+    ):
+        from unittest.mock import MagicMock
+        from rag import chain as chain_module
+
+        retriever = MagicMock()
+        retriever.search_with_fallback.return_value = []
+        retriever.format_context.return_value = "Contexte cyberharcelement."
+        monkeypatch.setattr(chain_module, "BilingualRetriever", lambda: retriever)
+
+        rag_chain = chain_module.RAGChain()
+        rag_chain._provider = MagicMock()
+        rag_chain._provider.generate.return_value = (
+            "Je comprends votre inquiétude. Conservez les preuves."
+        )
+
+        result = rag_chain.ask(
+            "Mon enfant de 13 ans est harcelé sur les réseaux. Que faire ?",
+            langue="fr",
+        )
+
+        assert result["user_profile"] == "parent"
+        assert "https://evigilance.ma/fr/signaler" in result["answer"]
+        assert "https://www.cyberconfiance.ma" in result["answer"]
+        assert "2511" in result["answer"]
+
 
 # Skip API-dependent tests if no key configured
 pytestmark_api = pytest.mark.skipif(
-    not GOOGLE_API_KEY or GOOGLE_API_KEY == "your-gemini-api-key-here",
-    reason="GOOGLE_API_KEY not configured in .env"
+    os.getenv("RUN_LIVE_LLM_TESTS") != "1"
+    or not GOOGLE_API_KEY
+    or GOOGLE_API_KEY == "your-gemini-api-key-here",
+    reason="Set RUN_LIVE_LLM_TESTS=1 to spend quota on live Gemini tests",
 )
 
 

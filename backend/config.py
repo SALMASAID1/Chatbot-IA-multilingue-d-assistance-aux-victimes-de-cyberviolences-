@@ -35,20 +35,43 @@ CHUNK_OVERLAP = 50        # overlap between chunks
 # Embedding model
 # ============================================================
 # Multilingual FR/AR -- good balance between performance and size
-EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+EMBEDDING_MODEL = os.getenv(
+    "EMBEDDING_MODEL",
+    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+)
+# auto: prefer a complete local Hugging Face snapshot, otherwise download it.
+# true: require a local snapshot. false: always resolve through Hugging Face.
+EMBEDDING_LOCAL_FILES_ONLY = os.getenv(
+    "EMBEDDING_LOCAL_FILES_ONLY", "auto"
+).strip().lower()
 # Alternative, more accurate but heavier:
 # EMBEDDING_MODEL = "intfloat/multilingual-e5-large"
 
 # ============================================================
 # Retriever parameters
 # ============================================================
-TOP_K = 4                 # number of chunks returned
-SIMILARITY_THRESHOLD = 0.3  # minimum relevance score
+TOP_K = int(os.getenv("TOP_K", "3"))
+SIMILARITY_THRESHOLD = float(os.getenv("SIMILARITY_THRESHOLD", "0.15"))
 
 # ============================================================
 # API Keys
 # ============================================================
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
+GEMINI_FALLBACK_MODELS = [
+    model.strip()
+    for model in os.getenv(
+        "GEMINI_FALLBACK_MODELS",
+        "gemini-3.1-flash-lite,gemini-3.6-flash",
+    ).split(",")
+    if model.strip()
+]
+GEMINI_MAX_OUTPUT_TOKENS = int(os.getenv("GEMINI_MAX_OUTPUT_TOKENS", "300"))
+GEMINI_REQUEST_TIMEOUT_SECONDS = float(
+    os.getenv("GEMINI_REQUEST_TIMEOUT_SECONDS", "20")
+)
+GEMINI_MAX_RETRIES = int(os.getenv("GEMINI_MAX_RETRIES", "1"))
+GEMINI_THINKING_LEVEL = os.getenv("GEMINI_THINKING_LEVEL", "minimal")
 
 # ============================================================
 # API Configuration

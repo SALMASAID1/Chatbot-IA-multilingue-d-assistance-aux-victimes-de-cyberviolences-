@@ -22,7 +22,7 @@ from config import (
     URGENCY_KEYWORDS_FR, URGENCY_KEYWORDS_AR,
     EMERGENCY_RESPONSE_FR, EMERGENCY_RESPONSE_AR,
 )
-from llm.gemini_provider import GeminiProvider
+from llm.gemini_provider import GeminiProvider, get_gemini_provider
 from rag.retriever import BilingualRetriever
 
 logger = logging.getLogger(__name__)
@@ -61,9 +61,222 @@ PROFILE_KEYWORDS = {
                "bloque", "sideree", "sideration", "choc", "traumatisme",
                "cauchemars", "insomnie", "plus envie"],
         "ar": ["خايف", "خايفة", "حشومة", "قلق", "توتر", "صدمة", "نوبة هلع",
-               "كنرتعش", "كنبكي", "ما قدرتش", "نعاس"],
+               "كنرتعش", "كنبكي", "ما قدرتش", "نعاس", "مكسور", "مكسورة",
+               "محطم", "محطمة", "منهار", "منهارة", "ضايع", "ضايعة",
+               "يائس", "يائسة", "تعبت", "بوحدي", "مخنوق", "مخنوقة",
+               "mkhlo3", "mkhlo3a", "khayf", "khayfa", "m9lo9", "m9l9",
+               "mkhno9", "mkhno9a", "m9hor", "m9hora", "ta3bt", "kanbki",
+               "bo7di", "day3", "day3a", "ma9dertch"],
     },
 }
+
+
+EMOTIONAL_DISTRESS_PATTERNS_FR = [
+    r"\bpanique",
+    r"\bstress(?:e|é|ée)?\b",
+    r"\banxi(?:ete|été|eux|euse)\b",
+    r"\bpeur\b",
+    r"\bhonte\b",
+    r"\bhchouma\b",
+    r"\bje (?:suis|me sens) (?:bris[ée]e?|d[ée]truit(?:e)?|effondr[ée]e?|perdu(?:e)?|vid[ée]e?|seul(?:e)?)\b",
+    r"\bje n['’]en peux plus\b",
+    r"\bje ne tiens plus\b",
+    r"\bje n['’]arrive (?:plus|pas)\b",
+    r"\bje (?:pleure|tremble)\b",
+    r"\b(?:submerg|boulevers|d[ée]sesp[ée]r|traumatis|sid[ée]r|insomni|cauchemar)",
+    r"\b(?:bloqu|choc|plus envie)",
+    r"\b(?:je suis|je me sens) mal\b",
+    r"\b(?:a|à) bout\b",
+]
+
+
+EMOTIONAL_SUPPORT_GUIDANCE = {
+    "fr": """--- PRIORITE : PERSONNE EN DETRESSE EMOTIONNELLE ---
+Le soutien emotionnel passe AVANT le signalement et les conseils techniques, sauf danger immediat.
+1. Commence par deux phrases humaines : reconnaitre la souffrance, ne pas culpabiliser et rappeler que la personne n'est pas seule.
+2. Aide-la a retrouver un peu de calme avec UNE action simple et immediate (respiration lente ou ancrage), sans lui donner un long exercice.
+3. Demande si elle est en securite maintenant seulement si son message montre un effondrement important.
+4. Ensuite seulement, donne au maximum deux petites actions pratiques. Les liens de signalement viennent en dernier.
+N'inonde pas une personne submergee d'informations, de lois ou de ressources.""",
+    "ar": """--- أولوية: شخص في ضائقة عاطفية ---
+الدعم النفسي يأتي قبل التبليغ والنصائح التقنية، إلا في حالة الخطر الفوري.
+1. ابدأ بجملتين إنسانيتين تعترفان بالألم، بدون لوم، مع التذكير أن الشخص ليس وحده.
+2. ساعده على الهدوء بخطوة واحدة بسيطة وفورية مثل التنفس البطيء أو تمرين تثبيت، بدون تمرين طويل.
+3. اسأل هل هو في أمان الآن فقط إذا كانت الرسالة تدل على انهيار شديد.
+4. بعد ذلك فقط، أعط خطوتين عمليتين قصيرتين كحد أقصى، وضع روابط التبليغ في النهاية.
+لا تغرق الشخص المتألم بالمعلومات أو القوانين أو لائحة طويلة من الموارد.""",
+}
+
+
+EMOTIONAL_SUPPORT_OPENERS = {
+    "fr": (
+        "Je suis désolé que vous traversiez cela. Ce que vous ressentez "
+        "compte, ce n'est pas votre faute et vous n'avez pas à l'affronter seul(e)."
+    ),
+    "ar": (
+        "أنا آسف لأنك تمر بهذه المعاناة. إحساسك مهم، وما وقع ليس خطأك، "
+        "ولست مضطرا لمواجهة هذا وحدك."
+    ),
+}
+
+
+ONLINE_HARM_KEYWORDS = {
+    "fr": [
+        "harcel", "menac", "chantage", "intimid", "humili", "dox",
+        "photo", "video", "contenu", "faux compte", "grooming",
+        "prédateur", "predateur", "agress", "diffam", "insult", "usurp",
+        "pirat", "sextors", "intime", "publie", "publié", "partage sans",
+    ],
+    "ar": [
+        "تنمر", "تحرش", "تهديد", "يهدد", "ابتزاز", "تخويف", "إهانة",
+        "اهانة", "صور", "فيديو", "محتوى", "حساب مزيف", "عنف", "تشهير",
+        "سب", "انتحال", "اختراق", "نشر", "شارك",
+    ],
+}
+
+
+SOCIAL_MEDIA_KEYWORDS = {
+    "fr": [
+        "réseau", "reseau", "facebook", "instagram", "tiktok", "whatsapp",
+        "telegram", "snapchat", "twitter", "youtube", "plateforme",
+        "en ligne", "internet", "compte", "profil", "publication",
+        "message", "groupe",
+    ],
+    "ar": [
+        "شبكة", "شبكات", "فيسبوك", "انستغرام", "إنستغرام", "تيك توك",
+        "واتساب", "تلغرام", "سناب", "تويتر", "يوتيوب", "منصة",
+        "الانترنت", "الإنترنت", "حساب", "بروفايل", "منشور", "رسالة",
+        "مجموعة",
+    ],
+}
+
+
+IMPLICIT_SOCIAL_MEDIA_HARM_KEYWORDS = {
+    "fr": ["cyberharcel", "sextors", "dox", "faux compte"],
+    "ar": ["تنمر إلكتروني", "تنمر الكتروني", "ابتزاز إلكتروني", "ابتزاز الكتروني"],
+}
+
+
+SOCIAL_MEDIA_REPORTING_GUIDANCE = {
+    "fr": """--- PRIORITE : PROBLEME ACTIF SUR UN RESEAU SOCIAL ---
+La reponse doit rester courte et suivre cet ordre :
+1. Rassurer la personne sans la culpabiliser.
+2. Conserver les preuves, puis signaler le contenu et le compte directement sur le reseau social concerne.
+3. Donner obligatoirement ces deux recours exacts :
+   - Signalement eVigilance : https://evigilance.ma/fr/signaler
+   - Aide EMC/Cyberconfiance : https://www.cyberconfiance.ma
+Si un enfant est implique, ajouter ONDE : 2511 et rappeler au parent de ne pas confisquer son appareil.
+Ne remplace pas ces liens par des domaines inventes et ne noie pas ces priorites dans une longue liste.""",
+    "ar": """--- أولوية: مشكلة قائمة على شبكة اجتماعية ---
+يجب أن يكون الجواب قصيرا وبهذا الترتيب:
+1. طمأنة الشخص وعدم لومه.
+2. حفظ الأدلة، ثم التبليغ عن المحتوى والحساب داخل الشبكة الاجتماعية المعنية.
+3. ذكر هاتين الجهتين بالضبط:
+   - التبليغ عبر eVigilance: https://evigilance.ma/fr/signaler
+   - المساعدة عبر EMC/Cyberconfiance: https://www.cyberconfiance.ma
+إذا كان طفل معنيا، أضف مرصد حقوق الطفل ONDE: 2511 وذكّر الوالد بعدم مصادرة جهازه.
+لا تستبدل هذه الروابط بروابط مخترعة ولا تضف لائحة طويلة تحجب الأولويات.""",
+}
+
+
+def needs_social_media_reporting(message: str, langue: str = "fr") -> bool:
+    """Return whether active social-media harm should prioritize reporting."""
+    message_lower = message.lower()
+    harm_keywords = ONLINE_HARM_KEYWORDS.get(langue, ONLINE_HARM_KEYWORDS["fr"])
+    social_keywords = SOCIAL_MEDIA_KEYWORDS.get(
+        langue,
+        SOCIAL_MEDIA_KEYWORDS["fr"],
+    )
+    implicit_keywords = IMPLICIT_SOCIAL_MEDIA_HARM_KEYWORDS.get(
+        langue,
+        IMPLICIT_SOCIAL_MEDIA_HARM_KEYWORDS["fr"],
+    )
+    has_implicit_online_harm = any(
+        keyword in message_lower for keyword in implicit_keywords
+    )
+    has_harm = any(keyword in message_lower for keyword in harm_keywords)
+    mentions_social_media = any(
+        keyword in message_lower for keyword in social_keywords
+    )
+    return has_implicit_online_harm or (has_harm and mentions_social_media)
+
+
+def ensure_social_media_reporting(
+    answer: str,
+    langue: str = "fr",
+    include_onde: bool = False,
+) -> str:
+    """Append omitted reporting actions/resources for social-media harm."""
+    missing_resources = []
+    answer_lower = answer.lower()
+    if langue == "fr":
+        mentions_evidence = "preuve" in answer_lower or "capture" in answer_lower
+        mentions_platform_report = (
+            "signal" in answer_lower
+            and any(term in answer_lower for term in ("réseau", "reseau", "plateforme", "compte", "contenu"))
+        )
+        if not mentions_evidence:
+            missing_resources.append("- Conservez les preuves et captures d'écran.")
+        if not mentions_platform_report:
+            missing_resources.append(
+                "- Signalez le contenu et le compte directement sur le réseau social."
+            )
+    else:
+        mentions_evidence = "دليل" in answer or "أدلة" in answer or "الأدلة" in answer
+        mentions_platform_report = (
+            ("بلغ" in answer or "تبليغ" in answer)
+            and any(term in answer for term in ("شبكة", "منصة", "حساب", "محتوى"))
+        )
+        if not mentions_evidence:
+            missing_resources.append("- احتفظ بالأدلة ولقطات الشاشة.")
+        if not mentions_platform_report:
+            missing_resources.append("- بلّغ عن المحتوى والحساب داخل الشبكة الاجتماعية.")
+
+    if "evigilance.ma/fr/signaler" not in answer.lower():
+        missing_resources.append(
+            "- eVigilance : https://evigilance.ma/fr/signaler"
+        )
+    if "cyberconfiance.ma" not in answer.lower():
+        missing_resources.append(
+            "- EMC/Cyberconfiance : https://www.cyberconfiance.ma"
+        )
+    if include_onde and "2511" not in answer:
+        onde_label = "ONDE (enfant)" if langue == "fr" else "ONDE للأطفال"
+        missing_resources.append(f"- {onde_label} : 2511")
+
+    if not missing_resources:
+        return answer
+
+    heading = (
+        "À faire en priorité — signalement et aide :"
+        if langue == "fr"
+        else "الأولوية — التبليغ والمساعدة:"
+    )
+    return f"{answer.rstrip()}\n\n{heading}\n" + "\n".join(missing_resources)
+
+
+def ensure_emotional_support(answer: str, langue: str = "fr") -> str:
+    """Ensure a distressed user receives human support before action steps."""
+    opening = answer.lstrip()[:350].lower()
+    if langue == "fr":
+        support_markers = (
+            "désolé", "desole", "je comprends", "pas votre faute",
+            "n'est pas votre faute", "pas seul", "soutien", "ressentez",
+        )
+    else:
+        support_markers = (
+            "آسف", "أتفهم", "كنفهم", "لست وحد", "ماشي خطأك",
+            "ليس خطأك", "إحساس", "شعور",
+        )
+
+    if any(marker in opening for marker in support_markers):
+        return answer
+
+    opener = EMOTIONAL_SUPPORT_OPENERS.get(
+        langue,
+        EMOTIONAL_SUPPORT_OPENERS["fr"],
+    )
+    return f"{opener}\n\n{answer.lstrip()}"
 
 
 def detect_profile(message: str, langue: str = "fr") -> str:
@@ -85,18 +298,23 @@ def detect_profile(message: str, langue: str = "fr") -> str:
         pattern = r'(?<![a-zà-ÿ])' + re.escape(kw) + r'(?![a-zà-ÿ])'
         return bool(re.search(pattern, text))
 
-    # Check emotional distress first (highest priority after urgency)
-    for keyword in PROFILE_KEYWORDS["detresse_emotionnelle"].get(langue, []):
-        if _match_keyword(keyword.lower(), message_lower):
+    # Check emotional distress first (highest priority after urgency).
+    if langue == "fr":
+        if any(
+            re.search(pattern, message_lower)
+            for pattern in EMOTIONAL_DISTRESS_PATTERNS_FR
+        ):
             return "detresse_emotionnelle"
+    else:
+        for keyword in PROFILE_KEYWORDS["detresse_emotionnelle"].get(langue, []):
+            if keyword.lower() in message_lower:
+                return "detresse_emotionnelle"
 
     # Check other profiles
     for profile in ["parent", "enseignant", "temoin", "jeune"]:
         for keyword in PROFILE_KEYWORDS[profile].get(langue, []):
             if _match_keyword(keyword.lower(), message_lower):
                 return profile
-
-    return "victim"
 
     return "victim"
 
@@ -155,15 +373,24 @@ class RAGChain:
 
     def __init__(
         self,
-        model_name: str = "gemini-flash-latest",
-        temperature: float = 0.3,
+        model_name: Optional[str] = None,
+        temperature: Optional[float] = None,
     ):
         self.retriever = BilingualRetriever()
-        self.provider = GeminiProvider(
-            model_name=model_name,
-            temperature=temperature,
-        )
+        self._model_name = model_name
+        self._temperature = temperature
+        self._provider: Optional[GeminiProvider] = None
         self.conversation_history: List[Dict[str, str]] = []
+
+    @property
+    def provider(self) -> GeminiProvider:
+        """Initialize Gemini only when a non-urgent message needs it."""
+        if self._provider is None:
+            self._provider = get_gemini_provider(
+                model_name=self._model_name,
+                temperature=self._temperature,
+            )
+        return self._provider
 
     def get_system_prompt(self, langue: str) -> str:
         """Return the system prompt in the correct language."""
@@ -198,6 +425,25 @@ class RAGChain:
         # 0. Detect user profile and urgency
         is_urgent = detect_urgency(question, langue)
         user_profile = detect_profile(question, langue)
+        needs_social_reporting = needs_social_media_reporting(question, langue)
+        involves_child = user_profile in {"parent", "jeune"}
+        needs_emotional_support = user_profile == "detresse_emotionnelle"
+
+        # Safety-critical replies must not wait for retrieval or an external LLM.
+        if is_urgent:
+            answer = (
+                EMERGENCY_RESPONSE_FR if langue == "fr" else EMERGENCY_RESPONSE_AR
+            )
+            self.conversation_history.append({"role": "user", "content": question})
+            self.conversation_history.append({"role": "assistant", "content": answer})
+            return {
+                "answer": answer,
+                "sources": [],
+                "langue": langue,
+                "context_used": answer,
+                "is_urgent": True,
+                "user_profile": user_profile,
+            }
 
         # 1. Retrieve relevant documents
         results = self.retriever.search_with_fallback(question, langue=langue)
@@ -226,6 +472,21 @@ class RAGChain:
             label = profile_labels.get(user_profile, user_profile)
             context = f"--- PROFIL DETECTE : {label} ---\n\n{context}"
 
+        if needs_social_reporting:
+            guidance = SOCIAL_MEDIA_REPORTING_GUIDANCE.get(
+                langue,
+                SOCIAL_MEDIA_REPORTING_GUIDANCE["fr"],
+            )
+            context = f"{guidance}\n\n{context}"
+
+        # Emotional support takes precedence over reporting/technical guidance.
+        if needs_emotional_support:
+            guidance = EMOTIONAL_SUPPORT_GUIDANCE.get(
+                langue,
+                EMOTIONAL_SUPPORT_GUIDANCE["fr"],
+            )
+            context = f"{guidance}\n\n{context}"
+
         # 3. Build prompt
         system_prompt = self.get_system_prompt(langue).format(context=context)
 
@@ -243,6 +504,14 @@ class RAGChain:
 
         # 4. Send to Gemini LLM via provider
         answer = self.provider.generate(messages)
+        if needs_emotional_support:
+            answer = ensure_emotional_support(answer, langue)
+        if needs_social_reporting:
+            answer = ensure_social_media_reporting(
+                answer,
+                langue,
+                include_onde=involves_child,
+            )
 
         # 5. Update history
         self.conversation_history.append({"role": "user", "content": question})

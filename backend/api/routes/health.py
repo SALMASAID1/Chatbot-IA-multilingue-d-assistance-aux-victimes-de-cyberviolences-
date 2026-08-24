@@ -30,19 +30,30 @@ async def health_check():
 
     store = get_session_store()
 
-    # Check RAG pipeline status
-    rag_status = "healthy"
+    # Validate the actual persisted collection and cached embedding readiness.
     try:
-        from config import CHROMA_PERSIST_DIR
-        if not CHROMA_PERSIST_DIR.exists():
-            rag_status = "not_initialized"
+        from rag.embeddings import get_vector_store_status
+        rag_status = get_vector_store_status()
     except Exception:
         rag_status = "error"
 
+    try:
+        from llm.gemini_provider import get_llm_runtime_status
+        llm_status = get_llm_runtime_status()
+    except Exception:
+        llm_status = "error"
+
+    overall_status = (
+        "healthy"
+        if rag_status == "healthy" and llm_status in {"configured", "healthy"}
+        else "degraded"
+    )
+
     return HealthResponse(
-        status="healthy",
+        status=overall_status,
         version=API_VERSION,
         rag_status=rag_status,
+        llm_status=llm_status,
         active_sessions=store.active_count if hasattr(store, "active_count") else 0,
         uptime_seconds=round(time.time() - _start_time, 2),
     )

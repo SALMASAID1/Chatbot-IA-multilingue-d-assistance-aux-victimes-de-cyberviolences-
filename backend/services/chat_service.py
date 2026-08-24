@@ -19,6 +19,14 @@ from services.session_service import get_session_store, Session
 logger = logging.getLogger(__name__)
 
 
+class ChatServiceUnavailableError(RuntimeError):
+    """Raised when the RAG/LLM dependency cannot produce an answer."""
+
+    def __init__(self, langue: str):
+        self.langue = langue
+        super().__init__(_get_error_response(langue))
+
+
 class ChatService:
     """Orchestrates the chat flow between the API layer and the RAG pipeline."""
 
@@ -83,16 +91,8 @@ class ChatService:
                 include_history=True,
             )
         except Exception as e:
-            logger.error(f"RAG pipeline error: {e}")
-            # Return a graceful fallback response
-            rag_result = {
-                "answer": _get_error_response(lang_result.detected_lang),
-                "sources": [],
-                "langue": lang_result.detected_lang,
-                "context_used": "",
-                "is_urgent": False,
-                "user_profile": "victim",
-            }
+            logger.error(f"RAG pipeline error: {e}", exc_info=True)
+            raise ChatServiceUnavailableError(lang_result.detected_lang) from e
 
         # 5. Store messages in session history
         session.add_message("user", message, message_id=f"{message_id}-q")

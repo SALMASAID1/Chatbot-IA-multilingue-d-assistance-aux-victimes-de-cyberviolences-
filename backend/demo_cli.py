@@ -120,7 +120,7 @@ def run_automated_demo():
     scenarios = [
         {
             "title": "SCÉNARIO 1 : Victime de Sextorsion (Français)",
-            "message": "Bonjour, je suis victime de chantage avec des photos intimes. Que dois-je faire ?",
+            "message": "ana ma9hora o knbki chno nder?",
             "pause": 3.0,
         },
         {
@@ -130,7 +130,7 @@ def run_automated_demo():
         },
         {
             "title": "SCÉNARIO 3 : Détection de Situation d'Urgence et Danger Immédiat",
-            "message": "Je suis en danger immédiat, la personne menace de venir chez moi maintenant !",
+            "message": "Quelqu'un me menace de publier mes photos si je ne lui donne pas d'argent. ",
             "pause": 3.0,
         },
         {

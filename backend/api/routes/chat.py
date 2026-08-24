@@ -39,6 +39,7 @@ router = APIRouter(prefix="/api/chat", tags=["Chat"])
     response_model=ChatResponse,
     responses={
         429: {"model": ErrorResponse, "description": "Rate limit exceeded"},
+        503: {"model": ErrorResponse, "description": "RAG/LLM temporarily unavailable"},
         500: {"model": ErrorResponse, "description": "Internal server error"},
     },
     summary="Send a chat message",
@@ -51,11 +52,16 @@ router = APIRouter(prefix="/api/chat", tags=["Chat"])
 @limiter.limit(RATE_LIMIT_CHAT)
 async def send_message(request: Request, body: ChatRequest):
     """Process a user message through the full RAG pipeline."""
-    from services.chat_service import get_chat_service
+    import asyncio
+    from services.chat_service import (
+        ChatServiceUnavailableError,
+        get_chat_service,
+    )
 
     try:
         chat_service = get_chat_service()
-        result = chat_service.process_message(
+        result = await asyncio.to_thread(
+            chat_service.process_message,
             message=body.message,
             session_id=body.session_id,
             langue_override=body.langue.value if body.langue else None,
@@ -73,12 +79,15 @@ async def send_message(request: Request, body: ChatRequest):
             timestamp=result["timestamp"],
         )
 
+    except ChatServiceUnavailableError as e:
+        logger.warning(f"Chat dependency unavailable: {e}")
+        raise HTTPException(status_code=503, detail=str(e)) from e
     except Exception as e:
         logger.error(f"Chat processing error: {e}", exc_info=True)
         raise HTTPException(
             status_code=500,
             detail="Une erreur interne s'est produite. Veuillez réessayer.",
-        )
+        ) from e
 
 
 @router.post(

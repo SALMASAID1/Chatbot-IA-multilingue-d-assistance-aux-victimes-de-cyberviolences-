@@ -39,6 +39,19 @@ class TestFrenchDetection:
         result = detect_language("J'ai besoin d'aide, quelqu'un me menace en ligne")
         assert result.detected_lang == "fr"
 
+    @pytest.mark.parametrize(
+        "message",
+        [
+            "Je suis victime d'intimidation en ligne",
+            "Que faire afin de me protéger ?",
+            "La fin du harcèlement est mon objectif",
+        ],
+    )
+    def test_french_words_do_not_match_darija_substrings(self, message):
+        result = detect_language(message)
+        assert result.detected_lang == "fr"
+        assert result.is_darija is False
+
 
 # ============================================================
 # Arabic standard detection
@@ -105,6 +118,21 @@ class TestDarijaLatinDetection:
         assert result.detected_lang == "ar"
         assert result.is_darija is True
 
+    def test_arabizi_requires_complete_marker_word(self):
+        result = detect_language("intimidation")
+        assert result.detected_lang == "fr"
+        assert result.is_darija is False
+
+    def test_common_arabizi_words(self):
+        result = detect_language("salam, chno ndir daba?")
+        assert result.detected_lang == "ar"
+        assert result.is_darija is True
+
+    def test_emotional_arabizi_words(self):
+        result = detect_language("ana m9hora o kanbki bzaf")
+        assert result.detected_lang == "ar"
+        assert result.is_darija is True
+
 
 # ============================================================
 # Edge cases
@@ -125,13 +153,11 @@ class TestEdgeCases:
 
     def test_short_french(self):
         result = detect_language("Aide")
-        # Short text — should still return a valid result
-        assert result.detected_lang in ("fr", "ar")
+        assert result.detected_lang == "fr"
 
     def test_numbers_only(self):
         result = detect_language("19 177 2511")
-        # Numbers — should return a valid result without crashing
-        assert result.detected_lang in ("fr", "ar")
+        assert result.detected_lang == "fr"
 
     def test_confidence_present(self):
         result = detect_language("Je suis en danger")

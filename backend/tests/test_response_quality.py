@@ -43,6 +43,20 @@ class TestGeminiProvider:
         result = provider.generate([])
         assert result == "Response from Gemini"
 
+    @patch("llm.gemini_provider.GEMINI_FALLBACK_MODELS", ["fallback-model"])
+    @patch("llm.gemini_provider.ChatGoogleGenerativeAI")
+    def test_provider_falls_back_when_model_is_unavailable(self, mock_chat):
+        primary = MagicMock()
+        primary.invoke.side_effect = RuntimeError("404 NOT_FOUND: model unavailable")
+        fallback = MagicMock()
+        fallback.invoke.return_value = MagicMock(content="Fallback response")
+        mock_chat.side_effect = [primary, fallback]
+
+        provider = GeminiProvider(model_name="primary-model")
+
+        assert provider.generate([]) == "Fallback response"
+        assert mock_chat.call_count == 2
+
 
 # ============================================================
 # Evaluator Helper Functions

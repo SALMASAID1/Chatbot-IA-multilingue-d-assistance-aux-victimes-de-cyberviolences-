@@ -1,16 +1,15 @@
 """Language detection service for FR / Arabic Standard / Darija.
 
-Uses `langdetect` as the primary detector for FR vs AR, then applies
-a Darija-specific heuristic layer when Arabic is detected.
+Uses the input script as the primary FR/AR signal, then applies a
+Darija-specific heuristic layer. Latin text defaults to French unless
+complete Arabizi/Darija words are present; Arabic-script text routes to
+Arabic.
 
 Darija routes through "ar" in the RAG pipeline since the AR knowledge
 base already mixes standard Arabic and Darija content.
 """
 import re
 from dataclasses import dataclass
-from typing import Optional
-
-from langdetect import detect, detect_langs, LangDetectException
 
 
 # ============================================================
@@ -45,7 +44,17 @@ DARIJA_MARKERS_LATIN = [
     "ghadi", "machi", "walou", "bzaf", "chwia",
     "hada", "hadi", "rah", "raha",
     "labas", "hamdoulah", "inchallah", "nta", "nti",
+    "chno", "chnou", "kayn", "kayna", "3afak", "7it", "m3a",
+    "chokran", "salam",
+    # Emotional Darija / Arabizi
+    "khayf", "khayfa", "mkhlo3", "mkhlo3a", "m9lo9", "m9l9",
+    "mkhno9", "mkhno9a", "m9hor", "m9hora", "ta3bt", "kanbki",
+    "bo7di", "day3", "day3a", "ma9dertch",
 ]
+
+# These spellings are also valid/common French words. They must never be
+# enough on their own to classify a Latin-script message as Darija.
+DARIJA_AMBIGUOUS_LATIN = {"fin"}
 
 
 @dataclass
@@ -62,6 +71,22 @@ def _has_arabic_chars(text: str) -> bool:
     return bool(re.search(r'[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]', text))
 
 
+def _arabic_tokens(text: str) -> list[str]:
+    """Return Arabic-script words without punctuation."""
+    return re.findall(r"[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]+", text)
+
+
+def _latin_tokens(text: str) -> list[str]:
+    """Return lowercase Latin/Arabizi words without punctuation."""
+    return re.findall(r"[a-zà-öø-ÿ0-9]+", text.lower())
+
+
+def _latin_darija_markers(text: str) -> set[str]:
+    """Find complete Arabizi words, never substrings inside French words."""
+    tokens = set(_latin_tokens(text))
+    return tokens.intersection(DARIJA_MARKERS_LATIN)
+
+
 def _check_darija_markers(text: str) -> float:
     """
     Check for Darija markers in the text.
@@ -69,22 +94,9 @@ def _check_darija_markers(text: str) -> float:
     Returns a score (0.0-1.0) indicating how likely the text is Darija.
     Score > 0.3 is considered Darija.
     """
-    text_lower = text.lower()
-    total_markers_found = 0
-    total_markers = len(DARIJA_MARKERS_AR) + len(DARIJA_MARKERS_LATIN)
-
-    # Check Arabic-script markers
-    for marker in DARIJA_MARKERS_AR:
-        if marker in text:
-            total_markers_found += 1
-
-    # Check Latin-script markers
-    for marker in DARIJA_MARKERS_LATIN:
-        if marker in text_lower:
-            total_markers_found += 1
-
-    if total_markers == 0:
-        return 0.0
+    arabic_matches = set(_arabic_tokens(text)).intersection(DARIJA_MARKERS_AR)
+    latin_matches = _latin_darija_markers(text)
+    total_markers_found = len(arabic_matches) + len(latin_matches)
 
     # Normalize: even 1-2 markers in a short message is a strong signal
     # Weight by message length (shorter messages need fewer markers)
@@ -104,9 +116,11 @@ def detect_language(text: str) -> LanguageResult:
     """
     Detect the language of the input text.
 
-    Two-step process:
-    1. Use langdetect for primary FR/AR classification
-    2. If AR detected, apply Darija heuristics
+    Deterministic process:
+    1. Any Arabic-script text routes to Arabic.
+    2. Latin-script text routes to Darija only when a complete, unambiguous
+       Arabizi marker is present.
+    3. All other Latin-script text defaults to French.
 
     Args:
         text: User input message
@@ -124,60 +138,32 @@ def detect_language(text: str) -> LanguageResult:
 
     text = text.strip()
 
-    # Step 1: Check for Latin-script Darija (Arabizi) first
-    darija_latin_score = 0
-    text_lower = text.lower()
-    for marker in DARIJA_MARKERS_LATIN:
-        if marker in text_lower:
-            darija_latin_score += 1
+    # Arabic script always selects the Arabic response pipeline. Darija in
+    # Arabic script remains distinguishable through the marker score.
+    if _has_arabic_chars(text):
+        darija_score = _check_darija_markers(text)
+        return LanguageResult(
+            detected_lang="ar",
+            is_darija=darija_score >= 0.3,
+            confidence=1.0,
+            raw_detection="arabic_script",
+        )
 
-    if darija_latin_score >= 1 and not _has_arabic_chars(text):
-        # Latin-script Darija detected
+    # Latin script defaults to French. Only complete, unambiguous Darija
+    # words can switch it to the Arabic/Darija response pipeline.
+    latin_matches = _latin_darija_markers(text)
+    strong_matches = latin_matches - DARIJA_AMBIGUOUS_LATIN
+    if strong_matches:
         return LanguageResult(
             detected_lang="ar",
             is_darija=True,
-            confidence=min(darija_latin_score / 2.0, 1.0),
+            confidence=min(0.7 + (0.1 * len(strong_matches)), 1.0),
             raw_detection="darija_latin",
         )
 
-    # Step 2: Use langdetect for primary classification
-    try:
-        lang_results = detect_langs(text)
-        primary = lang_results[0]
-        raw_lang = primary.lang
-        confidence = primary.prob
-    except LangDetectException:
-        # If detection fails, check for Arabic chars as fallback
-        if _has_arabic_chars(text):
-            raw_lang = "ar"
-            confidence = 0.5
-        else:
-            raw_lang = "fr"
-            confidence = 0.5
-
-    # Step 3: Map to supported languages
-    if raw_lang == "ar":
-        detected_lang = "ar"
-    elif raw_lang == "fr":
-        detected_lang = "fr"
-    else:
-        # Unsupported language — default based on script
-        if _has_arabic_chars(text):
-            detected_lang = "ar"
-        else:
-            detected_lang = "fr"
-        confidence = max(confidence * 0.5, 0.3)
-
-    # Step 4: If Arabic detected, check for Darija
-    is_darija = False
-    if detected_lang == "ar":
-        darija_score = _check_darija_markers(text)
-        if darija_score >= 0.3:
-            is_darija = True
-
     return LanguageResult(
-        detected_lang=detected_lang,
-        is_darija=is_darija,
-        confidence=round(confidence, 3),
-        raw_detection=raw_lang,
+        detected_lang="fr",
+        is_darija=False,
+        confidence=0.9,
+        raw_detection="latin_default_fr",
     )

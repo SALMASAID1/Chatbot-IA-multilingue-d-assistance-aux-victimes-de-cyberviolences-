@@ -199,6 +199,10 @@ class HealthResponse(BaseModel):
     status: str = Field(..., description="API status: 'healthy' or 'degraded'")
     version: str = Field(..., description="API version")
     rag_status: str = Field(..., description="RAG pipeline status")
+    llm_status: str = Field(
+        default="unknown",
+        description="Latest known Gemini API status",
+    )
     active_sessions: int = Field(default=0, description="Number of active sessions")
     uptime_seconds: float = Field(default=0.0, description="API uptime in seconds")
 

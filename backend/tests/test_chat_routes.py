@@ -81,9 +81,10 @@ class TestHealthEndpoint:
         response = client.get("/api/health")
         assert response.status_code == 200
         data = response.json()
-        assert data["status"] == "healthy"
+        assert data["status"] in {"healthy", "degraded"}
         assert "version" in data
         assert "rag_status" in data
+        assert "llm_status" in data
         assert "uptime_seconds" in data
 
     def test_health_has_session_count(self, client):
