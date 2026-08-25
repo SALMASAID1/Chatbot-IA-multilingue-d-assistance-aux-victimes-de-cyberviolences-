@@ -14,12 +14,18 @@
 
 ## 📄 Livrables générés
 
-### Rapport LaTeX → PDF (16 pages)
-- [rapport_projet.tex](file:///home/chicken/Desktop/CV_Resume/CMRPI_PFA/CMRPI_Projet/Chatbot-IA-multilingue-d-assistance-aux-victimes-de-cyberviolences-/docs/rapport_projet.tex)
-- [rapport_projet.pdf](file:///home/chicken/Desktop/CV_Resume/CMRPI_PFA/CMRPI_Projet/Chatbot-IA-multilingue-d-assistance-aux-victimes-de-cyberviolences-/docs/rapport_projet.pdf) — 16 pages, compilé avec succès
+### Rapport LaTeX → PDF (24 pages)
+- [rapport_projet.tex](docs/rapport_projet.tex) — source LaTeX (structure complète,
+  diagramme d'architecture TikZ, captures d'écran de l'interface, métriques mesurées)
+- [rapport_projet.pdf](docs/rapport_projet.pdf) — 24 pages, compilé avec succès
 
 > [!TIP]
 > Pour recompiler : `cd docs && pdflatex rapport_projet.tex && pdflatex rapport_projet.tex`
+> (deux passes : table des matières et références croisées)
+
+> [!IMPORTANT]
+> Les encadrés oranges « À compléter » signalent les sections restant à rédiger
+> par les auteurs (remerciements, introduction, conclusion, analyses détaillées).
 
 ### Plan de sprints (`plan/`)
 
