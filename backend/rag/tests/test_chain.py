@@ -37,6 +37,96 @@ class TestUrgencyDetection:
         assert detect_urgency("URGENCE", "fr") is True
 
 
+# Latin-script Darija. language_service routes these to "ar" whenever it finds
+# a Darija marker, and to "fr" otherwise, so both routings are exercised.
+ARABIZI_URGENT = [
+    "bghit nmot",
+    "bghit nmout",
+    "ma bghitch n3ich walakin nmut",
+    "n9tel rasi",
+    "nqtel rassi",
+    "nktel rasi",
+    "ma bqach 3andi la9wa",
+    "mab9ach 3andi la9wa",
+    "3yit mn 7yati",
+    "3ayit men 7yati",
+    "bghit nsali 7yati",
+    "ana f khatar",
+    "rah f lkhatar",
+    "ghadi ydrebni daba",
+    "ghadi y9telni",
+    "rah 3end bab dar",
+]
+
+# Ordinary questions that must never trigger the emergency protocol: it
+# bypasses retrieval and the LLM and answers with phone numbers only.
+ARABIZI_NOT_URGENT = [
+    "wach ndir plainte f police ?",
+    "kifach n9der nsali had lmochkil ?",
+    "bghit n3raf chnou hiya lqanoun 103-13",
+    "3afak 3awnini bach nbdel password dyali",
+    "chhal khass bach ndir signalement",
+    "nta 3andek chi ma3loumat 3la E-Blagh ?",
+    "hadi bnt khti kayn chi wa7ed kaydir liha des menaces",
+    "Comment signaler un compte Instagram ?",
+    "Je ne sais pas quoi faire, un mot de passe a ete vole",
+    "Bien motive, je veux porter plainte",
+]
+
+
+class TestArabiziUrgencyDetection:
+    """Latin-script Darija urgency -- no API key required.
+
+    Regression guard: `detect_urgency("bghit nmot", "ar")` returned False
+    while the Arabic-script spelling returned True, so a victim typing
+    suicidal ideation in Arabizi never reached the emergency protocol.
+    """
+
+    @pytest.mark.parametrize("message", ARABIZI_URGENT)
+    def test_arabizi_urgency_detected_in_both_pipelines(self, message):
+        from rag.chain import detect_urgency
+        assert detect_urgency(message, "ar") is True
+        assert detect_urgency(message, "fr") is True
+
+    @pytest.mark.parametrize("message", ARABIZI_NOT_URGENT)
+    def test_ordinary_messages_stay_non_urgent(self, message):
+        from rag.chain import detect_urgency
+        assert detect_urgency(message, "ar") is False
+        assert detect_urgency(message, "fr") is False
+
+    def test_matches_the_arabic_script_spelling(self):
+        """Arabizi and Arabic script must agree on the same sentence."""
+        from rag.chain import detect_urgency
+        assert detect_urgency("bghit nmot", "ar") is True
+        assert detect_urgency("\u0628\u063a\u064a\u062a \u0646\u0645\u0648\u062a", "ar") is True
+
+    def test_word_boundaries_are_enforced(self):
+        """Short Arabizi tokens must not fire inside a longer word."""
+        from rag.chain import detect_urgency
+        assert detect_urgency("nmotive", "ar") is False
+        assert detect_urgency("anmot", "ar") is False
+        assert detect_urgency("nmot123", "ar") is False
+
+    def test_french_keywords_reach_the_arabic_pipeline(self):
+        """Darija speakers code-switch: Latin-script French must still count."""
+        from rag.chain import detect_urgency
+        assert detect_urgency("wach kayn chi urgence", "ar") is True
+        assert detect_urgency("rah f danger", "ar") is True
+
+    def test_arabic_script_is_unaffected_by_the_french_pass(self):
+        """A pure Arabic-script message keeps its previous behaviour."""
+        from rag.chain import detect_urgency
+        assert detect_urgency("\u0645\u0627 \u0647\u0648 \u0627\u0644\u0639\u0646\u0641 \u0627\u0644\u0631\u0642\u0645\u064a", "ar") is False
+
+    def test_language_service_routing_still_reaches_urgency(self):
+        """End-to-end: whatever language_service decides, urgency is caught."""
+        from rag.chain import detect_urgency
+        from services.language_service import detect_language
+        for message in ARABIZI_URGENT:
+            langue = detect_language(message).detected_lang
+            assert detect_urgency(message, langue) is True, message
+
+
 class TestProfileDetection:
     """Tests for user profile detection -- no API key required."""
 

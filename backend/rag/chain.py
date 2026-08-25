@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 from config import (
-    URGENCY_KEYWORDS_FR, URGENCY_KEYWORDS_AR,
+    URGENCY_KEYWORDS_FR, URGENCY_KEYWORDS_AR, URGENCY_KEYWORDS_ARABIZI,
     EMERGENCY_RESPONSE_FR, EMERGENCY_RESPONSE_AR,
 )
 from llm.gemini_provider import GeminiProvider, get_gemini_provider
@@ -344,10 +344,36 @@ logger.info(f"Loaded prompts: FR={len(SYSTEM_PROMPT_FR)} chars, AR={len(SYSTEM_P
 # AR prompt is loaded above from system_prompt_ar.txt
 
 
+# Latin-script characters, used to tell an Arabizi message apart from an
+# Arabic-script one. Mirrors the token alphabet of services/language_service.py.
+_LATIN_CHAR_RE = re.compile(r"[a-z\u00e0-\u00f6\u00f8-\u00ff]", re.IGNORECASE)
+_ARABIZI_CHAR = r"[0-9a-z\u00e0-\u00f6\u00f8-\u00ff]"
+
+# Arabizi keywords are matched on word boundaries rather than as substrings:
+# a short token such as "nmot" must never fire inside an unrelated French
+# word. Whitespace inside a multi-word keyword is flexible.
+_URGENCY_ARABIZI_RE = re.compile(
+    "(?<!" + _ARABIZI_CHAR + ")(?:"
+    + "|".join(
+        r"\s+".join(re.escape(part) for part in keyword.split())
+        for keyword in URGENCY_KEYWORDS_ARABIZI
+    )
+    + ")(?!" + _ARABIZI_CHAR + ")",
+    re.IGNORECASE,
+)
+
+
 def detect_urgency(message: str, langue: str = "fr") -> bool:
     """
     Detect if the user message contains urgency keywords.
     Based on livrable-1 mots_cles_declencheurs.md priority system.
+
+    Three passes, because a Darija speaker may write the same crisis in three
+    scripts and language_service routes all Latin-script Darija to "ar":
+    1. the keyword list for `langue`;
+    2. the French list too, when the message is Latin-script but routed to
+       "ar" -- Darija speakers code-switch French constantly;
+    3. the Arabizi list, for both pipelines.
 
     Returns True if any urgency keyword is found.
     """
@@ -357,7 +383,13 @@ def detect_urgency(message: str, langue: str = "fr") -> bool:
     for keyword in keywords:
         if keyword.lower() in message_lower:
             return True
-    return False
+
+    if langue != "fr" and _LATIN_CHAR_RE.search(message_lower):
+        for keyword in URGENCY_KEYWORDS_FR:
+            if keyword.lower() in message_lower:
+                return True
+
+    return bool(_URGENCY_ARABIZI_RE.search(message_lower))
 
 
 class RAGChain:

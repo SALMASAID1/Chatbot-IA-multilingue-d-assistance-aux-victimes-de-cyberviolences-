@@ -132,6 +132,34 @@ URGENCY_KEYWORDS_AR = [
     "ما بقات عندي القوة",
 ]
 
+# Latin-script Darija (Arabizi). Neither list above reaches it: the Arabic
+# list is Arabic-script only, and a Latin-script message is routed to the
+# Arabic pipeline as soon as language_service finds one Darija marker. Before
+# this list, "bghit nmot" was NOT flagged as urgent while its Arabic-script
+# spelling "بغيت نموت" was.
+#
+# Arabizi has no standard orthography, so common spelling variants are listed
+# explicitly (digits stand for Arabic letters: 3=ع, 7=ح, 9=ق). These entries are
+# matched on word boundaries -- never as substrings -- so a short token such
+# as "nmot" cannot fire inside an unrelated French word.
+URGENCY_KEYWORDS_ARABIZI = [
+    # Suicidal ideation / self-harm ("bghit nmot", "nqtel rasi")
+    "nmot", "nmout", "nmut",
+    "nqtel rasi", "n9tel rasi", "nktel rasi",
+    "nqtel rassi", "n9tel rassi", "nktel rassi",
+    "nsali 7yati", "nsali hyati", "nsali m3a 7yati", "nsali m3a hyati",
+    "3yit men 7yati", "3yit mn 7yati", "3ayit men 7yati", "3ayit mn 7yati",
+    # No strength left -- parity with the FR "plus la force"
+    "ma bqach 3andi la9wa", "ma b9ach 3andi la9wa",
+    "mabqach 3andi la9wa", "mab9ach 3andi la9wa",
+    "ma bqach 3andi laqwa", "ma bqatch la9wa",
+    # Immediate physical danger -- parity with the AR list
+    "f khatar", "fkhatar", "f khtar", "f lkhatar",
+    "ghadi ydrebni", "ghadi idrebni", "ghadi ydribni",
+    "ghadi yqtelni", "ghadi y9telni", "ghadi yktelni",
+    "rah 3end bab", "rah 3and bab",
+]
+
 EMERGENCY_RESPONSE_FR = (
     "Si vous etes en danger immediat, appelez les autorites tout de suite :\n"
     "- Police : 19 (en ville)\n"
