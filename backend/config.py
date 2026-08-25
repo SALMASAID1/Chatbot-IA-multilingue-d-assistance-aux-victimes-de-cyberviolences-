@@ -91,6 +91,14 @@ MAX_HISTORY_SIZE = int(os.getenv("MAX_HISTORY_SIZE", "50"))
 MAX_MESSAGE_LENGTH = int(os.getenv("MAX_MESSAGE_LENGTH", "2000"))
 
 # ============================================================
+# Admin authentication
+# ============================================================
+# When unset, the /api/admin/* endpoints are disabled entirely (they answer 404).
+# Set it to a long random value to enable them, e.g.:
+#   python -c "import secrets; print(secrets.token_urlsafe(32))"
+ADMIN_API_KEY = os.getenv("ADMIN_API_KEY") or None
+
+# ============================================================
 # Rate limiting
 # ============================================================
 RATE_LIMIT_CHAT = os.getenv("RATE_LIMIT_CHAT", "30/minute")

@@ -7,9 +7,10 @@ Endpoints:
 import logging
 from collections import Counter
 
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, Depends, HTTPException, Request
 
 from api.middleware.rate_limit import limiter
+from api.security import require_admin_key
 
 import sys
 from pathlib import Path
@@ -23,7 +24,18 @@ from api.models.schemas import (
 
 logger = logging.getLogger(__name__)
 
-router = APIRouter(prefix="/api/admin", tags=["Admin"])
+# Every route in this router requires a valid X-Admin-Key header. When
+# ADMIN_API_KEY is not configured the dependency answers 404, so an
+# unconfigured deployment exposes no admin surface at all.
+router = APIRouter(
+    prefix="/api/admin",
+    tags=["Admin"],
+    dependencies=[Depends(require_admin_key)],
+    responses={
+        401: {"description": "Missing or invalid admin key"},
+        404: {"description": "Admin API disabled (ADMIN_API_KEY not configured)"},
+    },
+)
 
 
 @router.get(

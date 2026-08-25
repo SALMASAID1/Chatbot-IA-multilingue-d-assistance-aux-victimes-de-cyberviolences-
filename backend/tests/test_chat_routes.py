@@ -251,34 +251,47 @@ class TestFeedbackEndpoint:
 # ============================================================
 
 class TestAdminEndpoints:
-    """Test the /api/admin/* endpoints."""
+    """Test the /api/admin/* endpoints.
 
-    def test_list_sessions(self, client):
+    These routes require an admin key (see backend/api/security.py); the key is
+    enabled per-test through the `admin_key` fixture. Authentication itself is
+    covered in tests/test_admin_auth.py.
+    """
+
+    @pytest.fixture
+    def admin_key(self, monkeypatch):
+        import config
+
+        key = "test-admin-key-0123456789"
+        monkeypatch.setattr(config, "ADMIN_API_KEY", key)
+        return {"X-Admin-Key": key}
+
+    def test_list_sessions(self, client, admin_key):
         # Create some sessions
         client.post("/api/chat", json={"message": "Bonjour"})
         client.post("/api/chat", json={"message": "مرحبا"})
 
-        response = client.get("/api/admin/sessions")
+        response = client.get("/api/admin/sessions", headers=admin_key)
         assert response.status_code == 200
         data = response.json()
         assert data["total_sessions"] >= 2
         assert "by_language" in data
 
-    def test_delete_session(self, client):
+    def test_delete_session(self, client, admin_key):
         # Create a session
         r1 = client.post("/api/chat", json={"message": "Test"})
         session_id = r1.json()["session_id"]
 
         # Delete it
-        r2 = client.delete(f"/api/admin/sessions/{session_id}")
+        r2 = client.delete(f"/api/admin/sessions/{session_id}", headers=admin_key)
         assert r2.status_code == 200
 
         # Verify it's gone
         r3 = client.get(f"/api/chat/history/{session_id}")
         assert r3.status_code == 404
 
-    def test_delete_nonexistent_session(self, client):
-        response = client.delete("/api/admin/sessions/nonexistent")
+    def test_delete_nonexistent_session(self, client, admin_key):
+        response = client.delete("/api/admin/sessions/nonexistent", headers=admin_key)
         assert response.status_code == 404
 
 

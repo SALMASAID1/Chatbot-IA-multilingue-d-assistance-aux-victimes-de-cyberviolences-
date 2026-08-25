@@ -52,6 +52,14 @@ async def lifespan(app: FastAPI):
     store = get_session_store()
     logger.info(f"Session store initialized: {store.__class__.__name__}")
 
+    # The admin API is opt-in: without a key it answers 404 (see api/security.py).
+    from config import ADMIN_API_KEY
+
+    if ADMIN_API_KEY:
+        logger.info("Admin API enabled (X-Admin-Key required)")
+    else:
+        logger.info("Admin API disabled: ADMIN_API_KEY is not set")
+
     # Warm the cached embedding model/vector store before accepting chat traffic.
     # If the model is not cached yet, keep startup available and report degraded
     # health until the first download succeeds.
