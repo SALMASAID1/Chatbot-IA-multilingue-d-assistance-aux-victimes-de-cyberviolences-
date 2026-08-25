@@ -1,0 +1,43 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd frontend && npm ci && npm run build",
+  "outputDirectory": "frontend/dist",
+  "installCommand": "echo \"dependencies are installed by buildCommand\"",
+  "framework": null,
+  "github": { "silent": true },
+  "rewrites": [
+    {
+      "comment": "REPLACE <space-url> with your Hugging Face Space URL, e.g. https://cmrpi-emc-helpline.hf.space — proxying keeps the API same-origin, so no CORS setup is needed and the CSP below stays strict.",
+      "source": "/api/:path*",
+      "destination": "https://<space-url>/api/:path*"
+    },
+    {
+      "comment": "SPA fallback: every other route serves the app shell.",
+      "source": "/((?!assets/|favicon.svg|images/).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "no-referrer" },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; form-action 'self'"
+        },
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}

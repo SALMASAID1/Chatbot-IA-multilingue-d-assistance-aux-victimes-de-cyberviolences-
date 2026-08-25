@@ -1,0 +1,25 @@
+# Keep the build context small and free of secrets.
+.env
+.env.*
+!.env.example
+
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.git/
+.gitignore
+
+# Rebuilt during the image build — never ship a stale vector store.
+data/chroma_db/
+
+# Frontend has its own image (frontend/Dockerfile) and Vercel build.
+frontend/
+node_modules/
+
+# Not needed by the API at runtime.
+docs/resources/
+docs/*.pdf
+plan/
+scripts/
+WORKSPACE_ANALYSIS.md
