@@ -1,10 +1,60 @@
-# Tâche 1 — Développement du pipeline RAG (LangChain)
+# Tâche 1 — Développement du pipeline RAG (LangChain) ✅ TERMINÉE
 
 ## Assigné à
 **Salma Said**
 
 ## Objectif
 Développer le pipeline RAG (Retrieval-Augmented Generation) complet utilisant LangChain, incluant l'ingestion des documents, la vectorisation, la recherche sémantique et l'augmentation du contexte pour le LLM.
+
+
+## Statut : ✅ TERMINÉE
+
+> **Décisions d'architecture (écarts assumés par rapport au plan initial) :**
+> - **ChromaDB** en persistance locale (`data/chroma_db/`) plutôt que Pinecone : pas de
+>   dépendance à un service payant, et la base tient dans le dépôt pour le déploiement gratuit.
+> - **`paraphrase-multilingual-MiniLM-L12-v2`** (384 dimensions) retenu plutôt que
+>   `multilingual-e5-large` : il tourne sur CPU sans GPU, ce qui est la contrainte des
+>   hébergeurs gratuits visés (Sprint 4, tâche 2).
+> - **Découpage en 500 caractères** (chevauchement 50) plutôt qu'en tokens : `CHUNK_SIZE`
+>   et `CHUNK_OVERLAP` sont exprimés en caractères dans `RecursiveCharacterTextSplitter`.
+> - La base de connaissances a **grossi au-delà des 23+23 documents prévus** : elle compte
+>   aujourd'hui 33 documents FR et 24 documents AR, plus les paires Q/R de la FAQ.
+
+### Livrables produits
+- `backend/rag/ingestion.py` — chargement, exclusion des doublons, découpage, métadonnées
+- `backend/rag/embeddings.py` — modèle d'embeddings multilingue, chargement unique
+- `backend/rag/retriever.py` — `BilingualRetriever`, filtrage par langue, `search_with_fallback()`
+- `backend/rag/chain.py` — `RAGChain` complet : profil, urgence, récupération, prompt, LLM
+- `backend/rag/tests/` — `test_ingestion.py`, `test_retriever.py`, `test_chain.py`
+- Base vectorielle indexée : **820 vecteurs** (535 FR / 285 AR) dans `data/chroma_db/`
+
+### Paramètres retenus
+
+| Paramètre | Valeur | Emplacement |
+|---|---|---|
+| Modèle d'embeddings | `paraphrase-multilingual-MiniLM-L12-v2` (384 dim.) | `config.py` |
+| Taille de chunk / chevauchement | 500 / 50 caractères | `config.py` |
+| `TOP_K` | 3 | `config.py` |
+| Seuil de similarité | 0.15 | `config.py` |
+| Collection | `cyberviolence_knowledge` | `config.py` |
+
+### Répartition des 820 vecteurs
+
+| Catégorie | Vecteurs | Catégorie | Vecteurs |
+|---|---|---|---|
+| juridique | 132 | rapports_internationaux | 74 |
+| ressources | 131 | mots_cles | 42 |
+| psychologie | 124 | soutien_psychologique | 18 |
+| fiches_pratiques | 112 | profils_utilisateurs | 15 |
+| prevention | 95 | | |
+| faq | 77 | **Total** | **820** |
+
+> ⚠️ **Incident corrigé le 24/08/2026.** La base vectorielle livrée contenait 748 vecteurs
+> (dont seulement 213 en AR) : elle datait d'avant le commit `f8ca6b0`, qui a ajouté la
+> reconnaissance des en-têtes `Q:` / `س:` dans l'ingestion. Les **72 chunks des 32 paires
+> Q/R arabes validées n'étaient donc pas interrogeables** — la recherche AR/darija
+> fonctionnait sans eux. Une réindexation complète a rétabli les 820 vecteurs.
+> **À retenir :** toute modification de `ingestion.py` impose une réindexation.
 
 ## Prérequis (état actuel du projet)
 - ✅ Base de connaissances FR : 23 documents Markdown dans `data/knowledge_base/fr/` (7 catégories)
@@ -99,12 +149,17 @@ Développer le pipeline RAG (Retrieval-Augmented Generation) complet utilisant L
   - Tests unitaires (>80% coverage)
   - `requirements.txt` mis à jour
 
-## Critères de validation
-- [ ] Les 23 documents FR et 23 documents AR sont correctement ingérés et vectorisés
-- [ ] Le dossier `cyberviolence_ressources_verified_md/` est exclu de l'ingestion
-- [ ] Les métadonnées (langue, catégorie, mots-clés) sont préservées dans la base vectorielle
-- [ ] La recherche sémantique retourne des résultats pertinents dans la bonne langue
-- [ ] Le pipeline RAG génère des réponses contextualisées
-- [ ] Le temps de recherche est < 500ms
-- [ ] Les tests passent avec succès
-- [ ] Durée : **Semaine 3-4**
+
+## Critères de validation — Résultats
+
+- [x] Les documents FR et AR sont correctement ingérés et vectorisés — **33 FR + 24 AR**, soit 820 chunks (535 FR / 285 AR)
+- [x] Le dossier `cyberviolence_ressources_verified_md/` est exclu de l'ingestion — via `EXCLUDED_DIRS` (`ingestion.py:72`)
+- [x] Les métadonnées (`langue`, `categorie`, `mots_cles`) sont préservées dans la base vectorielle — vérifié par inspection directe de la collection
+- [x] La recherche sémantique retourne des résultats pertinents dans la bonne langue — filtrage `langue` + repli cross-lingue `search_with_fallback()`
+- [x] Le pipeline RAG génère des réponses contextualisées — `RAGChain.query()` avec profil utilisateur et injection de contexte
+- [x] Le temps de recherche est < 500 ms — **médiane mesurée : 19 ms** (20 exécutions, CPU, hors appel LLM)
+- [x] Les tests passent avec succès — **201 tests backend** (7 ignorés faute de clé API)
+- [x] Durée : **Semaine 3-4** ✅
+
+> **Non couvert :** la couverture de tests n'a pas été mesurée avec `pytest-cov`, le seuil
+> « > 80 % » du livrable n'est donc ni confirmé ni infirmé.

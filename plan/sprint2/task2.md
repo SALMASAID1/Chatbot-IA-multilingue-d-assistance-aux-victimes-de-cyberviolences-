@@ -1,10 +1,54 @@
-# Tâche 2 — Développement de l'API Backend (FastAPI)
+# Tâche 2 — Développement de l'API Backend (FastAPI) ✅ TERMINÉE
 
 ## Assigné à
 **Mohamed Tamzirt**
 
 ## Objectif
 Développer l'API backend avec FastAPI, incluant les endpoints de conversation, la gestion des sessions, la détection de langue, et l'intégration avec le pipeline RAG.
+
+
+## Statut : ✅ TERMINÉE
+
+> **Décisions d'architecture (écarts assumés par rapport au plan initial) :**
+> - **Sessions en mémoire uniquement.** `REDIS_URL` reste lu dans `config.py` mais aucun
+>   backend Redis n'est branché : les sessions vivent dans le processus, avec un TTL de
+>   30 minutes. Conséquence assumée : un redémarrage vide les conversations, et l'API ne
+>   peut pas être répliquée sur plusieurs instances. Acceptable pour le périmètre PFA et
+>   pour l'hébergement gratuit mono-conteneur.
+> - **`langdetect` écarté.** La détection est **déterministe et écrite à la main**
+>   (`services/language_service.py`) : `langdetect` est probabiliste, instable sur les
+>   messages courts — ceux d'une victime en détresse — et ne connaît pas l'arabizi.
+>   La règle retenue est explicite et testable : script arabe ⇒ `ar` ; script latin ⇒ `fr`
+>   sauf si un marqueur darija **complet** est présent.
+
+### Livrables produits
+- `backend/main.py` — application FastAPI, CORS, `slowapi`, journal de démarrage
+- `backend/api/routes/` — `chat.py`, `health.py`, `admin.py`
+- `backend/api/models/schemas.py` — modèles Pydantic v2 (entrée et sortie)
+- `backend/api/security.py` — garde par clé d'API sur les routes d'administration
+- `backend/services/` — `chat_service.py`, `language_service.py`, `session_service.py`
+- `backend/tests/` — `test_chat_routes.py`, `test_schemas.py`, `test_session_service.py`,
+  `test_language_service.py`, `test_admin_auth.py`, `test_response_quality.py`
+- `Dockerfile` (racine) et `docker-compose.yml` — conteneurisation de l'API
+
+### Endpoints exposés
+
+| Méthode | Chemin | Rôle | Limite |
+|---|---|---|---|
+| `POST` | `/api/chat` | Envoi d'un message, réponse RAG | 30/min |
+| `POST` | `/api/chat/session` | Création d'une session | 30/min |
+| `GET` | `/api/chat/history/{session_id}` | Historique de la session | 30/min |
+| `POST` | `/api/chat/feedback` | Retour utilisateur sur une réponse | 30/min |
+| `GET` | `/api/health` | État de l'API et du pipeline | — |
+| `GET` | `/api/admin/sessions` | Liste des sessions actives | 10/min, **clé requise** |
+| `DELETE` | `/api/admin/sessions/{session_id}` | Suppression d'une session | 10/min, **clé requise** |
+
+> 🔒 **Correctif de sécurité (25/08/2026).** Les deux routes `/api/admin/*` étaient
+> ouvertes sans authentification et exposaient les identifiants de session de toutes les
+> victimes connectées. Elles sont désormais protégées par `require_admin_key`
+> (`api/security.py`) : sans variable `ADMIN_API_KEY`, le routeur répond **404** — il
+> n'existe pas ; avec la variable, une clé manquante ou fausse répond **401**, comparée par
+> `secrets.compare_digest`. Couvert par `tests/test_admin_auth.py` (10 tests).
 
 ## Prérequis (état actuel du projet)
 - ✅ Base de connaissances complète (46 documents FR+AR) prête pour le RAG
@@ -98,12 +142,21 @@ Les réponses doivent toujours inclure les numéros d'urgence pertinents quand l
   - `Dockerfile` pour le déploiement
   - Variables d'environnement documentées dans `.env.example`
 
-## Critères de validation
-- [ ] L'API répond correctement sur tous les endpoints
-- [ ] La détection de langue fonctionne pour FR, AR et darija
-- [ ] Les sessions sont gérées correctement
-- [ ] La documentation Swagger est complète avec exemples trilingues
-- [ ] Le temps de réponse de l'API est < 3s
-- [ ] Le rate limiting fonctionne
-- [ ] L'API s'intègre correctement avec le module RAG
-- [ ] Durée : **Semaine 3-4**
+
+## Critères de validation — Résultats
+
+- [x] L'API répond correctement sur tous les endpoints — 7 routes, testées par `TestClient`
+- [x] La détection de langue fonctionne pour FR, AR et darija — `language_service.py`, **27 tests**
+- [x] Les sessions sont gérées correctement — création, historique, expiration à 30 min (`test_session_service.py`)
+- [x] La documentation Swagger est complète avec exemples trilingues — générée sur `/docs`, exemples FR/AR/darija dans les schémas Pydantic
+- [x] Le rate limiting fonctionne — `slowapi` : 30/min sur le chat, 10/min sur l'administration
+- [x] L'API s'intègre correctement avec le module RAG — `chat_service.py` → `RAGChain.query()`
+- [x] Durée : **Semaine 3-4** ✅
+
+### Réserve sur la performance
+
+- [ ] Le temps de réponse de l'API est < 3 s — **non mesuré de bout en bout.**
+  La partie maîtrisée est rapide : la récupération vectorielle a une médiane de **19 ms**.
+  Le reste dépend entièrement de la latence de l'API Gemini, qui n'a pas été chronométrée
+  sur un échantillon représentatif. Le chiffre reste donc à établir sur l'instance
+  déployée (voir Sprint 4, tâche 1).

@@ -1,4 +1,4 @@
-# Tâche 2 — Optimisation et déploiement en production
+# Tâche 2 — Optimisation et déploiement en production 🔄 EN COURS — prêt à déployer, déploiement à exécuter
 
 ## Assigné à
 **Mohamed Tamzirt** (déploiement) & **Salma Said** (validation end-to-end)

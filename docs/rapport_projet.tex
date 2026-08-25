@@ -437,6 +437,40 @@ en situation de détresse.
 \todo{Justifier plus longuement le choix d'une détection déterministe et
 présenter la liste des marqueurs (voir \texttt{backend/services/language\_service.py}).}
 
+\subsection{Un angle mort de sécurité : l'urgence en arabizi}
+\label{sec:arabizi}
+
+Le multilinguisme ne se joue pas seulement au niveau de la langue de réponse. La
+campagne de tests a révélé un défaut de sécurité que la seule détection de langue
+ne pouvait pas rattraper : les mots-clés de danger vital n'existaient qu'en
+caractères arabes. Écrite en caractères arabes, la phrase « je veux mourir »
+déclenchait bien le protocole d'urgence ; sa transcription latine
+\texttt{bghit nmot} --- le même aveu
+d'idées suicidaires, tapé de la façon la plus courante sur un téléphone marocain
+--- ne le déclenchait pas. Une victime écrivant en arabizi ne recevait aucun
+numéro d'urgence.
+
+Trois passes ont été ajoutées à \texttt{detect\_urgency()} :
+
+\begin{enumerate}[itemsep=2pt]
+  \item la liste de mots-clés correspondant à la langue détectée, comme
+  auparavant ;
+  \item la liste \emph{française} lorsque le message est en caractères latins
+  mais routé vers le pipeline arabe --- les locuteurs de darija alternent
+  constamment avec le français, et « \texttt{wach kayn chi urgence} » doit
+  compter ;
+  \item une liste arabizi de 38 entrées, couvrant les variantes orthographiques,
+  puisque l'arabizi n'a pas d'orthographe normalisée.
+\end{enumerate}
+
+Ces entrées sont comparées \textbf{sur des limites de mots} et non par
+sous-chaîne : un jeton court comme \texttt{nmot} ne doit jamais se déclencher à
+l'intérieur d'un mot français. Le compromis est assumé dans un sens précis --- un
+faux positif affiche des numéros d'urgence à quelqu'un qui n'en avait pas besoin,
+un faux négatif laisse une personne suicidaire sans réponse. La suite de tests
+verrouille les deux côtés : seize formulations qui doivent alerter, dix questions
+ordinaires qui ne le doivent pas.
+
 \section{Accompagnement psychologique}
 
 Sur recommandation de Mme Belaous, le système intègre une \emph{météo des
@@ -604,7 +638,9 @@ Latence du protocole d'urgence      & sans appel LLM \\
 Code backend (hors tests)           & 3\,246 lignes \\
 Code frontend (hors tests)          & 3\,417 lignes \\
 Code de test                        & 3\,150 lignes \\
-Poids du bundle frontend (gzip)     & 121 Ko \\
+Bundle frontend au chargement (gzip) & 149 Ko \\
+Rendu Markdown (chargé à la demande, gzip) & 48 Ko \\
+Tests automatisés (backend / front / e2e / scripts) & 348 \\
 \bottomrule
 \end{tabular}
 \caption{Indicateurs mesurés sur le dépôt}
@@ -646,10 +682,11 @@ réalisé, apports personnels et compétences acquises, difficultés rencontrée
 \section*{Perspectives}
 
 \begin{enumerate}[itemsep=2pt]
-  \item \textbf{Couverture de l'arabizi dans la détection d'urgence.} Les
-  marqueurs de danger vital ne sont actuellement définis qu'en caractères
-  arabes ; leur transcription latine doit être ajoutée pour couvrir les
-  utilisateurs écrivant la darija en caractères latins.
+  \item \textbf{Mesure du rappel en arabizi.} La détection d'urgence couvre
+  désormais la darija en caractères latins (voir \S\ref{sec:arabizi}), mais sur
+  la base d'une liste de variantes orthographiques établie à la main. Une
+  campagne d'annotation sur des messages réels permettrait de mesurer le rappel
+  effectif et de repérer les formulations manquantes.
   \item \textbf{Persistance des sessions.} Le passage à un magasin Redis
   permettrait de survivre aux redémarrages et de répartir la charge sur
   plusieurs instances.
