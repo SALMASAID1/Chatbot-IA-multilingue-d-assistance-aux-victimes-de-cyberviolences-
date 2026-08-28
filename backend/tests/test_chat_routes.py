@@ -247,39 +247,15 @@ class TestFeedbackEndpoint:
 
 
 # ============================================================
-# Admin endpoint tests
+# Admin endpoint security tests
 # ============================================================
 
-class TestAdminEndpoints:
-    """Test the /api/admin/* endpoints."""
+class TestAdminEndpointsDisabled:
+    """Ensure unauthenticated admin endpoints are not publicly exposed."""
 
-    def test_list_sessions(self, client):
-        # Create some sessions
-        client.post("/api/chat", json={"message": "Bonjour"})
-        client.post("/api/chat", json={"message": "مرحبا"})
-
-        response = client.get("/api/admin/sessions")
-        assert response.status_code == 200
-        data = response.json()
-        assert data["total_sessions"] >= 2
-        assert "by_language" in data
-
-    def test_delete_session(self, client):
-        # Create a session
-        r1 = client.post("/api/chat", json={"message": "Test"})
-        session_id = r1.json()["session_id"]
-
-        # Delete it
-        r2 = client.delete(f"/api/admin/sessions/{session_id}")
-        assert r2.status_code == 200
-
-        # Verify it's gone
-        r3 = client.get(f"/api/chat/history/{session_id}")
-        assert r3.status_code == 404
-
-    def test_delete_nonexistent_session(self, client):
-        response = client.delete("/api/admin/sessions/nonexistent")
-        assert response.status_code == 404
+    def test_admin_routes_are_not_registered(self, client):
+        assert client.get("/api/admin/sessions").status_code == 404
+        assert client.delete("/api/admin/sessions/any-session-id").status_code == 404
 
 
 # ============================================================

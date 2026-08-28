@@ -1,0 +1,21 @@
+# Secrets and repository metadata
+.env
+.git
+
+# Local Python and test artifacts
+venv/
+**/__pycache__/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Frontend and project-only files are not needed by the backend image. The
+# frontend service uses /frontend as its own Railway build root.
+frontend/
+scripts/
+plan/
+docs/resources/
+
+# Always regenerate the vector store during the backend image build so it
+# matches the knowledge base and embedding model shipped in that image.
+data/chroma_db/

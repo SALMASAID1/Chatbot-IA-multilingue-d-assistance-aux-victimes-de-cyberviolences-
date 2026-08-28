@@ -15,6 +15,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
+# Build the RAG assets into the image. The generated ChromaDB collection and
+# Hugging Face model cache are then available immediately at runtime, without
+# relying on Railway's ephemeral filesystem or a slow first-request download.
+RUN python -m backend.rag.embeddings
+
 # Expose the API port
 EXPOSE 8000
 

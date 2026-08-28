@@ -22,7 +22,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from config import API_HOST, API_PORT, API_VERSION
 from api.middleware.cors import setup_cors
 from api.middleware.rate_limit import setup_rate_limiting
-from api.routes import chat, health, admin
+from api.routes import chat, health
 from services.session_service import get_session_store, session_cleanup_task
 
 # ============================================================
@@ -125,7 +125,6 @@ setup_rate_limiting(app)
 # ============================================================
 app.include_router(health.router)
 app.include_router(chat.router)
-app.include_router(admin.router)
 
 
 # ============================================================
